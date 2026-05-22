@@ -1,5 +1,6 @@
 (() => {
-    const ASSET_DISTRIBUTION_NETWORK_URL = "https://cdn.jsdelivr.net/gh/UseNex/assets/";
+    const PRIMARY_CDN_URL = "https://nex-assets.pages.dev/";
+    const FALLBACK_CDN_URL = "https://cdn.jsdelivr.net/gh/UseNex/assets/";
 
     window.nex = new Proxy({}, {
         get(registryMap, gameIdentifier) {
@@ -105,33 +106,66 @@
             }
         }
 
+        async _raceFetch(primaryPath, fallbackPath, validatorFn) {
+            const controller = new AbortController();
+            const { signal } = controller;
+
+            const makeRequest = async (url, type) => {
+                const res = await fetch(url, { signal });
+                if (!res.ok) throw new Error();
+                const data = await (validatorFn.type === "json" ? res.json() : res.text());
+                if (validatorFn && !validatorFn(data)) throw new Error();
+                controller.abort();
+                return { data, url: url.substring(0, url.lastIndexOf('/') + 1) };
+            };
+
+            return Promise.any([
+                makeRequest(PRIMARY_CDN_URL + primaryPath, "primary"),
+                makeRequest(FALLBACK_CDN_URL + fallbackPath, "fallback")
+            ]);
+        }
+
         async initializeGameFetch() {
             if (!this._isComponentValid) return;
             try {
                 this._dispatchInternalEvent("progress", { progress: 5 });
-                
-                const manifestResponse = await fetch(`${ASSET_DISTRIBUTION_NETWORK_URL}game_list.json`);
-                const manifestData = await manifestResponse.json();
+
+                const manifestValidator = (data) => Array.isArray(data);
+                manifestValidator.type = "json";
+
+                const fastManifest = await this._raceFetch("game_list.json", "game_list.json", manifestValidator);
+                let activeCdnUrl = fastManifest.url;
+                const manifestData = fastManifest.data;
                 
                 const chunkedAssets = manifestData[0] || [];
                 const streamedAssets = manifestData[1] || [];
 
                 if (streamedAssets.includes(this.alias)) {
                     this._dispatchInternalEvent("progress", { progress: 30 });
-                    const standaloneResponse = await fetch(`${ASSET_DISTRIBUTION_NETWORK_URL}external/${this.alias}.html`);
+                    const standaloneResponse = await fetch(`${activeCdnUrl}external/${this.alias}.html`);
                     this._gameHtmlContent = await standaloneResponse.text();
                 } 
                 else if (chunkedAssets.includes(this.alias)) {
-                    const totalChunksResponse = await fetch(`${ASSET_DISTRIBUTION_NETWORK_URL}${this.alias}/nr.txt`);
-                    const totalChunksCount = parseInt(await totalChunksResponse.text(), 10);
+                    const nrValidator = (data) => {
+                        const txt = data.trim();
+                        return txt.length > 0 && txt.length <= 10 && !isNaN(txt);
+                    };
+                    nrValidator.type = "text";
 
-                    for (let currentChunkIndex = 1; currentChunkIndex <= totalChunksCount; currentChunkIndex++) {
-                        const chunkResponse = await fetch(`${ASSET_DISTRIBUTION_NETWORK_URL}${this.alias}/src.part${currentChunkIndex}.html`);
-                        this._gameHtmlContent += await chunkResponse.text();
-                        
-                        const calculatedProgress = Math.floor(10 + (currentChunkIndex / totalChunksCount) * 85);
-                        this._dispatchInternalEvent("progress", { progress: calculatedProgress });
+                    const fastNr = await this._raceFetch(`${this.alias}/nr.txt`, `${this.alias}/nr.txt`, nrValidator);
+                    activeCdnUrl = fastNr.url;
+                    const totalChunksCount = parseInt(fastNr.data.trim(), 10);
+
+                    const chunkPromises = [];
+                    for (let i = 1; i <= totalChunksCount; i++) {
+                        chunkPromises.push(
+                            fetch(`${activeCdnUrl}${this.alias}/src.part${i}.html`).then(r => r.text())
+                        );
                     }
+
+                    const chunksData = await Promise.all(chunkPromises);
+                    this._gameHtmlContent = chunksData.join("");
+                    this._dispatchInternalEvent("progress", { progress: 95 });
                 } else {
                     throw new Error("Game not found in manifest");
                 }
