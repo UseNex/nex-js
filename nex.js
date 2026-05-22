@@ -110,18 +110,18 @@
             const controller = new AbortController();
             const { signal } = controller;
 
-            const makeRequest = async (url, type) => {
-                const res = await fetch(url, { signal });
+            const makeRequest = async (baseUrl, path) => {
+                const res = await fetch(baseUrl + path, { signal });
                 if (!res.ok) throw new Error();
                 const data = await (validatorFn.type === "json" ? res.json() : res.text());
                 if (validatorFn && !validatorFn(data)) throw new Error();
                 controller.abort();
-                return { data, url: url.substring(0, url.lastIndexOf('/') + 1) };
+                return { data, baseUrl };
             };
 
             return Promise.any([
-                makeRequest(PRIMARY_CDN_URL + primaryPath, "primary"),
-                makeRequest(FALLBACK_CDN_URL + fallbackPath, "fallback")
+                makeRequest(PRIMARY_CDN_URL, primaryPath),
+                makeRequest(FALLBACK_CDN_URL, fallbackPath)
             ]);
         }
 
@@ -134,7 +134,7 @@
                 manifestValidator.type = "json";
 
                 const fastManifest = await this._raceFetch("game_list.json", "game_list.json", manifestValidator);
-                let activeCdnUrl = fastManifest.url;
+                let activeCdnUrl = fastManifest.baseUrl;
                 const manifestData = fastManifest.data;
                 
                 const chunkedAssets = manifestData[0] || [];
@@ -153,7 +153,7 @@
                     nrValidator.type = "text";
 
                     const fastNr = await this._raceFetch(`${this.alias}/nr.txt`, `${this.alias}/nr.txt`, nrValidator);
-                    activeCdnUrl = fastNr.url;
+                    activeCdnUrl = fastNr.baseUrl;
                     const totalChunksCount = parseInt(fastNr.data.trim(), 10);
 
                     const chunkPromises = [];
