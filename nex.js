@@ -41,20 +41,31 @@
             this._registeredListeners = {};
             this._isComponentValid = true;
             this._executionPending = false;
+            this._fetchAbortController = null;
             this.attachShadow({ mode: "open" });
         }
 
         get alias() { return this.getAttribute("alias"); }
         get gid() { return this.getAttribute("gid"); }
 
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (oldValue && oldValue !== newValue && this._isComponentValid) {
+                this._resetAndReload();
+            }
+        }
+
         connectedCallback() {
+            this._setupBaseStorage();
+        }
+
+        _setupBaseStorage() {
             this.shadowRoot.innerHTML = `<style>:host{display:block;width:100%;height:100%;background:#000;position:relative}iframe{width:100%;height:100%;border:0;display:block}</style>`;
             
             if (!this.gid) return;
 
             const gameRegistry = window.nex[this.gid];
 
-            if (gameRegistry._element) {
+            if (gameRegistry._element && gameRegistry._element !== this) {
                 this._isComponentValid = false;
                 console.error(`[NEX ERROR] gID "${this.gid}" already in use.`);
                 this.shadowRoot.innerHTML = `<style>:host{display:block;background:#300;color:#fff;padding:10px}</style><div>[NEX ERROR] Duplicate gID: ${this.gid}</div>`;
@@ -87,9 +98,27 @@
         }
 
         disconnectedCallback() {
+            this._cleanup();
+        }
+
+        _resetAndReload() {
+            this._cleanup();
+            this._gameHtmlContent = "";
+            this._executionPending = false;
+            this._isComponentValid = true;
+            this._setupBaseStorage();
+        }
+
+        _cleanup() {
+            if (this._fetchAbortController) {
+                this._fetchAbortController.abort();
+            }
             if (this._isComponentValid && this.gid && window.nex[this.gid]) {
                 delete window.nex[this.gid];
             }
+            const iframe = this.shadowRoot.querySelector("iframe");
+            if (iframe) iframe.remove();
+            this._registeredListeners = {};
         }
 
         _registerListener(eventName, eventCallback) {
@@ -107,15 +136,16 @@
         }
 
         async _raceFetch(primaryPath, fallbackPath, validatorFn) {
-            const controller = new AbortController();
-            const { signal } = controller;
+            this._fetchAbortController = new AbortController();
+            const { signal } = this._fetchAbortController;
 
             const makeRequest = async (baseUrl, path) => {
                 const res = await fetch(baseUrl + path, { signal });
                 if (!res.ok) throw new Error();
                 const data = await (validatorFn.type === "json" ? res.json() : res.text());
                 if (validatorFn && !validatorFn(data)) throw new Error();
-                controller.abort();
+                
+                this._fetchAbortController.abort(); 
                 return { data, baseUrl };
             };
 
@@ -177,7 +207,9 @@
                     this.start();
                 }
             } catch (fetchError) {
-                this._dispatchInternalEvent("error", { message: fetchError.message });
+                if (fetchError.name !== "AbortError") {
+                    this._dispatchInternalEvent("error", { message: fetchError.message });
+                }
             }
         }
 
@@ -191,8 +223,9 @@
             }
 
             const gameViewportFrame = document.createElement("iframe");
-            gameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads";
-            gameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock";
+            
+            gameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
+            gameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
             
             this.shadowRoot.appendChild(gameViewportFrame);
 
