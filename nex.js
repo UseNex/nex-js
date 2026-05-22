@@ -1,34 +1,35 @@
 (() => {
-    const PRIMARY_CDN_URL = "https://nex-assets.pages.dev/";
-    const FALLBACK_CDN_URL = "https://cdn.jsdelivr.net/gh/UseNex/assets/";
+    const NEX_PRIMARY_NODE = "https://nex-assets.pages.dev/";
+    const NEX_FALLBACK_NODE = "https://cdn.jsdelivr.net/gh/UseNex/assets/";
+    const NEX_CACHE_STORE = "nex-core-cache-v1";
 
     window.nex = new Proxy({}, {
-        get(registryMap, gameIdentifier) {
-            if (!registryMap[gameIdentifier]) {
-                registryMap[gameIdentifier] = {
-                    _earlyListeners: {},
-                    _element: null,
-                    _earlyStartRequested: false,
-                    on(eventName, eventCallback) {
-                        if (this._element) {
-                            this._element._registerListener(eventName, eventCallback);
+        get(nexRegistry, nexIdentifier) {
+            if (!nexRegistry[nexIdentifier]) {
+                nexRegistry[nexIdentifier] = {
+                    _nexEarlyListeners: {},
+                    _nexElement: null,
+                    _nexEarlyStartRequested: false,
+                    on(nexEventName, nexEventCallback) {
+                        if (this._nexElement) {
+                            this._nexElement._nexRegisterListener(nexEventName, nexEventCallback);
                         } else {
-                            if (!this._earlyListeners[eventName]) {
-                                this._earlyListeners[eventName] = [];
+                            if (!this._nexEarlyListeners[nexEventName]) {
+                                this._nexEarlyListeners[nexEventName] = [];
                             }
-                            this._earlyListeners[eventName].push(eventCallback);
+                            this._nexEarlyListeners[nexEventName].push(nexEventCallback);
                         }
                     },
                     start() {
-                        if (this._element) {
-                            this._element.start();
+                        if (this._nexElement) {
+                            this._nexElement.start();
                         } else {
-                            this._earlyStartRequested = true;
+                            this._nexEarlyStartRequested = true;
                         }
                     }
                 };
             }
-            return registryMap[gameIdentifier];
+            return nexRegistry[nexIdentifier];
         }
     });
 
@@ -37,202 +38,222 @@
         
         constructor() {
             super();
-            this._gameHtmlContent = "";
-            this._registeredListeners = {};
-            this._isComponentValid = true;
-            this._executionPending = false;
-            this._fetchAbortController = null;
+            this._nexHtmlPayload = "";
+            this._nexRegisteredListeners = {};
+            this._nexComponentValid = true;
+            this._nexExecutionPending = false;
+            this._nexAbortController = null;
             this.attachShadow({ mode: "open" });
         }
 
         get alias() { return this.getAttribute("alias"); }
         get gid() { return this.getAttribute("gid"); }
 
-        attributeChangedCallback(name, oldValue, newValue) {
-            if (oldValue && oldValue !== newValue && this._isComponentValid) {
-                this._resetAndReload();
+        attributeChangedCallback(nexAttrName, nexOldVal, nexNewVal) {
+            if (nexOldVal && nexOldVal !== nexNewVal && this._nexComponentValid) {
+                this._nexResetAndReload();
             }
         }
 
         connectedCallback() {
-            this._setupBaseStorage();
+            this._nexSetupBaseStorage();
         }
 
-        _setupBaseStorage() {
+        _nexSetupBaseStorage() {
             this.shadowRoot.innerHTML = `<style>:host{display:block;width:100%;height:100%;background:#000;position:relative}iframe{width:100%;height:100%;border:0;display:block}</style>`;
             
             if (!this.gid) return;
 
-            const gameRegistry = window.nex[this.gid];
+            const nexGameRegistry = window.nex[this.gid];
 
-            if (gameRegistry._element && gameRegistry._element !== this) {
-                this._isComponentValid = false;
+            if (nexGameRegistry._nexElement && nexGameRegistry._nexElement !== this) {
+                this._nexComponentValid = false;
                 console.error(`[NEX ERROR] gID "${this.gid}" already in use.`);
                 this.shadowRoot.innerHTML = `<style>:host{display:block;background:#300;color:#fff;padding:10px}</style><div>[NEX ERROR] Duplicate gID: ${this.gid}</div>`;
                 return;
             }
 
-            gameRegistry._element = this;
+            nexGameRegistry._nexElement = this;
 
-            if (gameRegistry._earlyStartRequested) {
-                this._executionPending = true;
-                delete gameRegistry._earlyStartRequested;
+            if (nexGameRegistry._nexEarlyStartRequested) {
+                this._nexExecutionPending = true;
+                delete nexGameRegistry._nexEarlyStartRequested;
             }
 
-            if (gameRegistry._earlyListeners) {
-                for (const eventName in gameRegistry._earlyListeners) {
-                    gameRegistry._earlyListeners[eventName].forEach(eventCallback => {
-                        this._registerListener(eventName, eventCallback);
+            if (nexGameRegistry._nexEarlyListeners) {
+                for (const nexEventName in nexGameRegistry._nexEarlyListeners) {
+                    nexGameRegistry._nexEarlyListeners[nexEventName].forEach(nexEventCallback => {
+                        this._nexRegisterListener(nexEventName, nexEventCallback);
                     });
                 }
-                delete gameRegistry._earlyListeners;
+                delete nexGameRegistry._nexEarlyListeners;
             }
 
             if (this.alias) {
                 if (document.readyState === "loading") {
-                    document.addEventListener("DOMContentLoaded", () => this.initializeGameFetch());
+                    document.addEventListener("DOMContentLoaded", () => this.nexInitializeFetchPipeline());
                 } else {
-                    setTimeout(() => this.initializeGameFetch(), 0);
+                    setTimeout(() => this.nexInitializeFetchPipeline(), 0);
                 }
             }
         }
 
         disconnectedCallback() {
-            this._cleanup();
+            this._nexCleanup();
         }
 
-        _resetAndReload() {
-            this._cleanup();
-            this._gameHtmlContent = "";
-            this._executionPending = false;
-            this._isComponentValid = true;
-            this._setupBaseStorage();
+        _nexResetAndReload() {
+            this._nexCleanup();
+            this._nexHtmlPayload = "";
+            this._nexExecutionPending = false;
+            this._nexComponentValid = true;
+            this._nexSetupBaseStorage();
         }
 
-        _cleanup() {
-            if (this._fetchAbortController) {
-                this._fetchAbortController.abort();
+        _nexCleanup() {
+            if (this._nexAbortController) {
+                this._nexAbortController.abort();
             }
-            if (this._isComponentValid && this.gid && window.nex[this.gid]) {
+            if (this._nexComponentValid && this.gid && window.nex[this.gid]) {
                 delete window.nex[this.gid];
             }
-            const iframe = this.shadowRoot.querySelector("iframe");
-            if (iframe) iframe.remove();
-            this._registeredListeners = {};
+            const nexTargetIframe = this.shadowRoot.querySelector("iframe");
+            if (nexTargetIframe) nexTargetIframe.remove();
+            this._nexRegisteredListeners = {};
         }
 
-        _registerListener(eventName, eventCallback) {
-            if (!this._registeredListeners[eventName]) {
-                this._registeredListeners[eventName] = [];
+        _nexRegisterListener(nexEventName, nexEventCallback) {
+            if (!this._nexRegisteredListeners[nexEventName]) {
+                this._nexRegisteredListeners[nexEventName] = [];
             }
-            this._registeredListeners[eventName].push(eventCallback);
+            this._nexRegisteredListeners[nexEventName].push(nexEventCallback);
         }
 
-        _dispatchInternalEvent(eventName, eventData = {}) {
-            if (!this._isComponentValid) return;
-            if (this._registeredListeners[eventName]) {
-                this._registeredListeners[eventName].forEach(eventCallback => eventCallback(eventData));
+        _nexDispatchInternalEvent(nexEventName, nexEventData = {}) {
+            if (!this._nexComponentValid) return;
+            if (this._nexRegisteredListeners[nexEventName]) {
+                this._nexRegisteredListeners[nexEventName].forEach(nexEventCallback => nexEventCallback(nexEventData));
             }
         }
 
-        async _raceFetch(primaryPath, fallbackPath, validatorFn) {
-            this._fetchAbortController = new AbortController();
-            const { signal } = this._fetchAbortController;
+        async _nexFetchWithCache(nexFullUrl, nexOptions = {}) {
+            try {
+                const nexCache = await caches.open(NEX_CACHE_STORE);
+                const nexCachedResponse = await nexCache.match(nexFullUrl);
+                if (nexCachedResponse) {
+                    return nexCachedResponse;
+                }
+                const nexNetworkResponse = await fetch(nexFullUrl, nexOptions);
+                if (nexNetworkResponse.ok) {
+                    await nexCache.put(nexFullUrl, nexNetworkResponse.clone());
+                }
+                return nexNetworkResponse;
+            } catch (nexCacheError) {
+                return fetch(nexFullUrl, nexOptions);
+            }
+        }
 
-            const makeRequest = async (baseUrl, path) => {
-                const res = await fetch(baseUrl + path, { signal });
-                if (!res.ok) throw new Error();
-                const data = await (validatorFn.type === "json" ? res.json() : res.text());
-                if (validatorFn && !validatorFn(data)) throw new Error();
+        async _nexRaceFetch(nexPrimaryPath, nexFallbackPath, nexValidatorFn) {
+            this._nexAbortController = new AbortController();
+            const { signal } = this._nexAbortController;
+
+            const nexExecuteRequest = async (nexBaseUrl, nexPath) => {
+                const nexUrl = nexBaseUrl + nexPath;
+                const nexRes = await this._nexFetchWithCache(nexUrl, { signal });
+                if (!nexRes.ok) throw new Error();
+                const nexRawData = await (nexValidatorFn.type === "json" ? nexRes.json() : nexRes.text());
+                if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error();
                 
-                this._fetchAbortController.abort(); 
-                return { data, baseUrl };
+                this._nexAbortController.abort(); 
+                return { nexRawData, nexBaseUrl };
             };
 
             return Promise.any([
-                makeRequest(PRIMARY_CDN_URL, primaryPath),
-                makeRequest(FALLBACK_CDN_URL, fallbackPath)
+                nexExecuteRequest(NEX_PRIMARY_NODE, nexPrimaryPath),
+                nexExecuteRequest(NEX_FALLBACK_NODE, nexFallbackPath)
             ]);
         }
 
-        async initializeGameFetch() {
-            if (!this._isComponentValid) return;
+        async nexInitializeFetchPipeline() {
+            if (!this._nexComponentValid) return;
             try {
-                this._dispatchInternalEvent("progress", { progress: 5 });
+                this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                const manifestValidator = (data) => Array.isArray(data);
-                manifestValidator.type = "json";
+                const nexManifestValidator = (nexData) => Array.isArray(nexData);
+                nexManifestValidator.type = "json";
 
-                const fastManifest = await this._raceFetch("game_list.json", "game_list.json", manifestValidator);
-                let activeCdnUrl = fastManifest.baseUrl;
-                const manifestData = fastManifest.data;
+                const nexFastManifest = await this._nexRaceFetch("game_list.json", "game_list.json", nexManifestValidator);
+                let nexActiveCdnUrl = nexFastManifest.nexBaseUrl;
+                const nexManifestData = nexFastManifest.nexRawData;
                 
-                const chunkedAssets = manifestData[0] || [];
-                const streamedAssets = manifestData[1] || [];
+                const nexChunkedAssets = nexManifestData[0] || [];
+                const nexStreamedAssets = nexManifestData[1] || [];
 
-                if (streamedAssets.includes(this.alias)) {
-                    this._dispatchInternalEvent("progress", { progress: 30 });
-                    const standaloneResponse = await fetch(`${activeCdnUrl}external/${this.alias}.html`);
-                    this._gameHtmlContent = await standaloneResponse.text();
+                if (nexStreamedAssets.includes(this.alias)) {
+                    this._nexDispatchInternalEvent("progress", { progress: 30 });
+                    const nexStandaloneUrl = `${nexActiveCdnUrl}external/${this.alias}.html`;
+                    const nexStandaloneResponse = await this._nexFetchWithCache(nexStandaloneUrl);
+                    this._nexHtmlPayload = await nexStandaloneResponse.text();
                 } 
-                else if (chunkedAssets.includes(this.alias)) {
-                    const nrValidator = (data) => {
-                        const txt = data.trim();
-                        return txt.length > 0 && txt.length <= 10 && !isNaN(txt);
+                else if (nexChunkedAssets.includes(this.alias)) {
+                    const nexNrValidator = (nexData) => {
+                        const nexTxt = nexData.trim();
+                        return nexTxt.length > 0 && nexTxt.length <= 10 && !isNaN(nexTxt);
                     };
-                    nrValidator.type = "text";
+                    nexNrValidator.type = "text";
 
-                    const fastNr = await this._raceFetch(`${this.alias}/nr.txt`, `${this.alias}/nr.txt`, nrValidator);
-                    activeCdnUrl = fastNr.baseUrl;
-                    const totalChunksCount = parseInt(fastNr.data.trim(), 10);
+                    const nexFastNr = await this._nexRaceFetch(`${this.alias}/nr.txt`, `${this.alias}/nr.txt`, nexNrValidator);
+                    nexActiveCdnUrl = nexFastNr.nexBaseUrl;
+                    const nexTotalChunksCount = parseInt(nexFastNr.nexRawData.trim(), 10);
 
-                    const chunkPromises = [];
-                    for (let i = 1; i <= totalChunksCount; i++) {
-                        chunkPromises.push(
-                            fetch(`${activeCdnUrl}${this.alias}/src.part${i}.html`).then(r => r.text())
+                    const nexChunkPromises = [];
+                    for (let nexIndex = 1; nexIndex <= nexTotalChunksCount; nexIndex++) {
+                        const nexChunkUrl = `${nexActiveCdnUrl}${this.alias}/src.part${nexIndex}.html`;
+                        nexChunkPromises.push(
+                            this._nexFetchWithCache(nexChunkUrl).then(nexResult => nexResult.text())
                         );
                     }
 
-                    const chunksData = await Promise.all(chunkPromises);
-                    this._gameHtmlContent = chunksData.join("");
-                    this._dispatchInternalEvent("progress", { progress: 95 });
+                    const nexChunksData = await Promise.all(nexChunkPromises);
+                    this._nexHtmlPayload = nexChunksData.join("");
+                    this._nexDispatchInternalEvent("progress", { progress: 95 });
                 } else {
                     throw new Error("Game not found in manifest");
                 }
 
-                this._dispatchInternalEvent("progress", { progress: 100 });
-                this._dispatchInternalEvent("ready");
+                this._nexDispatchInternalEvent("progress", { progress: 100 });
+                this._nexDispatchInternalEvent("ready");
 
-                if (this._executionPending) {
+                if (this._nexExecutionPending) {
                     this.start();
                 }
-            } catch (fetchError) {
-                if (fetchError.name !== "AbortError") {
-                    this._dispatchInternalEvent("error", { message: fetchError.message });
+            } catch (nexFetchError) {
+                if (nexFetchError.name !== "AbortError") {
+                    this._nexDispatchInternalEvent("error", { message: nexFetchError.message });
                 }
             }
         }
 
         start() {
-            if (!this._isComponentValid) return;
+            if (!this._nexComponentValid) return;
             if (this.shadowRoot.querySelector("iframe")) return;
 
-            if (!this._gameHtmlContent) {
-                this._executionPending = true;
+            if (!this._nexHtmlPayload) {
+                this._nexExecutionPending = true;
                 return;
             }
 
-            const gameViewportFrame = document.createElement("iframe");
+            const nexGameViewportFrame = document.createElement("iframe");
             
-            gameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
-            gameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
+            nexGameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
+            nexGameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
             
-            this.shadowRoot.appendChild(gameViewportFrame);
+            this.shadowRoot.appendChild(nexGameViewportFrame);
 
-            const frameDocument = gameViewportFrame.contentDocument || gameViewportFrame.contentWindow.document;
-            frameDocument.open();
-            frameDocument.write(this._gameHtmlContent);
-            frameDocument.close();
+            const nexFrameDocument = nexGameViewportFrame.contentDocument || nexGameViewportFrame.contentWindow.document;
+            nexFrameDocument.open();
+            nexFrameDocument.write(this._nexHtmlPayload);
+            nexFrameDocument.close();
         }
     }
 
