@@ -1,6 +1,8 @@
 (() => {
-    const NEX_PRIMARY_NODE = "https://nex-assets.pages.dev/";
-    const NEX_FALLBACK_NODE = "https://cdn.jsdelivr.net/gh/UseNex/assets/";
+    const NEX_NODES = [
+        "https://nex-assets.pages.dev/",
+        "https://cdn.jsdelivr.net/gh/UseNex/assets/"
+    ];
     const NEX_CACHE_STORE = "nex-core-cache-v1";
 
     window.nex = new Proxy({}, {
@@ -153,25 +155,39 @@
             }
         }
 
-        async _nexRaceFetch(nexPrimaryPath, nexFallbackPath, nexValidatorFn) {
+        async _nexRaceFetch(nexPath, nexValidatorFn) {
+            const nexCache = await caches.open(NEX_CACHE_STORE);
+            
+            for (const nexNode of NEX_NODES) {
+                const nexUrl = nexNode + nexPath;
+                const nexCachedResponse = await nexCache.match(nexUrl);
+                if (nexCachedResponse) {
+                    const nexRawData = await (nexValidatorFn.type === "json" ? nexCachedResponse.json() : nexCachedResponse.text());
+                    if (!nexValidatorFn || nexValidatorFn(nexRawData)) {
+                        return { nexRawData, nexBaseUrl: nexNode };
+                    }
+                }
+            }
+
             this._nexAbortController = new AbortController();
             const { signal } = this._nexAbortController;
 
-            const nexExecuteRequest = async (nexBaseUrl, nexPath) => {
+            const nexExecuteRequest = async (nexBaseUrl) => {
                 const nexUrl = nexBaseUrl + nexPath;
-                const nexRes = await this._nexFetchWithCache(nexUrl, { signal });
+                const nexRes = await fetch(nexUrl, { signal });
                 if (!nexRes.ok) throw new Error();
                 const nexRawData = await (nexValidatorFn.type === "json" ? nexRes.json() : nexRes.text());
                 if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error();
                 
+                try {
+                    await nexCache.put(nexUrl, nexRes.clone());
+                } catch (e) {}
+
                 this._nexAbortController.abort(); 
                 return { nexRawData, nexBaseUrl };
             };
 
-            return Promise.any([
-                nexExecuteRequest(NEX_PRIMARY_NODE, nexPrimaryPath),
-                nexExecuteRequest(NEX_FALLBACK_NODE, nexFallbackPath)
-            ]);
+            return Promise.any(NEX_NODES.map(nexNode => nexExecuteRequest(nexNode)));
         }
 
         async nexInitializeFetchPipeline() {
@@ -179,10 +195,10 @@
             try {
                 this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                const nexManifestValidator = (nexData) => Array.isArray(nexData);
+                const nexManifestValidator = (nexData) => Array.isArray(nexData) && nexData.length >= 2;
                 nexManifestValidator.type = "json";
 
-                const nexFastManifest = await this._nexRaceFetch("game_list.json", "game_list.json", nexManifestValidator);
+                const nexFastManifest = await this._nexRaceFetch("game_list.json", nexManifestValidator);
                 let nexActiveCdnUrl = nexFastManifest.nexBaseUrl;
                 const nexManifestData = nexFastManifest.nexRawData;
                 
@@ -193,6 +209,7 @@
                     this._nexDispatchInternalEvent("progress", { progress: 30 });
                     const nexStandaloneUrl = `${nexActiveCdnUrl}external/${this.alias}.html`;
                     const nexStandaloneResponse = await this._nexFetchWithCache(nexStandaloneUrl);
+                    if (!nexStandaloneResponse.ok) throw new Error("Streamed file payload invalid");
                     this._nexHtmlPayload = await nexStandaloneResponse.text();
                 } 
                 else if (nexChunkedAssets.includes(this.alias)) {
@@ -202,7 +219,7 @@
                     };
                     nexNrValidator.type = "text";
 
-                    const nexFastNr = await this._nexRaceFetch(`${this.alias}/nr.txt`, `${this.alias}/nr.txt`, nexNrValidator);
+                    const nexFastNr = await this._nexRaceFetch(`${this.alias}/nr.txt`, nexNrValidator);
                     nexActiveCdnUrl = nexFastNr.nexBaseUrl;
                     const nexTotalChunksCount = parseInt(nexFastNr.nexRawData.trim(), 10);
 
@@ -210,7 +227,10 @@
                     for (let nexIndex = 1; nexIndex <= nexTotalChunksCount; nexIndex++) {
                         const nexChunkUrl = `${nexActiveCdnUrl}${this.alias}/src.part${nexIndex}.html`;
                         nexChunkPromises.push(
-                            this._nexFetchWithCache(nexChunkUrl).then(nexResult => nexResult.text())
+                            this._nexFetchWithCache(nexChunkUrl).then(nexResult => {
+                                if (!nexResult.ok) throw new Error(`Chunk ${nexIndex} fetch failed`);
+                                return nexResult.text();
+                            })
                         );
                     }
 
