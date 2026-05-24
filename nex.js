@@ -1,7 +1,7 @@
 (() => {
     const NEX_NODES = [
         "https://nex-assets.pages.dev/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets/"
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets@12894c7e3bf80d68362af7f5e9e3eaf231828f8e/"
     ];
     const NEX_CACHE_STORE = "nex-core-cache-v1";
 
