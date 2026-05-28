@@ -123,7 +123,10 @@
                 delete window.nex[this.gid];
             }
             const iframe = this.shadowRoot.querySelector("iframe");
-            if (iframe) iframe.remove();
+            if (iframe) {
+                iframe.src = "about:blank";
+                iframe.remove();
+            }
             this._listeners = {};
         }
 
@@ -315,13 +318,20 @@
             const iframe = document.createElement("iframe");
             iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
             iframe.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
+            iframe.src = "about:blank";
             
             this.shadowRoot.appendChild(iframe);
 
             const doc = iframe.contentDocument || iframe.contentWindow.document;
-            doc.open();
-            doc.write(this._htmlContent);
-            doc.close();
+            
+            const blob = new Blob([this._htmlContent], { type: 'text/html' });
+            const blobUrl = URL.createObjectURL(blob);
+            
+            iframe.onload = () => {
+                URL.revokeObjectURL(blobUrl);
+            };
+            
+            iframe.src = blobUrl;
         }
     }
 
