@@ -1,12 +1,12 @@
 (() => {
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
         "https://nex-assets.pages.dev/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/"
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/"
     ];
     const NEX_CACHE_STORE = "nex-core-cache-v1";
 
