@@ -1,214 +1,217 @@
 (() => {
-    const CDN_NODES = [
+    const NEX_NODES = [
         "https://gcore.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
         "https://testingcf.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
         "https://quantil.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
         "https://fastly.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
         "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/",
-        "https://nex-assets.pages.dev/"
+        "https://nex-assets.pages.dev/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/"
     ];
-    const CACHE_NAME = "nex-cache-v2";
-    const MEMORY_CACHE = new Map();
+    const NEX_CACHE_STORE = "nex-core-cache-v1";
+    const NEX_CACHE_VERSION = "v2";
 
     window.nex = new Proxy({}, {
-        get(target, id) {
-            if (!target[id]) {
-                target[id] = {
-                    _listeners: {},
-                    _element: null,
-                    _pendingStart: false,
-                    on(event, callback) {
-                        if (this._element) {
-                            this._element._addListener(event, callback);
+        get(nexRegistry, nexIdentifier) {
+            if (!nexRegistry[nexIdentifier]) {
+                nexRegistry[nexIdentifier] = {
+                    _nexEarlyListeners: {},
+                    _nexElement: null,
+                    _nexEarlyStartRequested: false,
+                    on(nexEventName, nexEventCallback) {
+                        if (this._nexElement) {
+                            this._nexElement._nexRegisterListener(nexEventName, nexEventCallback);
                         } else {
-                            this._listeners[event] = this._listeners[event] || [];
-                            this._listeners[event].push(callback);
+                            if (!this._nexEarlyListeners[nexEventName]) {
+                                this._nexEarlyListeners[nexEventName] = [];
+                            }
+                            this._nexEarlyListeners[nexEventName].push(nexEventCallback);
                         }
                     },
                     start() {
-                        if (this._element) {
-                            this._element._startGame();
+                        if (this._nexElement) {
+                            this._nexElement.start();
                         } else {
-                            this._pendingStart = true;
+                            this._nexEarlyStartRequested = true;
                         }
                     }
                 };
             }
-            return target[id];
+            return nexRegistry[nexIdentifier];
         }
     });
 
-    class NexGameElement extends HTMLElement {
+    class NexGame extends HTMLElement {
         static get observedAttributes() { return ["alias", "gid"]; }
         
         constructor() {
             super();
-            this._htmlContent = "";
-            this._listeners = {};
-            this._valid = true;
-            this._pending = false;
-            this._controller = null;
-            this._useCache = true;
+            this._nexHtmlPayload = "";
+            this._nexRegisteredListeners = {};
+            this._nexComponentValid = true;
+            this._nexExecutionPending = false;
+            this._nexAbortController = null;
             this.attachShadow({ mode: "open" });
         }
 
         get alias() { return this.getAttribute("alias"); }
         get gid() { return this.getAttribute("gid"); }
 
-        attributeChangedCallback(name, oldVal, newVal) {
-            if (oldVal && oldVal !== newVal && this._valid) {
-                this._reset();
+        attributeChangedCallback(nexAttrName, nexOldVal, nexNewVal) {
+            if (nexOldVal && nexOldVal !== nexNewVal && this._nexComponentValid) {
+                this._nexResetAndReload();
             }
         }
 
         connectedCallback() {
-            this._init();
+            this._nexSetupBaseStorage();
         }
 
-        _init() {
+        _nexSetupBaseStorage() {
             this.shadowRoot.innerHTML = `<style>:host{display:block;width:100%;height:100%;background:#000;position:relative}iframe{width:100%;height:100%;border:0;display:block}</style>`;
             
             if (!this.gid) return;
 
-            const registry = window.nex[this.gid];
+            const nexGameRegistry = window.nex[this.gid];
 
-            if (registry._element && registry._element !== this) {
-                this._valid = false;
-                this.shadowRoot.innerHTML = `<style>:host{display:block;background:#300;color:#fff;padding:10px}</style><div>Duplicate gID: ${this.gid}</div>`;
+            if (nexGameRegistry._nexElement && nexGameRegistry._nexElement !== this) {
+                this._nexComponentValid = false;
+                console.error(`[NEX ERROR] gID "${this.gid}" already in use.`);
+                this.shadowRoot.innerHTML = `<style>:host{display:block;background:#300;color:#fff;padding:10px}</style><div>[NEX ERROR] Duplicate gID: ${this.gid}</div>`;
                 return;
             }
 
-            registry._element = this;
+            nexGameRegistry._nexElement = this;
 
-            if (registry._pendingStart) {
-                this._pending = true;
-                delete registry._pendingStart;
+            if (nexGameRegistry._nexEarlyStartRequested) {
+                this._nexExecutionPending = true;
+                delete nexGameRegistry._nexEarlyStartRequested;
             }
 
-            if (registry._listeners) {
-                Object.entries(registry._listeners).forEach(([event, callbacks]) => {
-                    callbacks.forEach(cb => this._addListener(event, cb));
-                });
-                delete registry._listeners;
+            if (nexGameRegistry._nexEarlyListeners) {
+                for (const nexEventName in nexGameRegistry._nexEarlyListeners) {
+                    nexGameRegistry._nexEarlyListeners[nexEventName].forEach(nexEventCallback => {
+                        this._nexRegisterListener(nexEventName, nexEventCallback);
+                    });
+                }
+                delete nexGameRegistry._nexEarlyListeners;
             }
 
             if (this.alias) {
                 if (document.readyState === "loading") {
-                    document.addEventListener("DOMContentLoaded", () => this._fetch());
+                    document.addEventListener("DOMContentLoaded", () => this.nexInitializeFetchPipeline());
                 } else {
-                    setTimeout(() => this._fetch(), 0);
+                    setTimeout(() => this.nexInitializeFetchPipeline(), 0);
                 }
             }
         }
 
         disconnectedCallback() {
-            this._cleanup();
+            this._nexCleanup();
         }
 
-        _reset() {
-            this._cleanup();
-            this._htmlContent = "";
-            this._pending = false;
-            this._valid = true;
-            this._init();
+        _nexResetAndReload() {
+            this._nexCleanup();
+            this._nexHtmlPayload = "";
+            this._nexExecutionPending = false;
+            this._nexComponentValid = true;
+            this._nexSetupBaseStorage();
         }
 
-        _cleanup() {
-            if (this._controller) {
-                this._controller.abort();
-                this._controller = null;
+        _nexCleanup() {
+            if (this._nexAbortController) {
+                this._nexAbortController.abort();
+                this._nexAbortController = null;
             }
-            if (this._valid && this.gid && window.nex[this.gid]) {
+            if (this._nexComponentValid && this.gid && window.nex[this.gid]) {
                 delete window.nex[this.gid];
             }
-            const iframe = this.shadowRoot.querySelector("iframe");
-            if (iframe) {
-                iframe.src = "about:blank";
-                iframe.remove();
+            const nexTargetIframe = this.shadowRoot.querySelector("iframe");
+            if (nexTargetIframe) {
+                nexTargetIframe.src = "about:blank";
+                nexTargetIframe.remove();
             }
-            this._listeners = {};
+            this._nexRegisteredListeners = {};
         }
 
-        _addListener(event, callback) {
-            this._listeners[event] = this._listeners[event] || [];
-            this._listeners[event].push(callback);
+        _nexRegisterListener(nexEventName, nexEventCallback) {
+            if (!this._nexRegisteredListeners[nexEventName]) {
+                this._nexRegisteredListeners[nexEventName] = [];
+            }
+            this._nexRegisteredListeners[nexEventName].push(nexEventCallback);
         }
 
-        _emit(event, data = {}) {
-            if (!this._valid) return;
-            if (this._listeners[event]) {
-                this._listeners[event].forEach(cb => cb(data));
-            }
-        }
-
-        async _fetchWithFallback(url, options = {}, retries = 2) {
-            if (MEMORY_CACHE.has(url)) {
-                return MEMORY_CACHE.get(url);
-            }
-
-            for (let i = 0; i <= retries; i++) {
-                try {
-                    let response;
-                    
-                    if (this._useCache) {
-                        const cache = await caches.open(CACHE_NAME).catch(() => null);
-                        if (cache) {
-                            response = await cache.match(url);
-                            if (response) {
-                                const cloned = response.clone();
-                                const data = await (options.json ? cloned.json() : cloned.text());
-                                MEMORY_CACHE.set(url, data);
-                                return data;
-                            }
-                        }
-                    }
-
-                    response = await fetch(url, { ...options, signal: this._controller?.signal });
-                    
-                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                    
-                    const data = await (options.json ? response.json() : response.text());
-                    
-                    if (this._useCache) {
-                        const cache = await caches.open(CACHE_NAME).catch(() => null);
-                        if (cache) {
-                            await cache.put(url, response.clone());
-                        }
-                    }
-                    
-                    MEMORY_CACHE.set(url, data);
-                    return data;
-                    
-                } catch (err) {
-                    if (i === retries) throw err;
-                    await new Promise(r => setTimeout(r, 100 * Math.pow(2, i)));
-                }
-            }
-            throw new Error("Fetch failed after retries");
-        }
-
-        async _raceFetch(path, validator = null) {
-            const cache = await caches.open(CACHE_NAME).catch(() => null);
-            const cachedResults = [];
-
-            for (const node of CDN_NODES) {
-                const url = node + path;
-                
-                if (MEMORY_CACHE.has(url)) {
-                    const data = MEMORY_CACHE.get(url);
-                    if (!validator || validator(data)) {
-                        return { data, baseUrl: node };
-                    }
-                }
-
-                if (cache) {
+        _nexDispatchInternalEvent(nexEventName, nexEventData = {}) {
+            if (!this._nexComponentValid) return;
+            if (this._nexRegisteredListeners[nexEventName]) {
+                this._nexRegisteredListeners[nexEventName].forEach(nexEventCallback => {
                     try {
-                        const response = await cache.match(url);
-                        if (response) {
-                            const data = validator?.type === "json" ? await response.json() : await response.text();
-                            if (!validator || validator(data)) {
-                                cachedResults.push({ data, baseUrl: node, url });
+                        nexEventCallback(nexEventData);
+                    } catch(e) {
+                        console.error("[NEX] Event callback error:", e);
+                    }
+                });
+            }
+        }
+
+        async _nexClearOldCache() {
+            try {
+                const cacheKeys = await caches.keys();
+                for (const key of cacheKeys) {
+                    if (key.startsWith("nex-core-cache") && key !== NEX_CACHE_STORE) {
+                        await caches.delete(key);
+                        console.log("[NEX] Cleared old cache:", key);
+                    }
+                }
+            } catch(e) {
+                console.warn("[NEX] Could not clear old cache:", e);
+            }
+        }
+
+        async _nexFetchWithCache(nexFullUrl, nexOptions = {}) {
+            try {
+                const nexCache = await caches.open(NEX_CACHE_STORE);
+                const nexCachedResponse = await nexCache.match(nexFullUrl);
+                if (nexCachedResponse) {
+                    const nexCachedTime = nexCachedResponse.headers.get("sw-cache-timestamp");
+                    if (nexCachedTime && (Date.now() - parseInt(nexCachedTime)) < 86400000) {
+                        return nexCachedResponse;
+                    }
+                }
+                const nexNetworkResponse = await fetch(nexFullUrl, nexOptions);
+                if (nexNetworkResponse.ok) {
+                    const nexResponseClone = nexNetworkResponse.clone();
+                    const nexHeaders = new Headers(nexResponseClone.headers);
+                    nexHeaders.set("sw-cache-timestamp", Date.now().toString());
+                    const nexNewResponse = new Response(nexResponseClone.body, {
+                        status: nexResponseClone.status,
+                        statusText: nexResponseClone.statusText,
+                        headers: nexHeaders
+                    });
+                    await nexCache.put(nexFullUrl, nexNewResponse);
+                }
+                return nexNetworkResponse;
+            } catch (nexCacheError) {
+                console.warn("[NEX] Cache fetch failed, using network:", nexCacheError);
+                return fetch(nexFullUrl, nexOptions);
+            }
+        }
+
+        async _nexRaceFetch(nexPath, nexValidatorFn) {
+            let nexCache = null;
+            try {
+                nexCache = await caches.open(NEX_CACHE_STORE);
+            } catch(e) {}
+            
+            for (const nexNode of NEX_NODES) {
+                const nexUrl = nexNode + nexPath;
+                if (nexCache) {
+                    try {
+                        const nexCachedResponse = await nexCache.match(nexUrl);
+                        if (nexCachedResponse) {
+                            const nexRawData = await (nexValidatorFn.type === "json" ? nexCachedResponse.json() : nexCachedResponse.text());
+                            if (!nexValidatorFn || nexValidatorFn(nexRawData)) {
+                                return { nexRawData, nexBaseUrl: nexNode };
                             }
                         }
                     } catch (err) {
@@ -217,123 +220,126 @@
                 }
             }
 
-            if (cachedResults.length > 0) {
-                const best = cachedResults[0];
-                MEMORY_CACHE.set(best.url, best.data);
-                return best;
-            }
+            this._nexAbortController = new AbortController();
+            const { signal } = this._nexAbortController;
 
-            this._controller = new AbortController();
-            const { signal } = this._controller;
-
-            const fetchFromNode = async (baseUrl) => {
-                const url = baseUrl + path;
-                const response = await fetch(url, { signal });
-                if (!response.ok) throw new Error();
-                const data = validator?.type === "json" ? await response.json() : await response.text();
-                if (validator && !validator(data)) throw new Error();
+            const nexExecuteRequest = async (nexBaseUrl) => {
+                const nexUrl = nexBaseUrl + nexPath;
+                const nexRes = await fetch(nexUrl, { signal });
+                if (!nexRes.ok) throw new Error(`HTTP ${nexRes.status}`);
+                const nexRawData = await (nexValidatorFn.type === "json" ? nexRes.json() : nexRes.text());
+                if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error("Validation failed");
                 
-                if (cache) {
+                if (nexCache) {
                     try {
-                        await cache.put(url, response.clone());
-                    } catch (err) {}
+                        await nexCache.put(nexUrl, nexRes.clone());
+                    } catch (e) {}
                 }
-                
-                MEMORY_CACHE.set(url, data);
-                this._controller.abort();
-                return { data, baseUrl };
+
+                this._nexAbortController.abort(); 
+                return { nexRawData, nexBaseUrl };
             };
 
-            return Promise.any(CDN_NODES.map(node => fetchFromNode(node)));
+            try {
+                return await Promise.any(NEX_NODES.map(nexNode => nexExecuteRequest(nexNode)));
+            } catch(e) {
+                throw new Error("All CDN nodes failed");
+            }
         }
 
-        async _fetch() {
-            if (!this._valid) return;
-            
+        async nexInitializeFetchPipeline() {
+            if (!this._nexComponentValid) return;
             try {
-                this._emit("progress", { progress: 5 });
+                await this._nexClearOldCache();
+                this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                const manifestValidator = (data) => Array.isArray(data) && data.length >= 2;
-                manifestValidator.type = "json";
+                const nexManifestValidator = (nexData) => Array.isArray(nexData) && nexData.length >= 2;
+                nexManifestValidator.type = "json";
 
-                const manifestResult = await this._raceFetch("game_list.json", manifestValidator);
-                let activeCdn = manifestResult.baseUrl;
-                const manifest = manifestResult.data;
+                const nexFastManifest = await this._nexRaceFetch("game_list.json", nexManifestValidator);
+                let nexActiveCdnUrl = nexFastManifest.nexBaseUrl;
+                const nexManifestData = nexFastManifest.nexRawData;
                 
-                const chunkedGames = manifest[0] || [];
-                const streamedGames = manifest[1] || [];
+                const nexChunkedAssets = nexManifestData[0] || [];
+                const nexStreamedAssets = nexManifestData[1] || [];
 
-                if (streamedGames.includes(this.alias)) {
-                    this._emit("progress", { progress: 30 });
-                    const url = `${activeCdn}external/${this.alias}.html`;
-                    this._htmlContent = await this._fetchWithFallback(url, { json: false });
+                if (nexStreamedAssets.includes(this.alias)) {
+                    this._nexDispatchInternalEvent("progress", { progress: 30 });
+                    const nexStandaloneUrl = `${nexActiveCdnUrl}external/${this.alias}.html`;
+                    const nexStandaloneResponse = await this._nexFetchWithCache(nexStandaloneUrl);
+                    if (!nexStandaloneResponse.ok) throw new Error("Streamed file payload invalid");
+                    this._nexHtmlPayload = await nexStandaloneResponse.text();
                 } 
-                else if (chunkedGames.includes(this.alias)) {
-                    const chunkValidator = (data) => {
-                        const trimmed = data.trim();
-                        return trimmed.length > 0 && trimmed.length <= 10 && !isNaN(trimmed);
+                else if (nexChunkedAssets.includes(this.alias)) {
+                    const nexNrValidator = (nexData) => {
+                        const nexTxt = nexData.trim();
+                        return nexTxt.length > 0 && nexTxt.length <= 10 && !isNaN(nexTxt);
                     };
-                    chunkValidator.type = "text";
+                    nexNrValidator.type = "text";
 
-                    const nrResult = await this._raceFetch(`${this.alias}/nr.txt`, chunkValidator);
-                    activeCdn = nrResult.baseUrl;
-                    const totalChunks = parseInt(nrResult.data.trim(), 10);
+                    const nexFastNr = await this._nexRaceFetch(`${this.alias}/nr.txt`, nexNrValidator);
+                    nexActiveCdnUrl = nexFastNr.nexBaseUrl;
+                    const nexTotalChunksCount = parseInt(nexFastNr.nexRawData.trim(), 10);
 
-                    const chunkPromises = [];
-                    for (let i = 1; i <= totalChunks; i++) {
-                        const url = `${activeCdn}${this.alias}/src.part${i}.html`;
-                        chunkPromises.push(this._fetchWithFallback(url, { json: false }));
+                    const nexChunkPromises = [];
+                    for (let nexIndex = 1; nexIndex <= nexTotalChunksCount; nexIndex++) {
+                        const nexChunkUrl = `${nexActiveCdnUrl}${this.alias}/src.part${nexIndex}.html`;
+                        nexChunkPromises.push(
+                            this._nexFetchWithCache(nexChunkUrl).then(async nexResult => {
+                                if (!nexResult.ok) throw new Error(`Chunk ${nexIndex} fetch failed`);
+                                return await nexResult.text();
+                            })
+                        );
                     }
 
-                    const chunks = await Promise.all(chunkPromises);
-                    this._htmlContent = chunks.join("");
-                    this._emit("progress", { progress: 95 });
+                    const nexChunksData = await Promise.all(nexChunkPromises);
+                    this._nexHtmlPayload = nexChunksData.join("");
+                    this._nexDispatchInternalEvent("progress", { progress: 95 });
                 } else {
                     throw new Error("Game not found in manifest");
                 }
 
-                this._emit("progress", { progress: 100 });
-                this._emit("ready");
+                this._nexDispatchInternalEvent("progress", { progress: 100 });
+                this._nexDispatchInternalEvent("ready");
 
-                if (this._pending) {
-                    this._startGame();
+                if (this._nexExecutionPending) {
+                    this.start();
                 }
-            } catch (err) {
-                if (err.name !== "AbortError") {
-                    this._emit("error", { message: err.message });
-                    console.error("[NEX] Load error:", err);
+            } catch (nexFetchError) {
+                if (nexFetchError.name !== "AbortError") {
+                    console.error("[NEX] Load error:", nexFetchError);
+                    this._nexDispatchInternalEvent("error", { message: nexFetchError.message || "Failed to load game" });
                 }
             }
         }
 
-        _startGame() {
-            if (!this._valid) return;
+        start() {
+            if (!this._nexComponentValid) return;
             if (this.shadowRoot.querySelector("iframe")) return;
 
-            if (!this._htmlContent) {
-                this._pending = true;
+            if (!this._nexHtmlPayload) {
+                this._nexExecutionPending = true;
                 return;
             }
 
-            const iframe = document.createElement("iframe");
-            iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
-            iframe.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
-            iframe.src = "about:blank";
+            const nexGameViewportFrame = document.createElement("iframe");
             
-            this.shadowRoot.appendChild(iframe);
+            nexGameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
+            nexGameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
+            nexGameViewportFrame.setAttribute("loading", "eager");
+            
+            this.shadowRoot.appendChild(nexGameViewportFrame);
 
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            
-            const blob = new Blob([this._htmlContent], { type: 'text/html' });
+            const blob = new Blob([this._nexHtmlPayload], { type: "text/html" });
             const blobUrl = URL.createObjectURL(blob);
             
-            iframe.onload = () => {
+            nexGameViewportFrame.onload = () => {
                 URL.revokeObjectURL(blobUrl);
             };
             
-            iframe.src = blobUrl;
+            nexGameViewportFrame.src = blobUrl;
         }
     }
 
-    customElements.define("nex-game", NexGameElement);
+    customElements.define("nex-game", NexGame);
 })();
