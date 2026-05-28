@@ -9,7 +9,6 @@
         "https://cdn.jsdelivr.net/gh/UseNex/g-assets@8ca88bc4c4ef11d0f916b42f92acc2932a20aaf5/"
     ];
     const NEX_CACHE_STORE = "nex-core-cache-v1";
-    const NEX_CACHE_VERSION = "v2";
 
     window.nex = new Proxy({}, {
         get(nexRegistry, nexIdentifier) {
@@ -174,7 +173,7 @@
                 const nexCachedResponse = await nexCache.match(nexFullUrl);
                 if (nexCachedResponse) {
                     const nexCachedTime = nexCachedResponse.headers.get("sw-cache-timestamp");
-                    if (nexCachedTime && (Date.now() - parseInt(nexCachedTime)) < 86400000) {
+                    if (!nexCachedTime || (Date.now() - parseInt(nexCachedTime)) < 86400000) {
                         return nexCachedResponse;
                     }
                 }
@@ -236,7 +235,10 @@
                     } catch (e) {}
                 }
 
-                this._nexAbortController.abort(); 
+                if (this._nexAbortController) {
+                    this._nexAbortController.abort();
+                    this._nexAbortController = null;
+                }
                 return { nexRawData, nexBaseUrl };
             };
 
@@ -326,18 +328,13 @@
             
             nexGameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
             nexGameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
-            nexGameViewportFrame.setAttribute("loading", "eager");
             
             this.shadowRoot.appendChild(nexGameViewportFrame);
 
-            const blob = new Blob([this._nexHtmlPayload], { type: "text/html" });
-            const blobUrl = URL.createObjectURL(blob);
-            
-            nexGameViewportFrame.onload = () => {
-                URL.revokeObjectURL(blobUrl);
-            };
-            
-            nexGameViewportFrame.src = blobUrl;
+            const nexFrameDocument = nexGameViewportFrame.contentDocument || nexGameViewportFrame.contentWindow.document;
+            nexFrameDocument.open();
+            nexFrameDocument.write(this._nexHtmlPayload);
+            nexFrameDocument.close();
         }
     }
 
