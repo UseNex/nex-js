@@ -1,4 +1,7 @@
 # NexGame Component Documentation
+```html
+<script src="https://cdn.jsdelivr.net/gh/UseNex/nex-js@8ec0d5475baacc373a43c7afcc04442075b67f87/nex.min.js"></script>
+```
 
 ## Overview
 
