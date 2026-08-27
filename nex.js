@@ -1,5 +1,5 @@
 (() => {
-    const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN"; 
+    const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "nex-core-cache-v2";
     const NEX_NODES = [
         "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
@@ -13,7 +13,6 @@
     function xorDecrypt(data, keyBase64) {
         const keyText = atob(keyBase64);
         const keyBytes = new TextEncoder().encode(keyText);
-        
         const result = new Uint8Array(data.length);
         const keyLen = keyBytes.length;
         for (let i = 0; i < data.length; i++) {
@@ -53,8 +52,10 @@
     });
 
     class NexGame extends HTMLElement {
-        static get observedAttributes() { return ["alias", "gid"]; }
-        
+        static get observedAttributes() {
+            return ["alias", "gid"];
+        }
+
         constructor() {
             super();
             this._nexHtmlPayload = "";
@@ -62,12 +63,18 @@
             this._nexComponentValid = true;
             this._nexExecutionPending = false;
             this._nexAbortController = null;
-            this._nexIframe = null; 
+            this._nexIframe = null;
+            this._nexGameData = null;
             this.attachShadow({ mode: "open" });
         }
 
-        get alias() { return this.getAttribute("alias"); }
-        get gid() { return this.getAttribute("gid"); }
+        get alias() {
+            return this.getAttribute("alias");
+        }
+
+        get gid() {
+            return this.getAttribute("gid");
+        }
 
         attributeChangedCallback(nexAttrName, nexOldVal, nexNewVal) {
             if (nexOldVal && nexOldVal !== nexNewVal && this._nexComponentValid) {
@@ -81,7 +88,7 @@
 
         _nexSetupBaseStorage() {
             this.shadowRoot.innerHTML = `<style>:host{display:block;width:100%;height:100%;background:#000;position:relative}iframe{width:100%;height:100%;border:0;display:block}</style>`;
-            
+
             if (!this.gid) return;
 
             const nexGameRegistry = window.nex[this.gid];
@@ -128,6 +135,7 @@
             this._nexExecutionPending = false;
             this._nexComponentValid = true;
             this._nexIframe = null;
+            this._nexGameData = null;
             this._nexSetupBaseStorage();
         }
 
@@ -150,8 +158,7 @@
                 this._nexIframe = null;
             }
 
-            const existingIframes = this.shadowRoot.querySelectorAll("iframe");
-            existingIframes.forEach(iframe => {
+            this.shadowRoot.querySelectorAll("iframe").forEach(iframe => {
                 try {
                     iframe.src = "about:blank";
                     iframe.remove();
@@ -178,7 +185,7 @@
                 this._nexRegisteredListeners[nexEventName].forEach(nexEventCallback => {
                     try {
                         nexEventCallback(nexEventData);
-                    } catch(e) {
+                    } catch (e) {
                         console.error("[NEX] Event callback error:", e);
                     }
                 });
@@ -194,7 +201,7 @@
                         console.log("[NEX] Cleared old cache:", key);
                     }
                 }
-            } catch(e) {
+            } catch (e) {
                 console.warn("[NEX] Could not clear old cache:", e);
             }
         }
@@ -232,8 +239,8 @@
             let nexCache = null;
             try {
                 nexCache = await caches.open(NEX_CACHE_STORE);
-            } catch(e) {}
-            
+            } catch (e) {}
+
             for (const nexNode of NEX_NODES) {
                 const nexUrl = nexNode + nexPath;
                 if (nexCache) {
@@ -260,7 +267,7 @@
                 if (!nexRes.ok) throw new Error(`HTTP ${nexRes.status}`);
                 const nexRawData = await (nexValidatorFn.type === "json" ? nexRes.json() : nexRes.text());
                 if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error("Validation failed");
-                
+
                 if (nexCache) {
                     try {
                         await nexCache.put(nexUrl, nexRes.clone());
@@ -276,90 +283,90 @@
 
             try {
                 return await Promise.any(NEX_NODES.map(nexNode => nexExecuteRequest(nexNode)));
-            } catch(e) {
+            } catch (e) {
                 throw new Error("All CDN nodes failed");
             }
         }
 
         async nexInitializeFetchPipeline() {
             if (!this._nexComponentValid) return;
+
             try {
                 await this._nexClearOldCache();
                 this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                const nexManifestValidator = (nexData) => Array.isArray(nexData) && nexData.length >= 2;
-                nexManifestValidator.type = "json";
+                const gameDataValidator = (data) => {
+                    return data && typeof data === "object" && !Array.isArray(data);
+                };
+                gameDataValidator.type = "json";
 
-                const nexFastManifest = await this._nexRaceFetch("game_list.json", nexManifestValidator);
-                let nexActiveCdnUrl = nexFastManifest.nexBaseUrl;
-                const nexManifestData = nexFastManifest.nexRawData;
-                
-                const nexChunkedAssets = nexManifestData[0] || [];
-                const nexStreamedAssets = nexManifestData[1] || [];
+                const gameDataResult = await this._nexRaceFetch("game_data.json", gameDataValidator);
+                const activeCdnUrl = gameDataResult.nexBaseUrl;
+                this._nexGameData = gameDataResult.nexRawData;
 
-                if (nexStreamedAssets.includes(this.alias)) {
-                    this._nexDispatchInternalEvent("progress", { progress: 30 });
-                    const nexStandaloneUrl = `${nexActiveCdnUrl}external/${this.alias}.html`;
-                    const nexStandaloneResponse = await this._nexFetchWithCache(nexStandaloneUrl);
-                    if (!nexStandaloneResponse.ok) throw new Error("Streamed file payload invalid");
-                    this._nexHtmlPayload = await nexStandaloneResponse.text();
-                } 
-                else if (nexChunkedAssets.includes(this.alias)) {
-                    const nexNrValidator = (nexData) => {
-                        const nexTxt = nexData.trim();
-                        return nexTxt.length > 0 && nexTxt.length <= 10 && !isNaN(nexTxt);
-                    };
-                    nexNrValidator.type = "text";
+                this._nexDispatchInternalEvent("progress", { progress: 20 });
 
-                    const nexFastNr = await this._nexRaceFetch(`${this.alias}/nr.txt`, nexNrValidator);
-                    nexActiveCdnUrl = nexFastNr.nexBaseUrl;
-                    const nexTotalChunksCount = parseInt(nexFastNr.nexRawData.trim(), 10);
+                const gameKeys = Object.keys(this._nexGameData);
+                const aliasFound = gameKeys.includes(this.alias);
 
-                    this._nexDispatchInternalEvent("progress", { progress: 20 });
-
-                    const nexChunkPromises = [];
-                    for (let nexIndex = 1; nexIndex <= nexTotalChunksCount; nexIndex++) {
-                        const nexChunkUrl = `${nexActiveCdnUrl}${this.alias}/src.part${nexIndex}.txt`;
-                        nexChunkPromises.push(
-                            this._nexFetchWithCache(nexChunkUrl).then(async nexResult => {
-                                if (!nexResult.ok) throw new Error(`Chunk ${nexIndex} fetch failed`);
-                                const encryptedBytes = new Uint8Array(await nexResult.arrayBuffer());
-                                
-                                const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
-                                
-                                return new TextDecoder("utf-8").decode(decryptedBytes);
-                            })
-                        );
-
-                        const progress = 20 + ((nexIndex / nexTotalChunksCount) * 70);
-                        this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
-                    }
-
-                    const nexChunksData = await Promise.all(nexChunkPromises);
-                    this._nexHtmlPayload = nexChunksData.join("");
-                    this._nexDispatchInternalEvent("progress", { progress: 95 });
-
-                } else {
-                    throw new Error("Game not found in manifest");
+                if (!aliasFound) {
+                    throw new Error(`Game alias "${this.alias}" not found in game_data.json`);
                 }
 
+                const gameEntry = this._nexGameData[this.alias];
+                const gameName = gameEntry.name || this.alias;
+
+                const nrValidator = (data) => {
+                    const trimmed = data.trim();
+                    return trimmed.length > 0 && trimmed.length <= 10 && !isNaN(trimmed);
+                };
+                nrValidator.type = "text";
+
+                const nrResult = await this._nexRaceFetch(`${this.alias}/nr.txt`, nrValidator);
+                const totalChunks = parseInt(nrResult.nexRawData.trim(), 10);
+
+                this._nexDispatchInternalEvent("progress", { progress: 30 });
+
+                const chunkPromises = [];
+                for (let i = 1; i <= totalChunks; i++) {
+                    const chunkUrl = `${activeCdnUrl}${this.alias}/src.part${i}.txt`;
+                    chunkPromises.push(
+                        this._nexFetchWithCache(chunkUrl).then(async response => {
+                            if (!response.ok) throw new Error(`Chunk ${i} fetch failed`);
+                            const encryptedBytes = new Uint8Array(await response.arrayBuffer());
+                            const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
+                            return new TextDecoder("utf-8").decode(decryptedBytes);
+                        })
+                    );
+
+                    const progress = 30 + ((i / totalChunks) * 65);
+                    this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
+                }
+
+                const chunksData = await Promise.all(chunkPromises);
+                this._nexHtmlPayload = chunksData.join("");
+
                 this._nexDispatchInternalEvent("progress", { progress: 100 });
-                this._nexDispatchInternalEvent("ready");
+                this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
 
                 if (this._nexExecutionPending) {
                     this.start();
                 }
-            } catch (nexFetchError) {
-                if (nexFetchError.name !== "AbortError") {
-                    console.error("[NEX] Load error:", nexFetchError);
-                    this._nexDispatchInternalEvent("error", { message: nexFetchError.message || "Failed to load game" });
+
+            } catch (fetchError) {
+                if (fetchError.name !== "AbortError") {
+                    console.error("[NEX] Load error:", fetchError);
+                    this._nexDispatchInternalEvent("error", {
+                        message: fetchError.message || "Failed to load game",
+                        alias: this.alias
+                    });
                 }
             }
         }
 
         start() {
             if (!this._nexComponentValid) return;
-            
+
             if (this._nexIframe) {
                 try {
                     if (this._nexIframe.contentWindow) {
@@ -373,8 +380,7 @@
                 this._nexIframe = null;
             }
 
-            const existingIframes = this.shadowRoot.querySelectorAll("iframe");
-            existingIframes.forEach(iframe => {
+            this.shadowRoot.querySelectorAll("iframe").forEach(iframe => {
                 try {
                     iframe.src = "about:blank";
                     iframe.remove();
@@ -386,15 +392,15 @@
                 return;
             }
 
-            const nexGameViewportFrame = document.createElement("iframe");
-            this._nexIframe = nexGameViewportFrame;
-            
-            nexGameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
-            nexGameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
-            
-            this.shadowRoot.appendChild(nexGameViewportFrame);
+            const iframe = document.createElement("iframe");
+            this._nexIframe = iframe;
 
-            const iframeDoc = nexGameViewportFrame.contentDocument || nexGameViewportFrame.contentWindow.document;
+            iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
+            iframe.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
+
+            this.shadowRoot.appendChild(iframe);
+
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             iframeDoc.open();
             iframeDoc.write(this._nexHtmlPayload);
             iframeDoc.close();
