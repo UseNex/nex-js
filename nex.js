@@ -1,14 +1,26 @@
 (() => {
+    const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN"; 
+    const NEX_CACHE_STORE = "nex-core-cache-v2";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/",
-        "https://nex-assets.pages.dev/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets@6214f2e133a9a4bd7fd5d9705ed9c900375e9c10/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/"
     ];
-    const NEX_CACHE_STORE = "nex-core-cache-v1";
+
+    function xorDecrypt(data, keyBase64) {
+        const keyText = atob(keyBase64);
+        const keyBytes = new TextEncoder().encode(keyText);
+        
+        const result = new Uint8Array(data.length);
+        const keyLen = keyBytes.length;
+        for (let i = 0; i < data.length; i++) {
+            result[i] = data[i] ^ keyBytes[i % keyLen];
+        }
+        return result;
+    }
 
     window.nex = new Proxy({}, {
         get(nexRegistry, nexIdentifier) {
@@ -50,6 +62,7 @@
             this._nexComponentValid = true;
             this._nexExecutionPending = false;
             this._nexAbortController = null;
+            this._nexIframe = null; 
             this.attachShadow({ mode: "open" });
         }
 
@@ -114,6 +127,7 @@
             this._nexHtmlPayload = "";
             this._nexExecutionPending = false;
             this._nexComponentValid = true;
+            this._nexIframe = null;
             this._nexSetupBaseStorage();
         }
 
@@ -122,14 +136,32 @@
                 this._nexAbortController.abort();
                 this._nexAbortController = null;
             }
+
+            if (this._nexIframe) {
+                try {
+                    if (this._nexIframe.contentWindow) {
+                        this._nexIframe.contentWindow.stop();
+                        this._nexIframe.src = "about:blank";
+                    }
+                    this._nexIframe.remove();
+                } catch (e) {
+                    console.warn("[NEX] Iframe cleanup warning:", e);
+                }
+                this._nexIframe = null;
+            }
+
+            const existingIframes = this.shadowRoot.querySelectorAll("iframe");
+            existingIframes.forEach(iframe => {
+                try {
+                    iframe.src = "about:blank";
+                    iframe.remove();
+                } catch (e) {}
+            });
+
             if (this._nexComponentValid && this.gid && window.nex[this.gid]) {
                 delete window.nex[this.gid];
             }
-            const nexTargetIframe = this.shadowRoot.querySelector("iframe");
-            if (nexTargetIframe) {
-                nexTargetIframe.src = "about:blank";
-                nexTargetIframe.remove();
-            }
+
             this._nexRegisteredListeners = {};
         }
 
@@ -283,20 +315,30 @@
                     nexActiveCdnUrl = nexFastNr.nexBaseUrl;
                     const nexTotalChunksCount = parseInt(nexFastNr.nexRawData.trim(), 10);
 
+                    this._nexDispatchInternalEvent("progress", { progress: 20 });
+
                     const nexChunkPromises = [];
                     for (let nexIndex = 1; nexIndex <= nexTotalChunksCount; nexIndex++) {
-                        const nexChunkUrl = `${nexActiveCdnUrl}${this.alias}/src.part${nexIndex}.html`;
+                        const nexChunkUrl = `${nexActiveCdnUrl}${this.alias}/src.part${nexIndex}.txt`;
                         nexChunkPromises.push(
                             this._nexFetchWithCache(nexChunkUrl).then(async nexResult => {
                                 if (!nexResult.ok) throw new Error(`Chunk ${nexIndex} fetch failed`);
-                                return await nexResult.text();
+                                const encryptedBytes = new Uint8Array(await nexResult.arrayBuffer());
+                                
+                                const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
+                                
+                                return new TextDecoder("utf-8").decode(decryptedBytes);
                             })
                         );
+
+                        const progress = 20 + ((nexIndex / nexTotalChunksCount) * 70);
+                        this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
                     }
 
                     const nexChunksData = await Promise.all(nexChunkPromises);
                     this._nexHtmlPayload = nexChunksData.join("");
                     this._nexDispatchInternalEvent("progress", { progress: 95 });
+
                 } else {
                     throw new Error("Game not found in manifest");
                 }
@@ -317,7 +359,27 @@
 
         start() {
             if (!this._nexComponentValid) return;
-            if (this.shadowRoot.querySelector("iframe")) return;
+            
+            if (this._nexIframe) {
+                try {
+                    if (this._nexIframe.contentWindow) {
+                        this._nexIframe.contentWindow.stop();
+                    }
+                    this._nexIframe.src = "about:blank";
+                    this._nexIframe.remove();
+                } catch (e) {
+                    console.warn("[NEX] Iframe cleanup before start:", e);
+                }
+                this._nexIframe = null;
+            }
+
+            const existingIframes = this.shadowRoot.querySelectorAll("iframe");
+            existingIframes.forEach(iframe => {
+                try {
+                    iframe.src = "about:blank";
+                    iframe.remove();
+                } catch (e) {}
+            });
 
             if (!this._nexHtmlPayload) {
                 this._nexExecutionPending = true;
@@ -325,16 +387,17 @@
             }
 
             const nexGameViewportFrame = document.createElement("iframe");
+            this._nexIframe = nexGameViewportFrame;
             
             nexGameViewportFrame.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
             nexGameViewportFrame.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
             
             this.shadowRoot.appendChild(nexGameViewportFrame);
 
-            const nexFrameDocument = nexGameViewportFrame.contentDocument || nexGameViewportFrame.contentWindow.document;
-            nexFrameDocument.open();
-            nexFrameDocument.write(this._nexHtmlPayload);
-            nexFrameDocument.close();
+            const iframeDoc = nexGameViewportFrame.contentDocument || nexGameViewportFrame.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(this._nexHtmlPayload);
+            iframeDoc.close();
         }
     }
 
