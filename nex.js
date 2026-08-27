@@ -1,6 +1,6 @@
 (() => {
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
-    const NEX_CACHE_STORE = "nex-core-cache-v2";
+    const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
         "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
         "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
