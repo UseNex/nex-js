@@ -1,6 +1,6 @@
 # NexGame Component Documentation
 ```html
-<script src="https://cdn.jsdelivr.net/gh/UseNex/nex-js@8ec0d5475baacc373a43c7afcc04442075b67f87/nex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/usenex/nex-js@f10e7a480b7d1d3b5af4b0e3066d8115f7f0c356/nex.min.js"></script>
 ```
 
 ## Overview
@@ -62,6 +62,6 @@ Fired when a network failure occurs, the validator rejects a payload, or the ali
 ## Technical Architecture Features
 
 * **Array-Driven Race Fetch:** Queries all CDN endpoints simultaneously. The fastest successful response resolves the request, while slower pending requests are instantly aborted via `AbortController`.
-* **Aggressive Cache-First Strategy:** All network requests check the `nex-core-cache-v1` Cache Storage API before hitting the network, eliminating repetitive data consumption over mobile/4G networks.
+* **Aggressive Cache-First Strategy:** All network requests check the `np-cache-1` Cache Storage API before hitting the network, eliminating repetitive data consumption over mobile/4G networks.
 * **Self-Healing Runtime:** Listens to live attribute alterations (`alias`, `gid`) via `attributeChangedCallback`, gracefully terminating active streams, clearing event registries, and hot-reloading new game pipelines without layout shifting.
 * **Unrestricted Sandbox Iframe:** Injects the game into an isolated Shadow DOM container with maximized permissions allowed for feature policy capabilities (pointer-lock, local storage, audio autoplay, gamepad API).
