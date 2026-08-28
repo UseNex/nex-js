@@ -44,7 +44,7 @@
     },
     "3d-flight-simulator": {
       "name": "3D Flight Simulator",
-      "category": "Driving",
+      "category": "Skill",
       "description": "Take control of an airplane and master the art of flying in 3D."
     },
     "8-ball-classic": {
@@ -625,7 +625,7 @@
             name: game.name || alias,
             category: game.category || "Unknown",
             description: game.description || "",
-            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@13a70ad536d52b4160168866db98bc27e235fccf/${alias}.webp`
+            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@803f8dcd4425131012ba0da25d401d6c8fc35a91/${alias}.webp`
         };
     }
 
