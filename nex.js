@@ -625,7 +625,7 @@
             name: game.name || alias,
             category: game.category || "Unknown",
             description: game.description || "",
-            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@d31c14abee877357afdd6a44fa921199ba0033fa/${alias}.webp`
+            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@13a70ad536d52b4160168866db98bc27e235fccf/${alias}.webp`
         };
     }
 
