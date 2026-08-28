@@ -210,7 +210,7 @@
             try {
                 const nexCache = await caches.open(NEX_CACHE_STORE);
                 const nexCachedResponse = await nexCache.match(nexFullUrl);
-                if (nexCachedResponse) {
+                if (nexCachedResponse && nexCachedResponse.ok) {
                     const nexCachedTime = nexCachedResponse.headers.get("sw-cache-timestamp");
                     if (!nexCachedTime || (Date.now() - parseInt(nexCachedTime)) < 86400000) {
                         return nexCachedResponse;
@@ -241,13 +241,18 @@
                 nexCache = await caches.open(NEX_CACHE_STORE);
             } catch (e) {}
 
-            for (const nexNode of NEX_NODES) {
-                const nexUrl = nexNode + nexPath;
-                if (nexCache) {
+            if (nexCache) {
+                for (const nexNode of NEX_NODES) {
+                    const nexUrl = nexNode + nexPath;
                     try {
                         const nexCachedResponse = await nexCache.match(nexUrl);
-                        if (nexCachedResponse) {
-                            const nexRawData = await (nexValidatorFn.type === "json" ? nexCachedResponse.json() : nexCachedResponse.text());
+                        if (nexCachedResponse && nexCachedResponse.ok) {
+                            let nexRawData;
+                            if (nexValidatorFn && nexValidatorFn.type === "json") {
+                                nexRawData = await nexCachedResponse.json();
+                            } else {
+                                nexRawData = await nexCachedResponse.text();
+                            }
                             if (!nexValidatorFn || nexValidatorFn(nexRawData)) {
                                 return { nexRawData, nexBaseUrl: nexNode };
                             }
@@ -258,31 +263,49 @@
                 }
             }
 
-            this._nexAbortController = new AbortController();
-            const { signal } = this._nexAbortController;
-
-            const nexExecuteRequest = async (nexBaseUrl) => {
-                const nexUrl = nexBaseUrl + nexPath;
-                const nexRes = await fetch(nexUrl, { signal });
-                if (!nexRes.ok) throw new Error(`HTTP ${nexRes.status}`);
-                const nexRawData = await (nexValidatorFn.type === "json" ? nexRes.json() : nexRes.text());
-                if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error("Validation failed");
-
-                if (nexCache) {
-                    try {
-                        await nexCache.put(nexUrl, nexRes.clone());
-                    } catch (e) {}
-                }
-
-                if (this._nexAbortController) {
-                    this._nexAbortController.abort();
-                    this._nexAbortController = null;
-                }
-                return { nexRawData, nexBaseUrl };
+            const fetchWithTimeout = (url, timeout = 15000) => {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), timeout);
+                return fetch(url, { signal: controller.signal })
+                    .then(response => {
+                        clearTimeout(timeoutId);
+                        return response;
+                    })
+                    .catch(err => {
+                        clearTimeout(timeoutId);
+                        throw err;
+                    });
             };
 
+            const promises = NEX_NODES.map(async (nexNode) => {
+                const nexUrl = nexNode + nexPath;
+                const response = await fetchWithTimeout(nexUrl);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                let nexRawData;
+                if (nexValidatorFn && nexValidatorFn.type === "json") {
+                    nexRawData = await response.json();
+                } else {
+                    nexRawData = await response.text();
+                }
+                if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error("Validation failed");
+                if (nexCache) {
+                    try {
+                        const nexResClone = response.clone();
+                        const nexHeaders = new Headers(nexResClone.headers);
+                        nexHeaders.set("sw-cache-timestamp", Date.now().toString());
+                        const nexNewResponse = new Response(nexResClone.body, {
+                            status: nexResClone.status,
+                            statusText: nexResClone.statusText,
+                            headers: nexHeaders
+                        });
+                        await nexCache.put(nexUrl, nexNewResponse);
+                    } catch (e) {}
+                }
+                return { nexRawData, nexBaseUrl: nexNode };
+            });
+
             try {
-                return await Promise.any(NEX_NODES.map(nexNode => nexExecuteRequest(nexNode)));
+                return await Promise.any(promises);
             } catch (e) {
                 throw new Error("All CDN nodes failed");
             }
