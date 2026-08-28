@@ -2,13 +2,16 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@06f7eb91be5e701521fcd2bff2298819c8f20dbd/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/"
     ];
+
+    // METADATA API - Vul hier je game data in
+    const GAME_DATA = {};
 
     function xorDecrypt(data, keyBase64) {
         const keyText = atob(keyBase64);
@@ -17,6 +20,32 @@
         const keyLen = keyBytes.length;
         for (let i = 0; i < data.length; i++) {
             result[i] = data[i] ^ keyBytes[i % keyLen];
+        }
+        return result;
+    }
+
+    // Metadata API helper
+    function getGameMetadata(alias) {
+        const game = GAME_DATA[alias];
+        if (!game) return null;
+        
+        return {
+            alias: alias,
+            name: game.name || alias,
+            category: game.category || "Unknown",
+            description: game.description || "",
+            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@d31c14abee877357afdd6a44fa921199ba0033fa/${alias}.webp`
+        };
+    }
+
+    function getAllAliases() {
+        return Object.keys(GAME_DATA);
+    }
+
+    function getAllMetadata() {
+        const result = {};
+        for (const alias of Object.keys(GAME_DATA)) {
+            result[alias] = getGameMetadata(alias);
         }
         return result;
     }
@@ -48,6 +77,21 @@
                 };
             }
             return nexRegistry[nexIdentifier];
+        }
+    });
+
+    // Metadata API op window.nex
+    window.nex.metadata = {
+        getAllAliases: getAllAliases,
+        getAllMetadata: getAllMetadata,
+        get: getGameMetadata,
+        getAlias: (alias) => getGameMetadata(alias)
+    };
+
+    // Proxy voor nex.metadata.alias.(naam)
+    window.nex.metadata.alias = new Proxy({}, {
+        get(target, alias) {
+            return getGameMetadata(alias);
         }
     });
 
