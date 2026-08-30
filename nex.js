@@ -10,7 +10,6 @@
         "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/"
     ];
 
-    // METADATA API - Vul hier je game data in
     const GAME_DATA = {
     "2048": {
       "name": "2048",
@@ -963,14 +962,8 @@
                 await this._nexClearOldCache();
                 this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                const gameDataValidator = (data) => {
-                    return data && typeof data === "object" && !Array.isArray(data);
-                };
-                gameDataValidator.type = "json";
-
-                const gameDataResult = await this._nexRaceFetch("game_data.json", gameDataValidator);
-                const activeCdnUrl = gameDataResult.nexBaseUrl;
-                this._nexGameData = gameDataResult.nexRawData;
+                // Gebruik ingebouwde GAME_DATA ipv externe JSON
+                this._nexGameData = GAME_DATA;
 
                 this._nexDispatchInternalEvent("progress", { progress: 20 });
 
@@ -978,11 +971,14 @@
                 const aliasFound = gameKeys.includes(this.alias);
 
                 if (!aliasFound) {
-                    throw new Error(`Game alias "${this.alias}" not found in game_data.json`);
+                    throw new Error(`Game alias "${this.alias}" not found in GAME_DATA`);
                 }
 
                 const gameEntry = this._nexGameData[this.alias];
                 const gameName = gameEntry.name || this.alias;
+
+                // Gebruik eerste CDN node als base
+                const activeCdnUrl = NEX_NODES[0];
 
                 const nrValidator = (data) => {
                     const trimmed = data.trim();
