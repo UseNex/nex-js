@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fbfdaf909e1fe64b3a0c54c17698acfb3dcfd12f/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2a2381e3ab7bd331c0eb687cc146c839b82d4d33/"
     ];
 
     // METADATA API - Vul hier je game data in
@@ -601,6 +601,16 @@
       "name": "Space Waves",
       "category": "Skill",
       "description": "Navigate a flying wave icon through narrow tunnels filled with spike walls."
+    },
+    "granny": {
+      "name": "Granny",
+      "category": "Horror",
+      "description": "Sneak past a ruthless granny while searching for escape items in a creaky, trap-filled house."
+    },
+    "granny-2": {
+      "name": "Granny 2",
+      "category": "Horror",
+      "description": "Sneak past Granny and Grandpa to find escape items in a creepy house."
     }
   };
 
@@ -625,7 +635,7 @@
             name: game.name || alias,
             category: game.category || "Unknown",
             description: game.description || "",
-            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@803f8dcd4425131012ba0da25d401d6c8fc35a91/${alias}.webp`
+            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@a2a0801856de61dcc0007dd896996092e975df94/${alias}.webp`
         };
     }
 
