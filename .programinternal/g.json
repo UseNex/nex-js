@@ -613,5 +613,10 @@
     "name": "Funny Battle",
     "category": "Strategy",
     "description": "Deploy crazy ragdoll armies and build hilarious strategies to crush enemies."
+  },
+  "funny-battle-2": {
+    "name": "Funny Battle 2",
+    "category": "Strategy",
+    "description": "Create chaotic ragdoll armies and control custom units to dominate hilarious battlefields."
   }
 }
