@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/"
     ];
 
     const GAME_DATA = {
@@ -625,6 +625,11 @@
     "name": "Funny Battle",
     "category": "Strategy",
     "description": "Deploy crazy ragdoll armies and build hilarious strategies to crush enemies."
+  },
+  "funny-battle-2": {
+    "name": "Funny Battle 2",
+    "category": "Strategy",
+    "description": "Create chaotic ragdoll armies and control custom units to dominate hilarious battlefields."
   }
 };
 
