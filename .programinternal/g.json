@@ -603,5 +603,10 @@
     "name": "Zrist",
     "category": "Skill",
     "description": "Dodge red blocks and tricky hazards to master every rule."
+  },
+  "motherload": {
+    "name": "MotherLoad",
+    "category": "Strategy",
+    "description": "Mine rare minerals and upgrade your pod to survive Mars."
   }
 }
