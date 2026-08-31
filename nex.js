@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@bb94c598fcee6d4a4a98bb873d3ca1302f8bca35/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@bb94c598fcee6d4a4a98bb873d3ca1302f8bca35/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@bb94c598fcee6d4a4a98bb873d3ca1302f8bca35/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@bb94c598fcee6d4a4a98bb873d3ca1302f8bca35/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@bb94c598fcee6d4a4a98bb873d3ca1302f8bca35/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@bb94c598fcee6d4a4a98bb873d3ca1302f8bca35/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@948c1f916aa74f2c75c79ffc6f00618dce0b450b/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@948c1f916aa74f2c75c79ffc6f00618dce0b450b/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@948c1f916aa74f2c75c79ffc6f00618dce0b450b/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@948c1f916aa74f2c75c79ffc6f00618dce0b450b/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@948c1f916aa74f2c75c79ffc6f00618dce0b450b/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@948c1f916aa74f2c75c79ffc6f00618dce0b450b/"
     ];
 
     const GAME_DATA = {
@@ -609,9 +609,14 @@
     "granny-2": {
       "name": "Granny 2",
       "category": "Horror",
-      "description": "Sneak past Granny and Grandpa to find escape items in a creepy house."
+      "description": "Sneak past Granny and Grandpa to find escape items in a creepy house.",
+  "zrist": {
+    "name": "Zrist",
+    "category": "Skill",
+    "description": "Dodge red blocks and tricky hazards to master every rule."
+  }
+,
     }
-  };
 
     function xorDecrypt(data, keyBase64) {
         const keyText = atob(keyBase64);
