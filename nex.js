@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b351dff4f8107ada406676eaef4e60acfe990146/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/"
     ];
 
     const GAME_DATA = {
@@ -630,6 +630,11 @@
     "name": "Funny Battle 2",
     "category": "Strategy",
     "description": "Create chaotic ragdoll armies and control custom units to dominate hilarious battlefields."
+  },
+  "funny-mad-racing": {
+    "name": "Funny Mad Racing",
+    "category": "Driving",
+    "description": "Drive bouncy pixel cars over crazy obstacles without flipping or crashing."
   }
 };
 
