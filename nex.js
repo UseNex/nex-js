@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9745a6ec1009c5d1839ca04f6fc7d372048889a9/"
     ];
 
     const GAME_DATA = {
@@ -620,6 +620,11 @@
     "name": "MotherLoad",
     "category": "Strategy",
     "description": "Mine rare minerals and upgrade your pod to survive Mars."
+  },
+  "funny-battle": {
+    "name": "Funny Battle",
+    "category": "Strategy",
+    "description": "Deploy crazy ragdoll armies and build hilarious strategies to crush enemies."
   }
 };
 
