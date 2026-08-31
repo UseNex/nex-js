@@ -618,5 +618,10 @@
     "name": "Funny Battle 2",
     "category": "Strategy",
     "description": "Create chaotic ragdoll armies and control custom units to dominate hilarious battlefields."
+  },
+  "funny-mad-racing": {
+    "name": "Funny Mad Racing",
+    "category": "Driving",
+    "description": "Drive bouncy pixel cars over crazy obstacles without flipping or crashing."
   }
 }
