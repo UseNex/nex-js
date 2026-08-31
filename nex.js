@@ -617,7 +617,7 @@
     "description": "Dodge red blocks and tricky hazards to master every rule."
   }
 };
-    }
+
 
     function getAllAliases() {
         return Object.keys(GAME_DATA);
