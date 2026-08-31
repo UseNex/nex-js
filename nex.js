@@ -609,13 +609,8 @@
     "granny-2": {
       "name": "Granny 2",
       "category": "Horror",
-      "description": "Sneak past Granny and Grandpa to find escape items in a creepy house.",
-  "zrist": {
-    "name": "Zrist",
-    "category": "Skill",
-    "description": "Dodge red blocks and tricky hazards to master every rule."
-  }
-,
+      "description": "Sneak past Granny and Grandpa to find escape items in a creepy house."
+    }
     }
 
     function xorDecrypt(data, keyBase64) {
