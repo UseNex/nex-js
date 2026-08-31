@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@1d31f0927e8e7e18945735abe110236601c79317/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@1d31f0927e8e7e18945735abe110236601c79317/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@1d31f0927e8e7e18945735abe110236601c79317/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@1d31f0927e8e7e18945735abe110236601c79317/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@1d31f0927e8e7e18945735abe110236601c79317/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@1d31f0927e8e7e18945735abe110236601c79317/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@5cdd16e9657e5940406db2d6dc72ad7b6e38da10/"
     ];
 
     const GAME_DATA = {
@@ -615,6 +615,11 @@
     "name": "Zrist",
     "category": "Skill",
     "description": "Dodge red blocks and tricky hazards to master every rule."
+  },
+  "motherload": {
+    "name": "MotherLoad",
+    "category": "Strategy",
+    "description": "Mine rare minerals and upgrade your pod to survive Mars."
   }
 };
 
