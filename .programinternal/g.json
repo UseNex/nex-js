@@ -608,5 +608,10 @@
     "name": "MotherLoad",
     "category": "Strategy",
     "description": "Mine rare minerals and upgrade your pod to survive Mars."
+  },
+  "funny-battle": {
+    "name": "Funny Battle",
+    "category": "Strategy",
+    "description": "Deploy crazy ragdoll armies and build hilarious strategies to crush enemies."
   }
 }
