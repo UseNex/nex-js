@@ -639,7 +639,7 @@
             name: game.name || alias,
             category: game.category || "Unknown",
             description: game.description || "",
-            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@a2a0801856de61dcc0007dd896996092e975df94/${alias}.webp`
+            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@main/${alias}.webp`
         };
     }
 
