@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@09dd1fc0fd3389d9ac747fa5c5116fac6c1a3ea2/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@09dd1fc0fd3389d9ac747fa5c5116fac6c1a3ea2/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@09dd1fc0fd3389d9ac747fa5c5116fac6c1a3ea2/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@09dd1fc0fd3389d9ac747fa5c5116fac6c1a3ea2/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@09dd1fc0fd3389d9ac747fa5c5116fac6c1a3ea2/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@09dd1fc0fd3389d9ac747fa5c5116fac6c1a3ea2/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b0de39ad0d97c5aa2b224fcf5d03b5cebe0acd12/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b0de39ad0d97c5aa2b224fcf5d03b5cebe0acd12/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b0de39ad0d97c5aa2b224fcf5d03b5cebe0acd12/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b0de39ad0d97c5aa2b224fcf5d03b5cebe0acd12/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b0de39ad0d97c5aa2b224fcf5d03b5cebe0acd12/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b0de39ad0d97c5aa2b224fcf5d03b5cebe0acd12/"
     ];
 
     const GAME_DATA = {
