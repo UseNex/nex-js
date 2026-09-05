@@ -752,8 +752,7 @@
 
         constructor() {
             super();
-            this._nexHtmlBlob = null;      // OPTIMALISATIE: Blob ipv string
-            this._nexBlobUrl = null;       // OPTIMALISATIE: URL voor blob
+            this._nexHtmlPayload = "";      // Volledige HTML als string
             this._nexRegisteredListeners = {};
             this._nexComponentValid = true;
             this._nexExecutionPending = false;
@@ -826,11 +825,7 @@
 
         _nexResetAndReload() {
             this._nexCleanup();
-            this._nexHtmlBlob = null;      // OPTIMALISATIE
-            if (this._nexBlobUrl) {
-                URL.revokeObjectURL(this._nexBlobUrl);
-                this._nexBlobUrl = null;
-            }
+            this._nexHtmlPayload = "";
             this._nexExecutionPending = false;
             this._nexComponentValid = true;
             this._nexIframe = null;
@@ -842,12 +837,6 @@
             if (this._nexAbortController) {
                 this._nexAbortController.abort();
                 this._nexAbortController = null;
-            }
-
-            // OPTIMALISATIE: Revoke blob URL
-            if (this._nexBlobUrl) {
-                URL.revokeObjectURL(this._nexBlobUrl);
-                this._nexBlobUrl = null;
             }
 
             if (this._nexIframe) {
@@ -1023,7 +1012,6 @@
                 await this._nexClearOldCache();
                 this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                // Gebruik ingebouwde GAME_DATA ipv externe JSON
                 this._nexGameData = GAME_DATA;
 
                 this._nexDispatchInternalEvent("progress", { progress: 20 });
@@ -1038,7 +1026,6 @@
                 const gameEntry = this._nexGameData[this.alias];
                 const gameName = gameEntry.name || this.alias;
 
-                // Gebruik eerste CDN node als base
                 const activeCdnUrl = NEX_NODES[0];
 
                 const nrValidator = (data) => {
@@ -1052,13 +1039,12 @@
 
                 this._nexDispatchInternalEvent("progress", { progress: 30 });
 
-                // OPTIMALISATIE: Verzamel chunks direct in een Blob
-                const blobParts = [];
+                // OPTIMALISATIE: Verzamel alle chunks in 1 string (geen tussentijdse array)
+                let fullHtml = "";
 
                 for (let i = 1; i <= totalChunks; i++) {
                     const chunkUrl = `${activeCdnUrl}${this.alias}/src.part${i}.txt`;
                     
-                    // Abort controller voor als de game wordt gestopt
                     if (this._nexAbortController) {
                         this._nexAbortController.abort();
                     }
@@ -1070,28 +1056,19 @@
                     
                     if (!response.ok) throw new Error(`Chunk ${i} fetch failed`);
 
-                    // OPTIMALISATIE: Blijf in bytes, geen string conversie
                     const encryptedBytes = new Uint8Array(await response.arrayBuffer());
                     const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
                     
-                    // OPTIMALISATIE: Voeg direct bytes toe aan blobParts
-                    blobParts.push(decryptedBytes);
+                    // OPTIMALISATIE: Direct omzetten naar string en toevoegen
+                    const chunkText = new TextDecoder("utf-8").decode(decryptedBytes);
+                    fullHtml += chunkText;  // Direct concatenaten (geen tussentijdse array)
 
                     const progress = 30 + ((i / totalChunks) * 65);
                     this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
                 }
 
-                // OPTIMALISATIE: Maak één Blob van alle chunks (geen extra kopie)
-                this._nexHtmlBlob = new Blob(blobParts, { type: "text/html" });
-
-                // OPTIMALISATIE: Maak URL voor de blob
-                if (this._nexBlobUrl) {
-                    URL.revokeObjectURL(this._nexBlobUrl);
-                }
-                this._nexBlobUrl = URL.createObjectURL(this._nexHtmlBlob);
-
-                // OPTIMALISATIE: Vrijgeven voor garbage collection
-                blobParts.length = 0;
+                // OPTIMALISATIE: Opslaan als 1 complete string
+                this._nexHtmlPayload = fullHtml;
 
                 this._nexDispatchInternalEvent("progress", { progress: 100 });
                 this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
@@ -1134,8 +1111,7 @@
                 } catch (e) {}
             });
 
-            // OPTIMALISATIE: Gebruik Blob URL in plaats van document.write()
-            if (!this._nexHtmlBlob || !this._nexBlobUrl) {
+            if (!this._nexHtmlPayload) {
                 this._nexExecutionPending = true;
                 return;
             }
@@ -1146,18 +1122,13 @@
             iframe.sandbox = "allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-pointer-lock allow-downloads allow-presentation allow-top-navigation-by-user-activation";
             iframe.allow = "autoplay; fullscreen; gamepad; pointer-lock; xr-spatial-tracking; clipboard-write";
 
-            // OPTIMALISATIE: Laad de blob URL direct in de iframe
-            iframe.src = this._nexBlobUrl;
-
             this.shadowRoot.appendChild(iframe);
 
-            // OPTIMALISATIE: Revoke blob URL nadat iframe is geladen
-            iframe.addEventListener('load', () => {
-                if (this._nexBlobUrl) {
-                    URL.revokeObjectURL(this._nexBlobUrl);
-                    this._nexBlobUrl = null;
-                }
-            }, { once: true });
+            // OPTIMALISATIE: Alles in 1 keer schrijven (geen blob)
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(this._nexHtmlPayload);
+            iframeDoc.close();
         }
     }
 
