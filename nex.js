@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/"
     ];
 
     const GAME_DATA = {
@@ -640,6 +640,11 @@
     "name": "KittyToy",
     "category": "Sandbox",
     "description": "Attract cute stray cats and build the ultimate kitty paradise!"
+  },
+  "funny-shooter-2": {
+    "name": "Funny Shooter 2",
+    "category": "Action",
+    "description": "Grab your gun, dodge bullets, and take down waves of hilarious foes!"
   }
 };
 
