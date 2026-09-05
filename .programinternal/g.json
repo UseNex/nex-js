@@ -643,5 +643,10 @@
     "name": "Geometry Dash Lite",
     "category": "Skill",
     "description": "Tap to the beat, dodge obstacles, and master the free introductory levels of Geometry Dash!"
+  },
+  "geometry-vibes": {
+    "name": "Geometry Vibes",
+    "category": "Skill",
+    "description": "Dodge spikes, master the rhythm, and survive the geometric chaos in this free arcade runner."
   }
 }
