@@ -623,5 +623,10 @@
     "name": "Funny Mad Racing",
     "category": "Driving",
     "description": "Drive bouncy pixel cars over crazy obstacles without flipping or crashing."
+  },
+  "kittytoy": {
+    "name": "KittyToy",
+    "category": "Sandbox",
+    "description": "Attract cute stray cats and build the ultimate kitty paradise!"
   }
 }
