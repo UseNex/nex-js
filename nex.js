@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/"
     ];
 
     const GAME_DATA = {
@@ -647,9 +647,14 @@
     "description": "Grab your gun, dodge bullets, and take down waves of hilarious foes!"
   },
   "geometry-dash": {
-    "name": "Geometry Dash",
+    "name": "Geometry Dash (Scratch)",
     "category": "Skill",
     "description": "Jump, fly, and flip your way through rhythm-based action-platforming."
+  },
+  "geometry-dash-lite": {
+    "name": "Geometry Dash Lite",
+    "category": "Skill",
+    "description": "Tap to the beat, dodge obstacles, and master the free introductory levels of Geometry Dash!"
   }
 };
 
