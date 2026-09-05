@@ -638,5 +638,10 @@
     "name": "Geometry Dash (Scratch)",
     "category": "Skill",
     "description": "Jump, fly, and flip your way through rhythm-based action-platforming."
+  },
+  "geometry-dash-lite": {
+    "name": "Geometry Dash Lite",
+    "category": "Skill",
+    "description": "Tap to the beat, dodge obstacles, and master the free introductory levels of Geometry Dash!"
   }
 }
