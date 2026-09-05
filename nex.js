@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@ce0db52727710424eb1d334f8ce7de707759a42a/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/"
     ];
 
     const GAME_DATA = {
@@ -655,6 +655,11 @@
     "name": "Geometry Dash Lite",
     "category": "Skill",
     "description": "Tap to the beat, dodge obstacles, and master the free introductory levels of Geometry Dash!"
+  },
+  "geometry-vibes": {
+    "name": "Geometry Vibes",
+    "category": "Skill",
+    "description": "Dodge spikes, master the rhythm, and survive the geometric chaos in this free arcade runner."
   }
 };
 
