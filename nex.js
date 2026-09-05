@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b19707fdd522b693ed87b3b25ef76c7d2883a9bd/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@cb90936355ad1a73fb8beafbcc802af29c2e3efe/"
     ];
 
     const GAME_DATA = {
@@ -645,6 +645,11 @@
     "name": "Funny Shooter 2",
     "category": "Action",
     "description": "Grab your gun, dodge bullets, and take down waves of hilarious foes!"
+  },
+  "geometry-dash": {
+    "name": "Geometry Dash",
+    "category": "Skill",
+    "description": "Jump, fly, and flip your way through rhythm-based action-platforming."
   }
 };
 
