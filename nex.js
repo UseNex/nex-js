@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@95fd9fd436e201d21a69d29e6773271587e6a781/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/"
     ];
 
     const GAME_DATA = {
@@ -660,6 +660,11 @@
     "name": "Geometry Vibes",
     "category": "Skill",
     "description": "Dodge spikes, master the rhythm, and survive the geometric chaos in this free arcade runner."
+  },
+  "getaway-shootout": {
+    "name": "Getaway Shootout",
+    "category": "Skill",
+    "description": "Outsmart opponents with crazy ragdoll jumps and insane weapons to be the first to escape!"
   }
 };
 
