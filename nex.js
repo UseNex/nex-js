@@ -674,7 +674,6 @@
         return result;
     }
 
-    // Metadata API helper
     function getGameMetadata(alias) {
         const game = GAME_DATA[alias];
         if (!game) return null;
@@ -730,7 +729,6 @@
         }
     });
 
-    // Metadata API op window.nex
     window.nex.metadata = {
         getAllAliases: getAllAliases,
         getAllMetadata: getAllMetadata,
@@ -738,7 +736,6 @@
         getAlias: (alias) => getGameMetadata(alias)
     };
 
-    // Proxy voor nex.metadata.alias.(naam)
     window.nex.metadata.alias = new Proxy({}, {
         get(target, alias) {
             return getGameMetadata(alias);
@@ -752,7 +749,7 @@
 
         constructor() {
             super();
-            this._nexHtmlPayload = "";
+            this._nexHtmlPayload = "";      // Volledige HTML als string
             this._nexRegisteredListeners = {};
             this._nexComponentValid = true;
             this._nexExecutionPending = false;
@@ -1012,7 +1009,6 @@
                 await this._nexClearOldCache();
                 this._nexDispatchInternalEvent("progress", { progress: 5 });
 
-                // Gebruik ingebouwde GAME_DATA ipv externe JSON
                 this._nexGameData = GAME_DATA;
 
                 this._nexDispatchInternalEvent("progress", { progress: 20 });
@@ -1027,7 +1023,6 @@
                 const gameEntry = this._nexGameData[this.alias];
                 const gameName = gameEntry.name || this.alias;
 
-                // Gebruik eerste CDN node als base
                 const activeCdnUrl = NEX_NODES[0];
 
                 const nrValidator = (data) => {
@@ -1041,24 +1036,33 @@
 
                 this._nexDispatchInternalEvent("progress", { progress: 30 });
 
-                const chunkPromises = [];
+                let fullHtml = "";
+
                 for (let i = 1; i <= totalChunks; i++) {
                     const chunkUrl = `${activeCdnUrl}${this.alias}/src.part${i}.txt`;
-                    chunkPromises.push(
-                        this._nexFetchWithCache(chunkUrl).then(async response => {
-                            if (!response.ok) throw new Error(`Chunk ${i} fetch failed`);
-                            const encryptedBytes = new Uint8Array(await response.arrayBuffer());
-                            const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
-                            return new TextDecoder("utf-8").decode(decryptedBytes);
-                        })
-                    );
+                    
+                    if (this._nexAbortController) {
+                        this._nexAbortController.abort();
+                    }
+                    this._nexAbortController = new AbortController();
+
+                    const response = await this._nexFetchWithCache(chunkUrl, { 
+                        signal: this._nexAbortController.signal 
+                    });
+                    
+                    if (!response.ok) throw new Error(`Chunk ${i} fetch failed`);
+
+                    const encryptedBytes = new Uint8Array(await response.arrayBuffer());
+                    const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
+                    
+                    const chunkText = new TextDecoder("utf-8").decode(decryptedBytes);
+                    fullHtml += chunkText; 
 
                     const progress = 30 + ((i / totalChunks) * 65);
                     this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
                 }
 
-                const chunksData = await Promise.all(chunkPromises);
-                this._nexHtmlPayload = chunksData.join("");
+                this._nexHtmlPayload = fullHtml;
 
                 this._nexDispatchInternalEvent("progress", { progress: 100 });
                 this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
