@@ -648,5 +648,10 @@
     "name": "Geometry Vibes",
     "category": "Skill",
     "description": "Dodge spikes, master the rhythm, and survive the geometric chaos in this free arcade runner."
+  },
+  "getaway-shootout": {
+    "name": "Getaway Shootout",
+    "category": "Skill",
+    "description": "Outsmart opponents with crazy ragdoll jumps and insane weapons to be the first to escape!"
   }
 }
