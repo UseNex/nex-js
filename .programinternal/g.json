@@ -628,5 +628,10 @@
     "name": "KittyToy",
     "category": "Sandbox",
     "description": "Attract cute stray cats and build the ultimate kitty paradise!"
+  },
+  "funny-shooter-2": {
+    "name": "Funny Shooter 2",
+    "category": "Action",
+    "description": "Grab your gun, dodge bullets, and take down waves of hilarious foes!"
   }
 }
