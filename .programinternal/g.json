@@ -633,5 +633,10 @@
     "name": "Funny Shooter 2",
     "category": "Action",
     "description": "Grab your gun, dodge bullets, and take down waves of hilarious foes!"
+  },
+  "geometry-dash": {
+    "name": "Geometry Dash",
+    "category": "Skill",
+    "description": "Jump, fly, and flip your way through rhythm-based action-platforming."
   }
 }
