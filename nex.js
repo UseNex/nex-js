@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@6df3a2109f257ff05a4e4332df040a8cb078f784/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@012ee3fd47ffc63f7028d0ad8f38cc0be39a81dd/"
     ];
 
     const GAME_DATA = {
@@ -635,6 +635,11 @@
     "name": "Funny Mad Racing",
     "category": "Driving",
     "description": "Drive bouncy pixel cars over crazy obstacles without flipping or crashing."
+  },
+  "kittytoy": {
+    "name": "KittyToy",
+    "category": "Sandbox",
+    "description": "Attract cute stray cats and build the ultimate kitty paradise!"
   }
 };
 
