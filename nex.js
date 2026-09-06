@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@7bca4a3adaed44f232d416d252f9edca54a6c3ea/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@7bca4a3adaed44f232d416d252f9edca54a6c3ea/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@7bca4a3adaed44f232d416d252f9edca54a6c3ea/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@7bca4a3adaed44f232d416d252f9edca54a6c3ea/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@7bca4a3adaed44f232d416d252f9edca54a6c3ea/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@7bca4a3adaed44f232d416d252f9edca54a6c3ea/"
     ];
 
     const GAME_DATA = {
@@ -668,8 +668,13 @@
   },
   "get-on-top": {
     "name": "Get on Top",
-    "category": "Action",
+    "category": "Skill",
     "description": "Use physics-based wrestling and precise timing to pin down your opponent's head."
+  },
+  "gladihoppers": {
+    "name": "Gladihoppers",
+    "category": "Skill",
+    "description": "Use physics-based hopping and strategic weapon swings to defeat rival gladiators."
   }
 };
 
