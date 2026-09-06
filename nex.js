@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f5fed21403facee6770c2a88c14a7b098051e486/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@6d899a622d1ce849a7c461578c42d8810d2ffa04/"
     ];
 
     const GAME_DATA = {
@@ -665,6 +665,11 @@
     "name": "Getaway Shootout",
     "category": "Skill",
     "description": "Outsmart opponents with crazy ragdoll jumps and insane weapons to be the first to escape!"
+  },
+  "get-on-top": {
+    "name": "Get on Top",
+    "category": "Action",
+    "description": "Use physics-based wrestling and precise timing to pin down your opponent's head."
   }
 };
 
