@@ -653,5 +653,10 @@
     "name": "Getaway Shootout",
     "category": "Skill",
     "description": "Outsmart opponents with crazy ragdoll jumps and insane weapons to be the first to escape!"
+  },
+  "get-on-top": {
+    "name": "Get on Top",
+    "category": "Action",
+    "description": "Use physics-based wrestling and precise timing to pin down your opponent's head."
   }
 }
