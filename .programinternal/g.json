@@ -658,5 +658,10 @@
     "name": "Get on Top",
     "category": "Skill",
     "description": "Use physics-based wrestling and precise timing to pin down your opponent's head."
+  },
+  "gladihoppers": {
+    "name": "Gladihoppers",
+    "category": "Skill",
+    "description": "Use physics-based hopping and strategic weapon swings to defeat rival gladiators."
   }
 }
