@@ -692,7 +692,6 @@
     function getGameMetadata(alias) {
         const game = GAME_DATA[alias];
         if (!game) return null;
-        
         return {
             alias: alias,
             name: game.name || alias,
@@ -799,24 +798,139 @@
         }
 
         _nexSetupBaseStorage() {
-            // Alleen de iframe en een eenvoudige achtergrond, GEEN loader meer!
-            this.shadowRoot.innerHTML = `
-                <style>
-                    :host {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        background: #0a0a0f;
-                        position: relative;
-                    }
-                    iframe {
-                        width: 100%;
-                        height: 100%;
-                        border: 0;
-                        display: block;
-                    }
-                </style>
-            `;
+            if (this._nexUseExternalLoader) {
+                // Externe modus: geen loader, alleen iframe en achtergrond
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: #0a0a0f;
+                            position: relative;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                            display: block;
+                        }
+                    </style>
+                `;
+            } else {
+                // Ingebouwde loader (exact uit de HTML, witte ring)
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: #0a0a0f;
+                            position: relative;
+                            font-family: system-ui, -apple-system, sans-serif;
+                        }
+                        #nex-loader {
+                            position: absolute;
+                            inset: 0;
+                            z-index: 100;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            background: #0a0a0f;
+                            overflow: hidden;
+                            transition: opacity 0.5s ease;
+                        }
+                        #nex-loader.hidden {
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                        .nex-bg-blur {
+                            position: absolute;
+                            inset: -20px;
+                            background-size: cover;
+                            background-position: center;
+                            filter: blur(10px) brightness(0.35);
+                            transform: scale(1.1);
+                            z-index: 1;
+                        }
+                        .nex-loader-content {
+                            position: relative;
+                            z-index: 2;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 20px;
+                        }
+                        .nex-circular-progress {
+                            position: relative;
+                            width: 120px;
+                            height: 120px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .nex-circular-progress svg {
+                            width: 100%;
+                            height: 100%;
+                            transform: rotate(-90deg);
+                        }
+                        .nex-circular-progress circle {
+                            fill: none;
+                            stroke-width: 8;
+                            stroke-linecap: round;
+                        }
+                        .nex-track {
+                            stroke: rgba(255, 255, 255, 0.1);
+                        }
+                        .nex-fill {
+                            stroke: #ffffff;
+                            stroke-dasharray: 314;
+                            stroke-dashoffset: 314;
+                            transition: stroke-dashoffset 0.1s ease;
+                        }
+                        .nex-percentage {
+                            position: absolute;
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #fff;
+                        }
+                        .nex-game-title {
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            color: #a1a1aa;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                        }
+                        .nex-error-msg {
+                            color: #e11d48;
+                            font-size: 0.9rem;
+                            display: none;
+                            margin-top: 10px;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                            display: block;
+                        }
+                    </style>
+                    <div id="nex-loader">
+                        <div class="nex-bg-blur" id="nex-bg-blur"></div>
+                        <div class="nex-loader-content">
+                            <div class="nex-circular-progress">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="50" class="nex-track"></circle>
+                                    <circle cx="60" cy="60" r="50" class="nex-fill" id="nex-progress-circle"></circle>
+                                </svg>
+                                <div class="nex-percentage" id="nex-percentage-text">0%</div>
+                            </div>
+                            <div class="nex-game-title" id="nex-game-title-text">Laden...</div>
+                            <div class="nex-error-msg" id="nex-error-msg">Kan game niet laden.</div>
+                        </div>
+                    </div>
+                `;
+            }
 
             if (!this.gid) return;
 
@@ -921,146 +1035,83 @@
             }
         }
 
-        async _nexClearOldCache() {
-            try {
-                const cacheKeys = await caches.keys();
-                for (const key of cacheKeys) {
-                    if (key.startsWith("nex-core-cache") && key !== NEX_CACHE_STORE) {
-                        await caches.delete(key);
-                        console.log("[NEX] Cleared old cache:", key);
-                    }
+        // ---- Helper voor built-in loader updates ----
+        _updateBuiltInLoader(progress, text, error) {
+            const loader = this.shadowRoot.getElementById('nex-loader');
+            const circle = this.shadowRoot.getElementById('nex-progress-circle');
+            const percentage = this.shadowRoot.getElementById('nex-percentage-text');
+            const title = this.shadowRoot.getElementById('nex-game-title-text');
+            const bgBlur = this.shadowRoot.getElementById('nex-bg-blur');
+            const errorMsg = this.shadowRoot.getElementById('nex-error-msg');
+            const circumference = 314;
+
+            if (error) {
+                if (errorMsg) {
+                    errorMsg.style.display = 'block';
+                    errorMsg.textContent = error;
                 }
-            } catch (e) {
-                console.warn("[NEX] Could not clear old cache:", e);
+                if (title) title.textContent = 'Fout';
+                return;
             }
+
+            if (progress !== undefined) {
+                const p = Math.round(progress);
+                if (percentage) percentage.textContent = p + '%';
+                if (circle) {
+                    const offset = circumference - (p / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+                }
+            }
+
+            if (text !== undefined && title) {
+                title.textContent = text;
+            }
+
+            // Als progress 100% is, verberg loader na korte vertraging (of we doen het in ready)
         }
 
-        async _nexFetchWithCache(nexFullUrl, nexOptions = {}) {
-            try {
-                const nexCache = await caches.open(NEX_CACHE_STORE);
-                const nexCachedResponse = await nexCache.match(nexFullUrl);
-                if (nexCachedResponse && nexCachedResponse.ok) {
-                    const nexCachedTime = nexCachedResponse.headers.get("sw-cache-timestamp");
-                    if (!nexCachedTime || (Date.now() - parseInt(nexCachedTime)) < 86400000) {
-                        return nexCachedResponse;
-                    }
-                }
-                const nexNetworkResponse = await fetch(nexFullUrl, nexOptions);
-                if (nexNetworkResponse.ok) {
-                    const nexResponseClone = nexNetworkResponse.clone();
-                    const nexHeaders = new Headers(nexResponseClone.headers);
-                    nexHeaders.set("sw-cache-timestamp", Date.now().toString());
-                    const nexNewResponse = new Response(nexResponseClone.body, {
-                        status: nexResponseClone.status,
-                        statusText: nexResponseClone.statusText,
-                        headers: nexHeaders
-                    });
-                    await nexCache.put(nexFullUrl, nexNewResponse);
-                }
-                return nexNetworkResponse;
-            } catch (nexCacheError) {
-                console.warn("[NEX] Cache fetch failed, using network:", nexCacheError);
-                return fetch(nexFullUrl, nexOptions);
-            }
-        }
-
-        async _nexRaceFetch(nexPath, nexValidatorFn) {
-            let nexCache = null;
-            try {
-                nexCache = await caches.open(NEX_CACHE_STORE);
-            } catch (e) {}
-
-            if (nexCache) {
-                for (const nexNode of NEX_NODES) {
-                    const nexUrl = nexNode + nexPath;
-                    try {
-                        const nexCachedResponse = await nexCache.match(nexUrl);
-                        if (nexCachedResponse && nexCachedResponse.ok) {
-                            let nexRawData;
-                            if (nexValidatorFn && nexValidatorFn.type === "json") {
-                                nexRawData = await nexCachedResponse.json();
-                            } else {
-                                nexRawData = await nexCachedResponse.text();
-                            }
-                            if (!nexValidatorFn || nexValidatorFn(nexRawData)) {
-                                return { nexRawData, nexBaseUrl: nexNode };
-                            }
-                        }
-                    } catch (err) {
-                        continue;
-                    }
-                }
-            }
-
-            const fetchWithTimeout = (url, timeout = 15000) => {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), timeout);
-                return fetch(url, { signal: controller.signal })
-                    .then(response => {
-                        clearTimeout(timeoutId);
-                        return response;
-                    })
-                    .catch(err => {
-                        clearTimeout(timeoutId);
-                        throw err;
-                    });
-            };
-
-            const promises = NEX_NODES.map(async (nexNode) => {
-                const nexUrl = nexNode + nexPath;
-                const response = await fetchWithTimeout(nexUrl);
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                let nexRawData;
-                if (nexValidatorFn && nexValidatorFn.type === "json") {
-                    nexRawData = await response.json();
-                } else {
-                    nexRawData = await response.text();
-                }
-                if (nexValidatorFn && !nexValidatorFn(nexRawData)) throw new Error("Validation failed");
-                if (nexCache) {
-                    try {
-                        const nexResClone = response.clone();
-                        const nexHeaders = new Headers(nexResClone.headers);
-                        nexHeaders.set("sw-cache-timestamp", Date.now().toString());
-                        const nexNewResponse = new Response(nexResClone.body, {
-                            status: nexResClone.status,
-                            statusText: nexResClone.statusText,
-                            headers: nexHeaders
-                        });
-                        await nexCache.put(nexUrl, nexNewResponse);
-                    } catch (e) {}
-                }
-                return { nexRawData, nexBaseUrl: nexNode };
-            });
-
-            try {
-                return await Promise.any(promises);
-            } catch (e) {
-                throw new Error("All CDN nodes failed");
-            }
-        }
-
+        // ---- Hoofd laadpijplijn ----
         async nexInitializeFetchPipeline() {
             if (!this._nexComponentValid) return;
 
             try {
+                // Metadata voor titel en blur
+                const gameInfo = getGameMetadata(this.alias);
+                const gameName = gameInfo ? gameInfo.name : this.alias;
+                const imgUrl = gameInfo ? gameInfo.img : null;
+
+                // Als built-in loader: zet titel en blur
+                if (!this._nexUseExternalLoader) {
+                    const titleEl = this.shadowRoot.getElementById('nex-game-title-text');
+                    const bgBlur = this.shadowRoot.getElementById('nex-bg-blur');
+                    if (titleEl) titleEl.textContent = gameName;
+                    if (bgBlur && imgUrl) {
+                        bgBlur.style.backgroundImage = `url('${imgUrl}')`;
+                    }
+                }
+
                 await this._nexClearOldCache();
-                
-                // Stuur progress events naar externe loader
-                this._nexDispatchInternalEvent("progress", { progress: 5 });
+
+                // Progress 5%
+                if (this._nexUseExternalLoader) {
+                    this._nexDispatchInternalEvent("progress", { progress: 5 });
+                } else {
+                    this._updateBuiltInLoader(5, gameName);
+                }
 
                 this._nexGameData = GAME_DATA;
-                this._nexDispatchInternalEvent("progress", { progress: 20 });
+                // Progress 20%
+                if (this._nexUseExternalLoader) {
+                    this._nexDispatchInternalEvent("progress", { progress: 20 });
+                } else {
+                    this._updateBuiltInLoader(20, gameName);
+                }
 
                 const gameKeys = Object.keys(this._nexGameData);
                 const aliasFound = gameKeys.includes(this.alias);
-
                 if (!aliasFound) {
                     throw new Error(`Game alias "${this.alias}" not found in GAME_DATA`);
                 }
-
-                const gameEntry = this._nexGameData[this.alias];
-                const gameName = gameEntry.name || this.alias;
 
                 const activeCdnUrl = NEX_NODES[0];
 
@@ -1073,50 +1124,82 @@
                 const nrResult = await this._nexRaceFetch(`${this.alias}/nr.txt`, nrValidator);
                 const totalChunks = parseInt(nrResult.nexRawData.trim(), 10);
 
-                this._nexDispatchInternalEvent("progress", { progress: 30 });
+                // Progress 30%
+                if (this._nexUseExternalLoader) {
+                    this._nexDispatchInternalEvent("progress", { progress: 30 });
+                } else {
+                    this._updateBuiltInLoader(30, gameName);
+                }
 
                 let fullHtml = "";
 
                 for (let i = 1; i <= totalChunks; i++) {
                     const chunkUrl = `${activeCdnUrl}${this.alias}/src.part${i}.txt`;
-                    
                     if (this._nexAbortController) {
                         this._nexAbortController.abort();
                     }
                     this._nexAbortController = new AbortController();
 
-                    const response = await this._nexFetchWithCache(chunkUrl, { 
-                        signal: this._nexAbortController.signal 
+                    const response = await this._nexFetchWithCache(chunkUrl, {
+                        signal: this._nexAbortController.signal
                     });
-                    
                     if (!response.ok) throw new Error(`Chunk ${i} fetch failed`);
 
                     const encryptedBytes = new Uint8Array(await response.arrayBuffer());
                     const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
-                    
                     const chunkText = new TextDecoder("utf-8").decode(decryptedBytes);
                     fullHtml += chunkText;
 
                     const progress = 30 + ((i / totalChunks) * 65);
-                    this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
+                    const roundedProgress = Math.min(progress, 95);
+                    if (this._nexUseExternalLoader) {
+                        this._nexDispatchInternalEvent("progress", { progress: roundedProgress });
+                    } else {
+                        this._updateBuiltInLoader(roundedProgress, gameName);
+                    }
                 }
 
                 this._nexHtmlPayload = fullHtml;
 
-                this._nexDispatchInternalEvent("progress", { progress: 100 });
-                this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
-
-                if (this._nexExecutionPending) {
+                // Progress 100%
+                if (this._nexUseExternalLoader) {
+                    this._nexDispatchInternalEvent("progress", { progress: 100 });
+                    this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
+                } else {
+                    this._updateBuiltInLoader(100, gameName);
+                    // Verberg loader na korte vertraging en start game
+                    const loader = this.shadowRoot.getElementById('nex-loader');
+                    if (loader) {
+                        setTimeout(() => {
+                            loader.classList.add('hidden');
+                        }, 400);
+                    }
+                    // Start direct (zonder te wachten op externe start)
                     this.start();
+                }
+
+                if (this._nexExecutionPending && !this._nexUseExternalLoader) {
+                    // start wordt al aangeroepen hierboven, maar voor de zekerheid
                 }
 
             } catch (fetchError) {
                 if (fetchError.name !== "AbortError") {
                     console.error("[NEX] Load error:", fetchError);
-                    this._nexDispatchInternalEvent("error", {
-                        message: fetchError.message || "Failed to load game",
-                        alias: this.alias
-                    });
+                    if (this._nexUseExternalLoader) {
+                        this._nexDispatchInternalEvent("error", {
+                            message: fetchError.message || "Failed to load game",
+                            alias: this.alias
+                        });
+                    } else {
+                        // Toon fout in built-in loader
+                        const errorMsg = this.shadowRoot.getElementById('nex-error-msg');
+                        const title = this.shadowRoot.getElementById('nex-game-title-text');
+                        if (errorMsg) {
+                            errorMsg.style.display = 'block';
+                            errorMsg.textContent = fetchError.message || 'Kan game niet laden.';
+                        }
+                        if (title) title.textContent = 'Fout';
+                    }
                 }
             }
         }
