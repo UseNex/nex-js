@@ -692,7 +692,6 @@
     function getGameMetadata(alias) {
         const game = GAME_DATA[alias];
         if (!game) return null;
-        
         return {
             alias: alias,
             name: game.name || alias,
@@ -799,118 +798,137 @@
         }
 
         _nexSetupBaseStorage() {
-            // COMPLEET LAADSCHERM met alle styling
-            this.shadowRoot.innerHTML = `
-                <style>
-                    :host {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        background: #0a0a0f;
-                        position: relative;
-                        font-family: system-ui, -apple-system, sans-serif;
-                    }
-                    .nex-loader {
-                        position: absolute;
-                        inset: 0;
-                        z-index: 100;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        background: #0a0a0f;
-                        overflow: hidden;
-                        transition: opacity 0.5s ease;
-                    }
-                    .nex-loader.hidden {
-                        opacity: 0;
-                        pointer-events: none;
-                    }
-                    .nex-bg-blur {
-                        position: absolute;
-                        inset: -20px;
-                        background-size: cover;
-                        background-position: center;
-                        filter: blur(10px) brightness(0.35);
-                        transform: scale(1.1);
-                        z-index: 1;
-                    }
-                    .nex-loader-content {
-                        position: relative;
-                        z-index: 2;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        gap: 20px;
-                    }
-                    .nex-circular-progress {
-                        position: relative;
-                        width: 120px;
-                        height: 120px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                    .nex-circular-progress svg {
-                        width: 100%;
-                        height: 100%;
-                        transform: rotate(-90deg);
-                    }
-                    .nex-circular-progress circle {
-                        fill: none;
-                        stroke-width: 8;
-                        stroke-linecap: round;
-                    }
-                    .nex-track {
-                        stroke: rgba(255, 255, 255, 0.1);
-                    }
-                    .nex-fill {
-                        stroke: #ffffff;
-                        stroke-dasharray: 314;
-                        stroke-dashoffset: 314;
-                        transition: stroke-dashoffset 0.1s ease;
-                    }
-                    .nex-percentage {
-                        position: absolute;
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                        color: #fff;
-                    }
-                    .nex-game-title {
-                        font-size: 1.2rem;
-                        font-weight: 600;
-                        color: #a1a1aa;
-                        letter-spacing: 1px;
-                        text-transform: uppercase;
-                    }
-                    .nex-error-msg {
-                        color: #e11d48;
-                        font-size: 0.9rem;
-                        display: none;
-                        margin-top: 10px;
-                    }
-                    iframe {
-                        width: 100%;
-                        height: 100%;
-                        border: 0;
-                        display: block;
-                    }
-                </style>
-                <div class="nex-loader" id="nex-loader">
-                    <div class="nex-bg-blur" id="nex-bg-blur"></div>
-                    <div class="nex-loader-content">
-                        <div class="nex-circular-progress">
-                            <svg width="120" height="120">
-                                <circle cx="60" cy="60" r="50" class="nex-track"></circle>
-                                <circle cx="60" cy="60" r="50" class="nex-fill" id="nex-progress-circle"></circle>
-                            </svg>
-                            <div class="nex-percentage" id="nex-percentage-text">0%</div>
+            if (this._nexUseExternalLoader) {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: #0a0a0f;
+                            position: relative;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                            display: block;
+                        }
+                    </style>
+                `;
+            } else {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background: #0a0a0f;
+                            position: relative;
+                            font-family: system-ui, -apple-system, sans-serif;
+                        }
+                        #nex-loader {
+                            position: absolute;
+                            inset: 0;
+                            z-index: 100;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            background: #0a0a0f;
+                            overflow: hidden;
+                            transition: opacity 0.5s ease;
+                        }
+                        #nex-loader.hidden {
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+                        .nex-bg-blur {
+                            position: absolute;
+                            inset: -20px;
+                            background-size: cover;
+                            background-position: center;
+                            filter: blur(10px) brightness(0.35);
+                            transform: scale(1.1);
+                            z-index: 1;
+                        }
+                        .nex-loader-content {
+                            position: relative;
+                            z-index: 2;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 20px;
+                        }
+                        .nex-circular-progress {
+                            position: relative;
+                            width: 120px;
+                            height: 120px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        .nex-circular-progress svg {
+                            width: 100%;
+                            height: 100%;
+                            transform: rotate(-90deg);
+                        }
+                        .nex-circular-progress circle {
+                            fill: none;
+                            stroke-width: 8;
+                            stroke-linecap: round;
+                        }
+                        .nex-track {
+                            stroke: rgba(255, 255, 255, 0.1);
+                        }
+                        .nex-fill {
+                            stroke: #ffffff;
+                            stroke-dasharray: 314;
+                            stroke-dashoffset: 314;
+                            transition: stroke-dashoffset 0.1s ease;
+                        }
+                        .nex-percentage {
+                            position: absolute;
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #fff;
+                        }
+                        .nex-game-title {
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            color: #a1a1aa;
+                            letter-spacing: 1px;
+                            text-transform: uppercase;
+                        }
+                        .nex-error-msg {
+                            color: #e11d48;
+                            font-size: 0.9rem;
+                            display: none;
+                            margin-top: 10px;
+                        }
+                        iframe {
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                            display: block;
+                        }
+                    </style>
+                    <div id="nex-loader">
+                        <div class="nex-bg-blur" id="nex-bg-blur"></div>
+                        <div class="nex-loader-content">
+                            <div class="nex-circular-progress">
+                                <svg width="120" height="120">
+                                    <circle cx="60" cy="60" r="50" class="nex-track"></circle>
+                                    <circle cx="60" cy="60" r="50" class="nex-fill" id="nex-progress-circle"></circle>
+                                </svg>
+                                <div class="nex-percentage" id="nex-percentage-text">0%</div>
+                            </div>
+                            <div class="nex-game-title" id="nex-game-title-text">Laden...</div>
+                            <div class="nex-error-msg" id="nex-error-msg">Kan game niet laden.</div>
                         </div>
-                        <div class="nex-game-title" id="nex-game-title-text">Laden...</div>
-                        <div class="nex-error-msg" id="nex-error-msg">Kan game niet laden.</div>
                     </div>
-                </div>
-            `;
+                `;
+            }
 
             if (!this.gid) return;
 
@@ -1015,7 +1033,38 @@
             }
         }
 
-        async _nexClearOldCache() {
+        _updateBuiltInLoader(progress, text, error) {
+            const loader = this.shadowRoot.getElementById('nex-loader');
+            const circle = this.shadowRoot.getElementById('nex-progress-circle');
+            const percentage = this.shadowRoot.getElementById('nex-percentage-text');
+            const title = this.shadowRoot.getElementById('nex-game-title-text');
+            const errorMsg = this.shadowRoot.getElementById('nex-error-msg');
+            const circumference = 314;
+
+            if (error) {
+                if (errorMsg) {
+                    errorMsg.style.display = 'block';
+                    errorMsg.textContent = error;
+                }
+                if (title) title.textContent = 'Error';
+                return;
+            }
+
+            if (progress !== undefined) {
+                const p = Math.round(progress);
+                if (percentage) percentage.textContent = p + '%';
+                if (circle) {
+                    const offset = circumference - (p / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+                }
+            }
+
+            if (text !== undefined && title) {
+                title.textContent = text;
+            }
+        }
+
+        async _clearOldCache() {
             try {
                 const cacheKeys = await caches.keys();
                 for (const key of cacheKeys) {
@@ -1029,7 +1078,7 @@
             }
         }
 
-        async _nexFetchWithCache(nexFullUrl, nexOptions = {}) {
+        async _fetchWithCache(nexFullUrl, nexOptions = {}) {
             try {
                 const nexCache = await caches.open(NEX_CACHE_STORE);
                 const nexCachedResponse = await nexCache.match(nexFullUrl);
@@ -1058,7 +1107,7 @@
             }
         }
 
-        async _nexRaceFetch(nexPath, nexValidatorFn) {
+        async _raceFetch(nexPath, nexValidatorFn) {
             let nexCache = null;
             try {
                 nexCache = await caches.open(NEX_CACHE_STORE);
@@ -1137,59 +1186,41 @@
         async nexInitializeFetchPipeline() {
             if (!this._nexComponentValid) return;
 
-            const loader = this.shadowRoot.getElementById('nex-loader');
-            const progressCircle = this.shadowRoot.getElementById('nex-progress-circle');
-            const percentageText = this.shadowRoot.getElementById('nex-percentage-text');
-            const gameTitleText = this.shadowRoot.getElementById('nex-game-title-text');
-            const bgBlur = this.shadowRoot.getElementById('nex-bg-blur');
-            const errorMsg = this.shadowRoot.getElementById('nex-error-msg');
-            const circumference = 314;
-
             try {
-                // Haal game metadata op voor de titel en achtergrond
                 const gameInfo = getGameMetadata(this.alias);
-                if (gameInfo) {
-                    gameTitleText.textContent = gameInfo.name;
-                    if (gameInfo.img) {
-                        bgBlur.style.backgroundImage = `url('${gameInfo.img}')`;
+                const gameName = gameInfo ? gameInfo.name : this.alias;
+                const imgUrl = gameInfo ? gameInfo.img : null;
+
+                if (!this._nexUseExternalLoader) {
+                    const titleEl = this.shadowRoot.getElementById('nex-game-title-text');
+                    const bgBlur = this.shadowRoot.getElementById('nex-bg-blur');
+                    if (titleEl) titleEl.textContent = gameName;
+                    if (bgBlur && imgUrl) {
+                        bgBlur.style.backgroundImage = `url('${imgUrl}')`;
                     }
-                } else {
-                    gameTitleText.textContent = this.alias;
                 }
 
-                await this._nexClearOldCache();
-                
-                if (!this._nexUseExternalLoader) {
-                    if (percentageText) percentageText.textContent = '5%';
-                    if (progressCircle) {
-                        const offset = circumference - (5 / 100) * circumference;
-                        progressCircle.style.strokeDashoffset = offset;
-                    }
-                } else {
+                await this._clearOldCache();
+
+                if (this._nexUseExternalLoader) {
                     this._nexDispatchInternalEvent("progress", { progress: 5 });
+                } else {
+                    this._updateBuiltInLoader(5, gameName);
                 }
 
                 this._nexGameData = GAME_DATA;
 
-                if (!this._nexUseExternalLoader) {
-                    if (percentageText) percentageText.textContent = '20%';
-                    if (progressCircle) {
-                        const offset = circumference - (20 / 100) * circumference;
-                        progressCircle.style.strokeDashoffset = offset;
-                    }
-                } else {
+                if (this._nexUseExternalLoader) {
                     this._nexDispatchInternalEvent("progress", { progress: 20 });
+                } else {
+                    this._updateBuiltInLoader(20, gameName);
                 }
 
                 const gameKeys = Object.keys(this._nexGameData);
                 const aliasFound = gameKeys.includes(this.alias);
-
                 if (!aliasFound) {
                     throw new Error(`Game alias "${this.alias}" not found in GAME_DATA`);
                 }
-
-                const gameEntry = this._nexGameData[this.alias];
-                const gameName = gameEntry.name || this.alias;
 
                 const activeCdnUrl = NEX_NODES[0];
 
@@ -1199,87 +1230,79 @@
                 };
                 nrValidator.type = "text";
 
-                const nrResult = await this._nexRaceFetch(`${this.alias}/nr.txt`, nrValidator);
+                const nrResult = await this._raceFetch(`${this.alias}/nr.txt`, nrValidator);
                 const totalChunks = parseInt(nrResult.nexRawData.trim(), 10);
 
-                if (!this._nexUseExternalLoader) {
-                    if (percentageText) percentageText.textContent = '30%';
-                    if (progressCircle) {
-                        const offset = circumference - (30 / 100) * circumference;
-                        progressCircle.style.strokeDashoffset = offset;
-                    }
-                } else {
+                if (this._nexUseExternalLoader) {
                     this._nexDispatchInternalEvent("progress", { progress: 30 });
+                } else {
+                    this._updateBuiltInLoader(30, gameName);
                 }
 
                 let fullHtml = "";
 
                 for (let i = 1; i <= totalChunks; i++) {
                     const chunkUrl = `${activeCdnUrl}${this.alias}/src.part${i}.txt`;
-                    
                     if (this._nexAbortController) {
                         this._nexAbortController.abort();
                     }
                     this._nexAbortController = new AbortController();
 
-                    const response = await this._nexFetchWithCache(chunkUrl, { 
-                        signal: this._nexAbortController.signal 
+                    const response = await this._fetchWithCache(chunkUrl, {
+                        signal: this._nexAbortController.signal
                     });
-                    
                     if (!response.ok) throw new Error(`Chunk ${i} fetch failed`);
 
                     const encryptedBytes = new Uint8Array(await response.arrayBuffer());
                     const decryptedBytes = xorDecrypt(encryptedBytes, XOR_KEY_BASE64);
-                    
                     const chunkText = new TextDecoder("utf-8").decode(decryptedBytes);
                     fullHtml += chunkText;
 
                     const progress = 30 + ((i / totalChunks) * 65);
-                    const roundedProgress = Math.round(Math.min(progress, 95));
-                    
-                    if (!this._nexUseExternalLoader) {
-                        if (percentageText) percentageText.textContent = `${roundedProgress}%`;
-                        if (progressCircle) {
-                            const offset = circumference - (roundedProgress / 100) * circumference;
-                            progressCircle.style.strokeDashoffset = offset;
-                        }
-                    } else {
+                    const roundedProgress = Math.min(progress, 95);
+                    if (this._nexUseExternalLoader) {
                         this._nexDispatchInternalEvent("progress", { progress: roundedProgress });
+                    } else {
+                        this._updateBuiltInLoader(roundedProgress, gameName);
                     }
                 }
 
                 this._nexHtmlPayload = fullHtml;
 
-                // DIRECT STARTEN na laden
-                if (!this._nexUseExternalLoader) {
-                    if (percentageText) percentageText.textContent = '100%';
-                    if (progressCircle) {
-                        progressCircle.style.strokeDashoffset = 0;
-                    }
-                    // Verberg de loader
-                    if (loader) {
-                        loader.classList.add('hidden');
-                    }
-                    // START DIRECT
-                    this.start();
-                } else {
+                if (this._nexUseExternalLoader) {
                     this._nexDispatchInternalEvent("progress", { progress: 100 });
                     this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
+                } else {
+                    this._updateBuiltInLoader(100, gameName);
+                    const loader = this.shadowRoot.getElementById('nex-loader');
+                    if (loader) {
+                        setTimeout(() => {
+                            loader.classList.add('hidden');
+                        }, 400);
+                    }
+                    this.start();
+                }
+
+                if (this._nexExecutionPending && !this._nexUseExternalLoader) {
+                    // handled above
                 }
 
             } catch (fetchError) {
                 if (fetchError.name !== "AbortError") {
                     console.error("[NEX] Load error:", fetchError);
-                    if (!this._nexUseExternalLoader) {
-                        if (errorMsg) {
-                            errorMsg.style.display = 'block';
-                            errorMsg.textContent = `Fout: ${fetchError.message || 'Kan game niet laden.'}`;
-                        }
-                    } else {
+                    if (this._nexUseExternalLoader) {
                         this._nexDispatchInternalEvent("error", {
                             message: fetchError.message || "Failed to load game",
                             alias: this.alias
                         });
+                    } else {
+                        const errorMsg = this.shadowRoot.getElementById('nex-error-msg');
+                        const title = this.shadowRoot.getElementById('nex-game-title-text');
+                        if (errorMsg) {
+                            errorMsg.style.display = 'block';
+                            errorMsg.textContent = fetchError.message || 'Failed to load game.';
+                        }
+                        if (title) title.textContent = 'Error';
                     }
                 }
             }
