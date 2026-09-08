@@ -799,7 +799,7 @@
         }
 
         _nexSetupBaseStorage() {
-            // Ingebouwd laadscherm met stijl
+            // EXACT laadscherm uit de HTML (met witte ring)
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
@@ -812,41 +812,83 @@
                     .nex-loader {
                         position: absolute;
                         inset: 0;
-                        z-index: 10;
+                        z-index: 100;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
                         background: #0a0a0f;
+                        overflow: hidden;
                         transition: opacity 0.5s ease;
                     }
                     .nex-loader.hidden {
                         opacity: 0;
                         pointer-events: none;
                     }
-                    .nex-spinner {
-                        width: 50px;
-                        height: 50px;
-                        border: 4px solid rgba(255,255,255,0.1);
-                        border-top-color: #6366f1;
-                        border-radius: 50%;
-                        animation: nex-spin 0.8s linear infinite;
+                    .nex-bg-blur {
+                        position: absolute;
+                        inset: -20px;
+                        background-size: cover;
+                        background-position: center;
+                        filter: blur(10px) brightness(0.35);
+                        transform: scale(1.1);
+                        z-index: 1;
                     }
-                    @keyframes nex-spin {
-                        to { transform: rotate(360deg); }
+                    .nex-loader-content {
+                        position: relative;
+                        z-index: 2;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 20px;
                     }
-                    .nex-loader-text {
-                        margin-top: 16px;
-                        font-size: 14px;
-                        color: #888;
+                    .nex-circular-progress {
+                        position: relative;
+                        width: 120px;
+                        height: 120px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .nex-circular-progress svg {
+                        width: 100%;
+                        height: 100%;
+                        transform: rotate(-90deg);
+                    }
+                    .nex-circular-progress circle {
+                        fill: none;
+                        stroke-width: 8;
+                        stroke-linecap: round;
+                    }
+                    .nex-track {
+                        stroke: rgba(255, 255, 255, 0.1);
+                    }
+                    .nex-fill {
+                        stroke: #ffffff;
+                        stroke-dasharray: 314;
+                        stroke-dashoffset: 314;
+                        transition: stroke-dashoffset 0.1s ease;
+                    }
+                    .nex-percentage {
+                        position: absolute;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: #fff;
+                    }
+                    .nex-game-title {
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        color: #a1a1aa;
                         letter-spacing: 1px;
-                        font-family: system-ui, sans-serif;
+                        text-transform: uppercase;
+                        font-family: system-ui, -apple-system, sans-serif;
                     }
-                    .nex-loader-progress {
-                        margin-top: 8px;
-                        font-size: 12px;
-                        color: #555;
-                        font-family: system-ui, sans-serif;
+                    .nex-error-msg {
+                        color: #e11d48;
+                        font-size: 0.9rem;
+                        display: none;
+                        margin-top: 10px;
+                        font-family: system-ui, -apple-system, sans-serif;
                     }
                     iframe {
                         width: 100%;
@@ -856,9 +898,18 @@
                     }
                 </style>
                 <div class="nex-loader" id="nex-loader">
-                    <div class="nex-spinner"></div>
-                    <div class="nex-loader-text" id="nex-loader-text">Laden...</div>
-                    <div class="nex-loader-progress" id="nex-loader-progress">0%</div>
+                    <div class="nex-bg-blur" id="nex-bg-blur"></div>
+                    <div class="nex-loader-content">
+                        <div class="nex-circular-progress">
+                            <svg width="120" height="120">
+                                <circle cx="60" cy="60" r="50" class="nex-track"></circle>
+                                <circle cx="60" cy="60" r="50" class="nex-fill" id="nex-progress-circle"></circle>
+                            </svg>
+                            <div class="nex-percentage" id="nex-percentage-text">0%</div>
+                        </div>
+                        <div class="nex-game-title" id="nex-game-title-text">Laden...</div>
+                        <div class="nex-error-msg" id="nex-error-msg">Kan game niet laden.</div>
+                    </div>
                 </div>
             `;
 
@@ -1088,18 +1139,34 @@
             if (!this._nexComponentValid) return;
 
             const loader = this.shadowRoot.getElementById('nex-loader');
-            const loaderText = this.shadowRoot.getElementById('nex-loader-text');
-            const loaderProgress = this.shadowRoot.getElementById('nex-loader-progress');
+            const progressCircle = this.shadowRoot.getElementById('nex-progress-circle');
+            const percentageText = this.shadowRoot.getElementById('nex-percentage-text');
+            const gameTitleText = this.shadowRoot.getElementById('nex-game-title-text');
+            const bgBlur = this.shadowRoot.getElementById('nex-bg-blur');
+            const errorMsg = this.shadowRoot.getElementById('nex-error-msg');
+            const circumference = 314;
 
             try {
+                // Haal game metadata op voor de titel en achtergrond
+                const gameInfo = getGameMetadata(this.alias);
+                if (gameInfo) {
+                    gameTitleText.textContent = gameInfo.name;
+                    if (gameInfo.img) {
+                        bgBlur.style.backgroundImage = `url('${gameInfo.img}')`;
+                    }
+                } else {
+                    gameTitleText.textContent = this.alias;
+                }
+
                 await this._nexClearOldCache();
                 
-                // Alleen progress events sturen als er externe listeners zijn
-                // en de loader updaten als we geen externe loader gebruiken
                 if (!this._nexUseExternalLoader) {
-                    // Update de ingebouwde loader
-                    if (loaderText) loaderText.textContent = 'Voorbereiden...';
-                    if (loaderProgress) loaderProgress.textContent = '5%';
+                    // Update percentage
+                    if (percentageText) percentageText.textContent = '5%';
+                    if (progressCircle) {
+                        const offset = circumference - (5 / 100) * circumference;
+                        progressCircle.style.strokeDashoffset = offset;
+                    }
                 } else {
                     this._nexDispatchInternalEvent("progress", { progress: 5 });
                 }
@@ -1107,8 +1174,11 @@
                 this._nexGameData = GAME_DATA;
 
                 if (!this._nexUseExternalLoader) {
-                    if (loaderText) loaderText.textContent = 'Game laden...';
-                    if (loaderProgress) loaderProgress.textContent = '20%';
+                    if (percentageText) percentageText.textContent = '20%';
+                    if (progressCircle) {
+                        const offset = circumference - (20 / 100) * circumference;
+                        progressCircle.style.strokeDashoffset = offset;
+                    }
                 } else {
                     this._nexDispatchInternalEvent("progress", { progress: 20 });
                 }
@@ -1135,8 +1205,11 @@
                 const totalChunks = parseInt(nrResult.nexRawData.trim(), 10);
 
                 if (!this._nexUseExternalLoader) {
-                    if (loaderText) loaderText.textContent = `Laden ${gameName}...`;
-                    if (loaderProgress) loaderProgress.textContent = '30%';
+                    if (percentageText) percentageText.textContent = '30%';
+                    if (progressCircle) {
+                        const offset = circumference - (30 / 100) * circumference;
+                        progressCircle.style.strokeDashoffset = offset;
+                    }
                 } else {
                     this._nexDispatchInternalEvent("progress", { progress: 30 });
                 }
@@ -1164,20 +1237,32 @@
                     fullHtml += chunkText;
 
                     const progress = 30 + ((i / totalChunks) * 65);
+                    const roundedProgress = Math.round(Math.min(progress, 95));
+                    
                     if (!this._nexUseExternalLoader) {
-                        if (loaderProgress) loaderProgress.textContent = `${Math.round(Math.min(progress, 95))}%`;
+                        if (percentageText) percentageText.textContent = `${roundedProgress}%`;
+                        if (progressCircle) {
+                            const offset = circumference - (roundedProgress / 100) * circumference;
+                            progressCircle.style.strokeDashoffset = offset;
+                        }
                     } else {
-                        this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
+                        this._nexDispatchInternalEvent("progress", { progress: roundedProgress });
                     }
                 }
 
                 this._nexHtmlPayload = fullHtml;
 
                 if (!this._nexUseExternalLoader) {
-                    if (loaderProgress) loaderProgress.textContent = '100%';
-                    if (loaderText) loaderText.textContent = 'Klaar!';
-                    // Verberg de loader
-                    if (loader) loader.classList.add('hidden');
+                    if (percentageText) percentageText.textContent = '100%';
+                    if (progressCircle) {
+                        progressCircle.style.strokeDashoffset = 0;
+                    }
+                    // Verberg de loader na een korte vertraging
+                    if (loader) {
+                        setTimeout(() => {
+                            loader.classList.add('hidden');
+                        }, 300);
+                    }
                 } else {
                     this._nexDispatchInternalEvent("progress", { progress: 100 });
                     this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
@@ -1191,8 +1276,10 @@
                 if (fetchError.name !== "AbortError") {
                     console.error("[NEX] Load error:", fetchError);
                     if (!this._nexUseExternalLoader) {
-                        if (loaderText) loaderText.textContent = 'Fout bij laden';
-                        if (loaderProgress) loaderProgress.textContent = '❌';
+                        if (errorMsg) {
+                            errorMsg.style.display = 'block';
+                            errorMsg.textContent = `Fout: ${fetchError.message || 'Kan game niet laden.'}`;
+                        }
                     } else {
                         this._nexDispatchInternalEvent("error", {
                             message: fetchError.message || "Failed to load game",
