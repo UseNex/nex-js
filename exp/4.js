@@ -799,7 +799,7 @@
         }
 
         _nexSetupBaseStorage() {
-            // EXACT laadscherm uit de HTML (met witte ring)
+            // COMPLEET LAADSCHERM met alle styling
             this.shadowRoot.innerHTML = `
                 <style>
                     :host {
@@ -808,6 +808,7 @@
                         height: 100%;
                         background: #0a0a0f;
                         position: relative;
+                        font-family: system-ui, -apple-system, sans-serif;
                     }
                     .nex-loader {
                         position: absolute;
@@ -881,14 +882,12 @@
                         color: #a1a1aa;
                         letter-spacing: 1px;
                         text-transform: uppercase;
-                        font-family: system-ui, -apple-system, sans-serif;
                     }
                     .nex-error-msg {
                         color: #e11d48;
                         font-size: 0.9rem;
                         display: none;
                         margin-top: 10px;
-                        font-family: system-ui, -apple-system, sans-serif;
                     }
                     iframe {
                         width: 100%;
@@ -1161,7 +1160,6 @@
                 await this._nexClearOldCache();
                 
                 if (!this._nexUseExternalLoader) {
-                    // Update percentage
                     if (percentageText) percentageText.textContent = '5%';
                     if (progressCircle) {
                         const offset = circumference - (5 / 100) * circumference;
@@ -1252,24 +1250,21 @@
 
                 this._nexHtmlPayload = fullHtml;
 
+                // DIRECT STARTEN na laden
                 if (!this._nexUseExternalLoader) {
                     if (percentageText) percentageText.textContent = '100%';
                     if (progressCircle) {
                         progressCircle.style.strokeDashoffset = 0;
                     }
-                    // Verberg de loader na een korte vertraging
+                    // Verberg de loader
                     if (loader) {
-                        setTimeout(() => {
-                            loader.classList.add('hidden');
-                        }, 300);
+                        loader.classList.add('hidden');
                     }
+                    // START DIRECT
+                    this.start();
                 } else {
                     this._nexDispatchInternalEvent("progress", { progress: 100 });
                     this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
-                }
-
-                if (this._nexExecutionPending) {
-                    this.start();
                 }
 
             } catch (fetchError) {
