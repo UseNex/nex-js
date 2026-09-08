@@ -799,7 +799,68 @@
         }
 
         _nexSetupBaseStorage() {
-            this.shadowRoot.innerHTML = `<style>:host{display:block;width:100%;height:100%;background:#000;position:relative}iframe{width:100%;height:100%;border:0;display:block}</style>`;
+            // Ingebouwd laadscherm met stijl
+            this.shadowRoot.innerHTML = `
+                <style>
+                    :host {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        background: #0a0a0f;
+                        position: relative;
+                    }
+                    .nex-loader {
+                        position: absolute;
+                        inset: 0;
+                        z-index: 10;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background: #0a0a0f;
+                        transition: opacity 0.5s ease;
+                    }
+                    .nex-loader.hidden {
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+                    .nex-spinner {
+                        width: 50px;
+                        height: 50px;
+                        border: 4px solid rgba(255,255,255,0.1);
+                        border-top-color: #6366f1;
+                        border-radius: 50%;
+                        animation: nex-spin 0.8s linear infinite;
+                    }
+                    @keyframes nex-spin {
+                        to { transform: rotate(360deg); }
+                    }
+                    .nex-loader-text {
+                        margin-top: 16px;
+                        font-size: 14px;
+                        color: #888;
+                        letter-spacing: 1px;
+                        font-family: system-ui, sans-serif;
+                    }
+                    .nex-loader-progress {
+                        margin-top: 8px;
+                        font-size: 12px;
+                        color: #555;
+                        font-family: system-ui, sans-serif;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: 0;
+                        display: block;
+                    }
+                </style>
+                <div class="nex-loader" id="nex-loader">
+                    <div class="nex-spinner"></div>
+                    <div class="nex-loader-text" id="nex-loader-text">Laden...</div>
+                    <div class="nex-loader-progress" id="nex-loader-progress">0%</div>
+                </div>
+            `;
 
             if (!this.gid) return;
 
@@ -1026,16 +1087,29 @@
         async nexInitializeFetchPipeline() {
             if (!this._nexComponentValid) return;
 
+            const loader = this.shadowRoot.getElementById('nex-loader');
+            const loaderText = this.shadowRoot.getElementById('nex-loader-text');
+            const loaderProgress = this.shadowRoot.getElementById('nex-loader-progress');
+
             try {
                 await this._nexClearOldCache();
                 
-                if (this._nexUseExternalLoader) {
+                // Alleen progress events sturen als er externe listeners zijn
+                // en de loader updaten als we geen externe loader gebruiken
+                if (!this._nexUseExternalLoader) {
+                    // Update de ingebouwde loader
+                    if (loaderText) loaderText.textContent = 'Voorbereiden...';
+                    if (loaderProgress) loaderProgress.textContent = '5%';
+                } else {
                     this._nexDispatchInternalEvent("progress", { progress: 5 });
                 }
 
                 this._nexGameData = GAME_DATA;
 
-                if (this._nexUseExternalLoader) {
+                if (!this._nexUseExternalLoader) {
+                    if (loaderText) loaderText.textContent = 'Game laden...';
+                    if (loaderProgress) loaderProgress.textContent = '20%';
+                } else {
                     this._nexDispatchInternalEvent("progress", { progress: 20 });
                 }
 
@@ -1060,7 +1134,10 @@
                 const nrResult = await this._nexRaceFetch(`${this.alias}/nr.txt`, nrValidator);
                 const totalChunks = parseInt(nrResult.nexRawData.trim(), 10);
 
-                if (this._nexUseExternalLoader) {
+                if (!this._nexUseExternalLoader) {
+                    if (loaderText) loaderText.textContent = `Laden ${gameName}...`;
+                    if (loaderProgress) loaderProgress.textContent = '30%';
+                } else {
                     this._nexDispatchInternalEvent("progress", { progress: 30 });
                 }
 
@@ -1086,18 +1163,23 @@
                     const chunkText = new TextDecoder("utf-8").decode(decryptedBytes);
                     fullHtml += chunkText;
 
-                    if (this._nexUseExternalLoader) {
-                        const progress = 30 + ((i / totalChunks) * 65);
+                    const progress = 30 + ((i / totalChunks) * 65);
+                    if (!this._nexUseExternalLoader) {
+                        if (loaderProgress) loaderProgress.textContent = `${Math.round(Math.min(progress, 95))}%`;
+                    } else {
                         this._nexDispatchInternalEvent("progress", { progress: Math.min(progress, 95) });
                     }
                 }
 
                 this._nexHtmlPayload = fullHtml;
 
-                if (this._nexUseExternalLoader) {
-                    this._nexDispatchInternalEvent("progress", { progress: 100 });
-                    this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
+                if (!this._nexUseExternalLoader) {
+                    if (loaderProgress) loaderProgress.textContent = '100%';
+                    if (loaderText) loaderText.textContent = 'Klaar!';
+                    // Verberg de loader
+                    if (loader) loader.classList.add('hidden');
                 } else {
+                    this._nexDispatchInternalEvent("progress", { progress: 100 });
                     this._nexDispatchInternalEvent("ready", { gameName, alias: this.alias });
                 }
 
@@ -1108,10 +1190,15 @@
             } catch (fetchError) {
                 if (fetchError.name !== "AbortError") {
                     console.error("[NEX] Load error:", fetchError);
-                    this._nexDispatchInternalEvent("error", {
-                        message: fetchError.message || "Failed to load game",
-                        alias: this.alias
-                    });
+                    if (!this._nexUseExternalLoader) {
+                        if (loaderText) loaderText.textContent = 'Fout bij laden';
+                        if (loaderProgress) loaderProgress.textContent = '❌';
+                    } else {
+                        this._nexDispatchInternalEvent("error", {
+                            message: fetchError.message || "Failed to load game",
+                            alias: this.alias
+                        });
+                    }
                 }
             }
         }
