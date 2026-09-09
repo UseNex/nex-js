@@ -923,8 +923,8 @@
                                 </svg>
                                 <div class="nex-percentage" id="nex-percentage-text">0%</div>
                             </div>
-                            <div class="nex-game-title" id="nex-game-title-text">Laden...</div>
-                            <div class="nex-error-msg" id="nex-error-msg">Kan game niet laden.</div>
+                            <div class="nex-game-title" id="nex-game-title-text">Loading...</div>
+                            <div class="nex-error-msg" id="nex-error-msg">Can't load game.</div>
                         </div>
                     </div>
                 `;
