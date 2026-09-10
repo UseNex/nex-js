@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fdb749a7dc8814949b2e5fc34aafdef70cc170f0/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fdb749a7dc8814949b2e5fc34aafdef70cc170f0/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fdb749a7dc8814949b2e5fc34aafdef70cc170f0/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fdb749a7dc8814949b2e5fc34aafdef70cc170f0/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fdb749a7dc8814949b2e5fc34aafdef70cc170f0/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fdb749a7dc8814949b2e5fc34aafdef70cc170f0/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/"
     ];
 
     const GAME_DATA = {
@@ -680,6 +680,11 @@
     "name": "Rubble Trouble: New York",
     "category": "Puzzle",
     "description": "Clear buildings, use limited tools, and earn target cash to win!"
+  },
+  "google-baseball": {
+    "name": "Google Baseball",
+    "category": "Sports",
+    "description": "Hit pitches and score runs in this baseball batting game."
   }
 };
 
