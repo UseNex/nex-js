@@ -713,5 +713,10 @@
     "name": "Hole.io",
     "category": "Action",
     "description": "Grow your hole by swallowing objects and compete to become the biggest."
+  },
+  "house-of-hazards": {
+    "name": "House of Hazards",
+    "category": "Skill",
+    "description": "Escape a house full of deadly hazards and avoid the traps."
   }
 }
