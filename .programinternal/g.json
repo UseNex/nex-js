@@ -723,5 +723,10 @@
     "name": "Hover Racer Drive",
     "category": "Skill",
     "description": "Pilot a hovercraft through futuristic tracks and beat your rivals!"
+  },
+  "idle-breakout": {
+    "name": "Idle Breakout",
+    "category": "Clicker",
+    "description": "Bounce a ball to smash bricks and earn points automatically."
   }
 }
