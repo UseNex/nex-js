@@ -698,5 +698,10 @@
     "name": "Helix Jump",
     "category": "Skill",
     "description": "Rotate helix platforms to guide your bouncing ball to the bottom."
+  },
+  "highway-traffic": {
+    "name": "Highway Traffic",
+    "category": "Driving",
+    "description": "Weave through highway traffic at high speed and dodge oncoming cars."
   }
 }
