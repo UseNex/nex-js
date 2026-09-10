@@ -663,5 +663,10 @@
     "name": "Gladihoppers",
     "category": "Skill",
     "description": "Use physics-based hopping and strategic weapon swings to defeat rival gladiators."
+  },
+  "rubble-trouble-new-york": {
+    "name": "Rubble Trouble: New York",
+    "category": "Puzzle",
+    "description": "Clear buildings, use limited tools, and earn target cash to win!"
   }
 }
