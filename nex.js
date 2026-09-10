@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/"
     ];
 
     const GAME_DATA = {
@@ -730,6 +730,11 @@
     "name": "House of Hazards",
     "category": "Skill",
     "description": "Escape a house full of deadly hazards and avoid the traps."
+  },
+  "hover-racer-drive": {
+    "name": "Hover Racer Drive",
+    "category": "Skill",
+    "description": "Pilot a hovercraft through futuristic tracks and beat your rivals!"
   }
 };
 
