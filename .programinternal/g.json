@@ -673,5 +673,10 @@
     "name": "Google Baseball",
     "category": "Sports",
     "description": "Hit pitches and score runs in this baseball batting game."
+  },
+  "google-dino": {
+    "name": "Google Dino",
+    "category": "Skill",
+    "description": "Play the classic dinosaur game and jump over obstacles to survive."
   }
 }
