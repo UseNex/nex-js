@@ -668,5 +668,10 @@
     "name": "Rubble Trouble: New York",
     "category": "Puzzle",
     "description": "Clear buildings, use limited tools, and earn target cash to win!"
+  },
+  "google-baseball": {
+    "name": "Google Baseball",
+    "category": "Sports",
+    "description": "Hit pitches and score runs in this baseball batting game."
   }
 }
