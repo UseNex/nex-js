@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/"
     ];
 
     const GAME_DATA = {
@@ -690,6 +690,11 @@
     "name": "Google Dino",
     "category": "Skill",
     "description": "Play the classic dinosaur game and jump over obstacles to survive."
+  },
+  "guess-their-answer": {
+    "name": "Guess Their Answer",
+    "category": "Puzzle",
+    "description": "Guess the most popular answers and outscore your opponents."
   }
 };
 
