@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@dd65cc7a11fa82f8864688348a743912ccb30ed5/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/"
     ];
 
     const GAME_DATA = {
@@ -735,6 +735,11 @@
     "name": "Hover Racer Drive",
     "category": "Skill",
     "description": "Pilot a hovercraft through futuristic tracks and beat your rivals!"
+  },
+  "idle-breakout": {
+    "name": "Idle Breakout",
+    "category": "Clicker",
+    "description": "Bounce a ball to smash bricks and earn points automatically."
   }
 };
 
