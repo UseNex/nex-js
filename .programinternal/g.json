@@ -718,5 +718,10 @@
     "name": "House of Hazards",
     "category": "Skill",
     "description": "Escape a house full of deadly hazards and avoid the traps."
+  },
+  "hover-racer-drive": {
+    "name": "Hover Racer Drive",
+    "category": "Skill",
+    "description": "Pilot a hovercraft through futuristic tracks and beat your rivals!"
   }
 }
