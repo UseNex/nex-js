@@ -683,5 +683,10 @@
     "name": "Guess Their Answer",
     "category": "Puzzle",
     "description": "Guess the most popular answers and outscore your opponents."
+  },
+  "hanger-2": {
+    "name": "Hanger 2",
+    "category": "Action",
+    "description": "Swing around on a rope and beat as many levels as possible!"
   }
 }
