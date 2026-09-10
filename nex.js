@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@be3a16916f2dca7a724a716d06923eba6c8fcd32/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@27ef96b26dad781b9daa5e873735f526b1e03fb5/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@27ef96b26dad781b9daa5e873735f526b1e03fb5/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@27ef96b26dad781b9daa5e873735f526b1e03fb5/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@27ef96b26dad781b9daa5e873735f526b1e03fb5/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@27ef96b26dad781b9daa5e873735f526b1e03fb5/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@27ef96b26dad781b9daa5e873735f526b1e03fb5/"
     ];
 
     const GAME_DATA = {
@@ -695,6 +695,11 @@
     "name": "Guess Their Answer",
     "category": "Puzzle",
     "description": "Guess the most popular answers and outscore your opponents."
+  },
+  "hanger-2": {
+    "name": "Hanger 2",
+    "category": "Action",
+    "description": "Swing around on a rope and beat as many levels as possible!"
   }
 };
 
