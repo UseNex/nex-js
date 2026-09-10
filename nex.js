@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/"
     ];
 
     const GAME_DATA = {
@@ -715,6 +715,11 @@
     "name": "Highway Traffic",
     "category": "Driving",
     "description": "Weave through highway traffic at high speed and dodge oncoming cars."
+  },
+  "hill-climb-racing-lite": {
+    "name": "Hill Climb Racing Lite",
+    "category": "Driving",
+    "description": "Drive your car over bumpy hills without flipping over or running out of fuel!"
   }
 };
 
