@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@98fb8418f74cf27db256738c40a5fe2a86a4337f/"
     ];
 
     const GAME_DATA = {
@@ -710,6 +710,11 @@
     "name": "Helix Jump",
     "category": "Skill",
     "description": "Rotate helix platforms to guide your bouncing ball to the bottom."
+  },
+  "highway-traffic": {
+    "name": "Highway Traffic",
+    "category": "Driving",
+    "description": "Weave through highway traffic at high speed and dodge oncoming cars."
   }
 };
 
