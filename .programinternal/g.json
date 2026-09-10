@@ -693,5 +693,10 @@
     "name": "Happy Wheels",
     "category": "Driving",
     "description": "Ride through deadly tracks and try to reach the end without dying!"
+  },
+  "helix-jump": {
+    "name": "Helix Jump",
+    "category": "Skill",
+    "description": "Rotate helix platforms to guide your bouncing ball to the bottom."
   }
 }
