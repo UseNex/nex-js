@@ -678,5 +678,10 @@
     "name": "Google Dino",
     "category": "Skill",
     "description": "Play the classic dinosaur game and jump over obstacles to survive."
+  },
+  "guess-their-answer": {
+    "name": "Guess Their Answer",
+    "category": "Puzzle",
+    "description": "Guess the most popular answers and outscore your opponents."
   }
 }
