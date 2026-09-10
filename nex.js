@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2bf4a6f10046bc55293a5f3ed7867da9802fc95b/"
     ];
 
     const GAME_DATA = {
@@ -725,6 +725,11 @@
     "name": "Hole.io",
     "category": "Action",
     "description": "Grow your hole by swallowing objects and compete to become the biggest."
+  },
+  "house-of-hazards": {
+    "name": "House of Hazards",
+    "category": "Skill",
+    "description": "Escape a house full of deadly hazards and avoid the traps."
   }
 };
 
