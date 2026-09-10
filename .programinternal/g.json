@@ -703,5 +703,10 @@
     "name": "Highway Traffic",
     "category": "Driving",
     "description": "Weave through highway traffic at high speed and dodge oncoming cars."
+  },
+  "hill-climb-racing-lite": {
+    "name": "Hill Climb Racing Lite",
+    "category": "Driving",
+    "description": "Drive your car over bumpy hills without flipping over or running out of fuel!"
   }
 }
