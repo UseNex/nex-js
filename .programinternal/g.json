@@ -688,5 +688,10 @@
     "name": "Hanger 2",
     "category": "Action",
     "description": "Swing around on a rope and beat as many levels as possible!"
+  },
+  "happy-wheels": {
+    "name": "Happy Wheels",
+    "category": "Driving",
+    "description": "Ride through deadly tracks and try to reach the end without dying!"
   }
 }
