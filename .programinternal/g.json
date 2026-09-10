@@ -708,5 +708,10 @@
     "name": "Hill Climb Racing Lite",
     "category": "Driving",
     "description": "Drive your car over bumpy hills without flipping over or running out of fuel!"
+  },
+  "hole-io": {
+    "name": "Hole.io",
+    "category": "Action",
+    "description": "Grow your hole by swallowing objects and compete to become the biggest."
   }
 }
