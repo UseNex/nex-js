@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@634ed8b6f2a22a0363ee65251566e8904f18aba2/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@634ed8b6f2a22a0363ee65251566e8904f18aba2/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@634ed8b6f2a22a0363ee65251566e8904f18aba2/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@634ed8b6f2a22a0363ee65251566e8904f18aba2/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@634ed8b6f2a22a0363ee65251566e8904f18aba2/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@634ed8b6f2a22a0363ee65251566e8904f18aba2/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d75096b464f7493f7256f0a1ddd8e0299f1e8910/"
     ];
 
     const GAME_DATA = {
@@ -705,6 +705,11 @@
     "name": "Happy Wheels",
     "category": "Driving",
     "description": "Ride through deadly tracks and try to reach the end without dying!"
+  },
+  "helix-jump": {
+    "name": "Helix Jump",
+    "category": "Skill",
+    "description": "Rotate helix platforms to guide your bouncing ball to the bottom."
   }
 };
 
