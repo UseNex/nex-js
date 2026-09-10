@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@de0893b9373c5aeb0ce099a111dd6a7a1ac6fbc1/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c742a63f3e1ed5f56d45177de3f801ba2778059d/"
     ];
 
     const GAME_DATA = {
@@ -685,6 +685,11 @@
     "name": "Google Baseball",
     "category": "Sports",
     "description": "Hit pitches and score runs in this baseball batting game."
+  },
+  "google-dino": {
+    "name": "Google Dino",
+    "category": "Skill",
+    "description": "Play the classic dinosaur game and jump over obstacles to survive."
   }
 };
 
