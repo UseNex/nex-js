@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2d4e8bef9e1779d7ab0cc71cd7fd2e1e08fd7806/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@601aa184c3fc8138251a0eab8527f30c1acaf708/"
     ];
 
     const GAME_DATA = {
@@ -720,6 +720,11 @@
     "name": "Hill Climb Racing Lite",
     "category": "Driving",
     "description": "Drive your car over bumpy hills without flipping over or running out of fuel!"
+  },
+  "hole-io": {
+    "name": "Hole.io",
+    "category": "Action",
+    "description": "Grow your hole by swallowing objects and compete to become the biggest."
   }
 };
 
