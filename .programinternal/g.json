@@ -793,5 +793,10 @@
     "name": "Melon Playground",
     "category": "Sandbox",
     "description": "Experiment with realistic physics and ragdolls in an open sandbox world."
+  },
+  "merge-round-racers": {
+    "name": "Merge Round Racers",
+    "category": "Racing",
+    "description": "Merge identical cars to build faster racers and speed down the track."
   }
 }
