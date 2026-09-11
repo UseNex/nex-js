@@ -800,6 +800,11 @@
     "name": "Madalin Stunt Cars 2",
     "category": "Racing",
     "description": "Perform stunts in fast cars and explore an open world full of ramps."
+  },
+  "melon-playground": {
+    "name": "Melon Playground",
+    "category": "Sandbox",
+    "description": "Experiment with realistic physics and ragdolls in an open sandbox world."
   }
 };
 
