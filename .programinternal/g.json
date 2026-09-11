@@ -743,5 +743,10 @@
     "name": "Johnny Trigger",
     "category": "Action",
     "description": "Don't miss a single enemy while parkouring to the end!"
+  },
+  "jumping-shell": {
+    "name": "Jumping Shell",
+    "category": "Skill",
+    "description": "Hop through dangerous levels and dodge spikes to reach the goal."
   }
 }
