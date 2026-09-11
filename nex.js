@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/"
     ];
 
     const GAME_DATA = {
@@ -805,6 +805,11 @@
     "name": "Melon Playground",
     "category": "Sandbox",
     "description": "Experiment with realistic physics and ragdolls in an open sandbox world."
+  },
+  "merge-round-racers": {
+    "name": "Merge Round Racers",
+    "category": "Racing",
+    "description": "Merge identical cars to build faster racers and speed down the track."
   }
 };
 
