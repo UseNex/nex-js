@@ -748,5 +748,10 @@
     "name": "Jumping Shell",
     "category": "Skill",
     "description": "Hop through dangerous levels and dodge spikes to reach the goal."
+  },
+  "karate-bros": {
+    "name": "Karate Bros",
+    "category": "Action",
+    "description": "Fight one-on-one battles and defeat your rival with martial arts combos."
   }
 }
