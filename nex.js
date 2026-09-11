@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/"
     ];
 
     const GAME_DATA = {
@@ -780,6 +780,11 @@
     "name": "Learn to Fly 3",
     "category": "Skill",
     "description": "Upgrade your penguin and rocket through the sky to reach outer space."
+  },
+  "learn-to-fly-idle": {
+    "name": "Learn to Fly Idle",
+    "category": "Clicker",
+    "description": "Upgrade your cannon and blast snowballs at the snowman while raking in idle cash!"
   }
 };
 
