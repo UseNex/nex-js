@@ -738,5 +738,10 @@
     "name": "Jetpack Joyride",
     "category": "Action",
     "description": "Fly through a dangerous lab on a jetpack and dodge deadly obstacles."
+  },
+  "johnny-trigger": {
+    "name": "Johnny Trigger",
+    "category": "Action",
+    "description": "Don't miss a single enemy while parkouring to the end!"
   }
 }
