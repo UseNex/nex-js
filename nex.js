@@ -785,6 +785,11 @@
     "name": "Learn to Fly Idle",
     "category": "Clicker",
     "description": "Upgrade your cannon and blast snowballs at the snowman while raking in idle cash!"
+  },
+  "learn-to-fly": {
+    "name": "Learn to Fly",
+    "category": "Skill",
+    "description": "Launch your penguin off a ramp and glide as far as you can."
   }
 };
 
