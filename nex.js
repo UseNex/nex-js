@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@3835b8b8d9cfeb89d98c1a58ca6e843959562693/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/"
     ];
 
     const GAME_DATA = {
@@ -740,6 +740,11 @@
     "name": "Idle Breakout",
     "category": "Clicker",
     "description": "Bounce a ball to smash bricks and earn points automatically."
+  },
+  "iron-snout": {
+    "name": "Iron Snout",
+    "category": "Action",
+    "description": "Battle endless waves of hungry wolves and fight back with brutal kicks."
   }
 };
 
