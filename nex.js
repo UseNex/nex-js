@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e5d3c4af486f098ef0cee435cd2bed214a90b9f5/"
     ];
 
     const GAME_DATA = {
@@ -795,6 +795,11 @@
     "name": "Level Devil",
     "category": "Skill",
     "description": "Dodge sneaky traps in each level and reach the exit without dying."
+  },
+  "madalin-stunt-cars-2": {
+    "name": "Madalin Stunt Cars 2",
+    "category": "Racing",
+    "description": "Perform stunts in fast cars and explore an open world full of ramps."
   }
 };
 
