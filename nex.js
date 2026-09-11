@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/"
     ];
 
     const GAME_DATA = {
@@ -750,6 +750,11 @@
     "name": "Jetpack Joyride",
     "category": "Action",
     "description": "Fly through a dangerous lab on a jetpack and dodge deadly obstacles."
+  },
+  "johnny-trigger": {
+    "name": "Johnny Trigger",
+    "category": "Action",
+    "description": "Don't miss a single enemy while parkouring to the end!"
   }
 };
 
