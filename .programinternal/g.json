@@ -733,5 +733,10 @@
     "name": "Iron Snout",
     "category": "Action",
     "description": "Battle endless waves of hungry wolves and fight back with brutal kicks."
+  },
+  "jetpack-joyride": {
+    "name": "Jetpack Joyride",
+    "category": "Action",
+    "description": "Fly through a dangerous lab on a jetpack and dodge deadly obstacles."
   }
 }
