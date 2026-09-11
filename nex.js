@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d01b6e4903da6a5e87c206ea9e6269a5649c6bce/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@8fb16b326f59537350c33b8cb61219909261f0c9/"
     ];
 
     const GAME_DATA = {
@@ -790,6 +790,11 @@
     "name": "Learn to Fly",
     "category": "Skill",
     "description": "Launch your penguin off a ramp and glide as far as you can."
+  },
+  "level-devil": {
+    "name": "Level Devil",
+    "category": "Skill",
+    "description": "Dodge sneaky traps in each level and reach the exit without dying."
   }
 };
 
