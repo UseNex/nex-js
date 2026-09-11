@@ -753,5 +753,10 @@
     "name": "Karate Bros",
     "category": "Action",
     "description": "Fight one-on-one battles and defeat your rival with martial arts combos."
+  },
+  "kart-bros": {
+    "name": "Kart Bros",
+    "category": "Racing",
+    "description": "Race go-karts around wild tracks and drift past your rivals."
   }
 }
