@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/"
     ];
 
     const GAME_DATA = {
@@ -770,6 +770,11 @@
     "name": "Kart Bros",
     "category": "Racing",
     "description": "Race go-karts around wild tracks and drift past your rivals."
+  },
+  "learn-to-fly-2": {
+    "name": "Learn to Fly 2",
+    "category": "Skill",
+    "description": "Launch your penguin into the sky and glide as far as you can."
   }
 };
 
