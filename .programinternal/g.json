@@ -778,5 +778,10 @@
     "name": "Learn to Fly",
     "category": "Skill",
     "description": "Launch your penguin off a ramp and glide as far as you can."
+  },
+  "level-devil": {
+    "name": "Level Devil",
+    "category": "Skill",
+    "description": "Dodge sneaky traps in each level and reach the exit without dying."
   }
 }
