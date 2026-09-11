@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/"
     ];
 
     const GAME_DATA = {
@@ -760,6 +760,11 @@
     "name": "Jumping Shell",
     "category": "Skill",
     "description": "Hop through dangerous levels and dodge spikes to reach the goal."
+  },
+  "karate-bros": {
+    "name": "Karate Bros",
+    "category": "Action",
+    "description": "Fight one-on-one battles and defeat your rival with martial arts combos."
   }
 };
 
