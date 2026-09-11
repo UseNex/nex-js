@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d4eb205f9f35a4045bf8c35c2a81e88868a1cd91/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@d77cb61c6a0f3f321bea6bf20fe05a345e06c885/"
     ];
 
     const GAME_DATA = {
@@ -775,6 +775,11 @@
     "name": "Learn to Fly 2",
     "category": "Skill",
     "description": "Launch your penguin into the sky and glide as far as you can."
+  },
+  "learn-to-fly-3": {
+    "name": "Learn to Fly 3",
+    "category": "Skill",
+    "description": "Upgrade your penguin and rocket through the sky to reach outer space."
   }
 };
 
