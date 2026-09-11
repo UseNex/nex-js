@@ -728,5 +728,10 @@
     "name": "Idle Breakout",
     "category": "Clicker",
     "description": "Bounce a ball to smash bricks and earn points automatically."
+  },
+  "iron-snout": {
+    "name": "Iron Snout",
+    "category": "Action",
+    "description": "Battle endless waves of hungry wolves and fight back with brutal kicks."
   }
 }
