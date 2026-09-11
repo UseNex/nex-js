@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@bbcc526830871d9af7cc24677334d507c84d5e1c/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b1962c1062f102905c35f38872722795c738f693/"
     ];
 
     const GAME_DATA = {
@@ -765,6 +765,11 @@
     "name": "Karate Bros",
     "category": "Action",
     "description": "Fight one-on-one battles and defeat your rival with martial arts combos."
+  },
+  "kart-bros": {
+    "name": "Kart Bros",
+    "category": "Racing",
+    "description": "Race go-karts around wild tracks and drift past your rivals."
   }
 };
 
