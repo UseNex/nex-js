@@ -758,5 +758,10 @@
     "name": "Kart Bros",
     "category": "Racing",
     "description": "Race go-karts around wild tracks and drift past your rivals."
+  },
+  "learn-to-fly-2": {
+    "name": "Learn to Fly 2",
+    "category": "Skill",
+    "description": "Launch your penguin into the sky and glide as far as you can."
   }
 }
