@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4c1d2ce6c9643fe8c87ca753a8756f578fe7d6d1/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@5351d681a6ae46ee3ad7fb3dc48f803ed5bb2857/"
     ];
 
     const GAME_DATA = {
@@ -745,6 +745,11 @@
     "name": "Iron Snout",
     "category": "Action",
     "description": "Battle endless waves of hungry wolves and fight back with brutal kicks."
+  },
+  "jetpack-joyride": {
+    "name": "Jetpack Joyride",
+    "category": "Action",
+    "description": "Fly through a dangerous lab on a jetpack and dodge deadly obstacles."
   }
 };
 
