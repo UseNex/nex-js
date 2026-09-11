@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e5997393255192897569def0fa94896e33b3c05e/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9f5426953de9f16af41be7ff602e4123682ac450/"
     ];
 
     const GAME_DATA = {
@@ -755,6 +755,11 @@
     "name": "Johnny Trigger",
     "category": "Action",
     "description": "Don't miss a single enemy while parkouring to the end!"
+  },
+  "jumping-shell": {
+    "name": "Jumping Shell",
+    "category": "Skill",
+    "description": "Hop through dangerous levels and dodge spikes to reach the goal."
   }
 };
 
