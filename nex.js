@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/"
     ];
 
     const GAME_DATA = {
@@ -910,6 +910,11 @@
     "name": "Papa's Donuteria",
     "category": "Simulation",
     "description": "Fry and glaze donuts to fill every customer's order in time."
+  },
+  "papas-freezeria": {
+    "name": "Papa's Freezeria",
+    "category": "Simulation",
+    "description": "Build ice cream sundaes and serve them before they melt."
   }
 };
 
