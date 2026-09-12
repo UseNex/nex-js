@@ -938,5 +938,10 @@
     "name": "Papa's Taco Mia",
     "category": "Simulation",
     "description": "Fill tacos with the right toppings and serve them before time runs out."
+  },
+  "papas-wingeria": {
+    "name": "Papa's Wingeria",
+    "category": "Simulation",
+    "description": "Fry chicken wings and toss them in sauce for every order."
   }
 }
