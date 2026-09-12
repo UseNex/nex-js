@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@98c04d681dd21d17e88fc92ed48403b210398860/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@98c04d681dd21d17e88fc92ed48403b210398860/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@98c04d681dd21d17e88fc92ed48403b210398860/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@98c04d681dd21d17e88fc92ed48403b210398860/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@98c04d681dd21d17e88fc92ed48403b210398860/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@98c04d681dd21d17e88fc92ed48403b210398860/"
     ];
 
     const GAME_DATA = {
@@ -985,6 +985,11 @@
     "name": "Ping Pong Chaos",
     "category": "Sports",
     "description": "Smash the ball past your rival in fast and frantic ping pong rallies."
+  },
+  "pixel-speedrun": {
+    "name": "Pixel Speedrun",
+    "category": "Skill",
+    "description": "Sprint and jump through pixel levels as fast as you possibly can."
   }
 };
 
