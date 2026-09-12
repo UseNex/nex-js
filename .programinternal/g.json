@@ -908,5 +908,10 @@
     "name": "Papa's Hot Doggeria",
     "category": "Simulation",
     "description": "Grill hot dogs and serve fans fast at the big stadium."
+  },
+  "papas-pancakeria": {
+    "name": "Papa's Pancakeria",
+    "category": "Simulation",
+    "description": "Stack pancakes and serve them hot before your customers walk out."
   }
 }
