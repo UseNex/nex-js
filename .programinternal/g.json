@@ -808,5 +808,10 @@
     "name": "Monkey Mart",
     "category": "Simulation",
     "description": "Run your own supermarket and serve customers as a busy monkey."
+  },
+  "monster-tracks": {
+    "name": "Monster Tracks",
+    "category": "Racing",
+    "description": "Drive a monster truck over brutal obstacle tracks without crashing."
   }
 }
