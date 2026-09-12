@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e460ab1c5cc0cea2c3f25dc197f1d3aa75a2efbf/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e460ab1c5cc0cea2c3f25dc197f1d3aa75a2efbf/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e460ab1c5cc0cea2c3f25dc197f1d3aa75a2efbf/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e460ab1c5cc0cea2c3f25dc197f1d3aa75a2efbf/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e460ab1c5cc0cea2c3f25dc197f1d3aa75a2efbf/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e460ab1c5cc0cea2c3f25dc197f1d3aa75a2efbf/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/"
     ];
 
     const GAME_DATA = {
@@ -900,6 +900,11 @@
     "name": "Papa's Cheeseria",
     "category": "Simulation",
     "description": "Melt cheese over burgers and stack the perfect patty for each order."
+  },
+  "papas-cupcakeria": {
+    "name": "Papa's Cupcakeria",
+    "category": "Simulation",
+    "description": "Decorate cupcakes and serve sweet orders to your hungry customers."
   }
 };
 
