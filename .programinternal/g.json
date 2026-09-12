@@ -813,5 +813,10 @@
     "name": "Monster Tracks",
     "category": "Racing",
     "description": "Drive a monster truck over brutal obstacle tracks without crashing."
+  },
+  "moto-x3m-2": {
+    "name": "Moto X3M 2",
+    "category": "Racing",
+    "description": "Race your motorbike through deadly tracks and pull off crazy flips."
   }
 }
