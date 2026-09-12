@@ -988,5 +988,10 @@
     "name": "Plonky",
     "category": "Skill",
     "description": "Run, jump and climb your way to the end without falling!"
+  },
+  "poor-bunny": {
+    "name": "Poor Bunny!",
+    "category": "Skill",
+    "description": "Hop across platforms, dodge falling arrows and outrun deadly cannons!"
   }
 }
