@@ -828,5 +828,10 @@
     "name": "Moto X3M: Pool Party",
     "category": "Racing",
     "description": "Race your motorbike through wild pool party tracks and land every stunt."
+  },
+  "moto-x3m-spooky-land": {
+    "name": "Moto X3M: Spooky Land",
+    "category": "Racing",
+    "description": "Race your motorbike through haunted tracks and survive every creepy jump."
   }
 }
