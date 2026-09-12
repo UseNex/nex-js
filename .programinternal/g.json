@@ -958,5 +958,10 @@
     "name": "Parking Fury 3",
     "category": "Driving",
     "description": "Park your car in tight spots and survive chaotic city traffic."
+  },
+  "parking-fury": {
+    "name": "Parking Fury",
+    "category": "Driving",
+    "description": "Park your car perfectly in tight spots without crashing."
   }
 }
