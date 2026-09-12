@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/"
     ];
 
     const GAME_DATA = {
@@ -870,6 +870,11 @@
     "name": "OvO 2",
     "category": "Skill",
     "description": "Run, jump and slide through fast levels with smooth parkour moves."
+  },
+  "ovo-dimensions": {
+    "name": "OvO Dimensions",
+    "category": "Skill",
+    "description": "Dash, wall-jump and slide through tough levels across many dimensions."
   }
 };
 
