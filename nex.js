@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@3d0f2765ccf8a37536bd366f78ae1a44b6bfd111/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/"
     ];
 
     const GAME_DATA = {
@@ -915,6 +915,11 @@
     "name": "Papa's Freezeria",
     "category": "Simulation",
     "description": "Build ice cream sundaes and serve them before they melt."
+  },
+  "papas-hot-doggeria": {
+    "name": "Papa's Hot Doggeria",
+    "category": "Simulation",
+    "description": "Grill hot dogs and serve fans fast at the big stadium."
   }
 };
 
