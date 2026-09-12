@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/"
     ];
 
     const GAME_DATA = {
@@ -815,6 +815,11 @@
     "name": "Minesweeper",
     "category": "Puzzle",
     "description": "Reveal safe tiles and flag hidden mines without blowing up the board."
+  },
+  "monkey-mart": {
+    "name": "Monkey Mart",
+    "category": "Simulation",
+    "description": "Run your own supermarket and serve customers as a busy monkey."
   }
 };
 
