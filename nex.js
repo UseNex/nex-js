@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e7e8dbb79ad333c192876b4d0a7af66e4be86006/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/"
     ];
 
     const GAME_DATA = {
@@ -880,6 +880,11 @@
     "name": "OvO",
     "category": "Skill",
     "description": "Run, jump and slide through fast parkour levels with smooth moves."
+  },
+  "pac-man": {
+    "name": "Pac-Man",
+    "category": "Action",
+    "description": "Eat all the dots while dodging ghosts in this classic arcade maze."
   }
 };
 
