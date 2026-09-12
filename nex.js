@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/"
     ];
 
     const GAME_DATA = {
@@ -945,6 +945,11 @@
     "name": "Papa's Sushiria",
     "category": "Simulation",
     "description": "Roll sushi and serve it fresh before your customers lose patience."
+  },
+  "papas-taco-mia": {
+    "name": "Papa's Taco Mia",
+    "category": "Simulation",
+    "description": "Fill tacos with the right toppings and serve them before time runs out."
   }
 };
 
