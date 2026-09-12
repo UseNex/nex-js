@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c5d6ce5d482e606474e77a7cd4340ea1d913bfc9/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@550742b9dce5b870de5a48c68e5083136966bd9b/"
     ];
 
     const GAME_DATA = {
@@ -810,6 +810,11 @@
     "name": "Merge Round Racers",
     "category": "Racing",
     "description": "Merge identical cars to build faster racers and speed down the track."
+  },
+  "minesweeper": {
+    "name": "Minesweeper",
+    "category": "Puzzle",
+    "description": "Reveal safe tiles and flag hidden mines without blowing up the board."
   }
 };
 
