@@ -903,5 +903,10 @@
     "name": "Papa's Freezeria",
     "category": "Simulation",
     "description": "Build ice cream sundaes and serve them before they melt."
+  },
+  "papas-hot-doggeria": {
+    "name": "Papa's Hot Doggeria",
+    "category": "Simulation",
+    "description": "Grill hot dogs and serve fans fast at the big stadium."
   }
 }
