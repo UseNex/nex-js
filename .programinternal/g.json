@@ -878,5 +878,10 @@
     "name": "Papa's Bakeria",
     "category": "Simulation",
     "description": "Bake pies for hungry customers and serve them before time runs out."
+  },
+  "papas-burgeria": {
+    "name": "Papa's Burgeria",
+    "category": "Simulation",
+    "description": "Grill burgers and serve orders fast to keep your customers happy."
   }
 }
