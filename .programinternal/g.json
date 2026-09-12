@@ -898,5 +898,10 @@
     "name": "Papa's Donuteria",
     "category": "Simulation",
     "description": "Fry and glaze donuts to fill every customer's order in time."
+  },
+  "papas-freezeria": {
+    "name": "Papa's Freezeria",
+    "category": "Simulation",
+    "description": "Build ice cream sundaes and serve them before they melt."
   }
 }
