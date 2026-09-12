@@ -803,5 +803,10 @@
     "name": "Minesweeper",
     "category": "Puzzle",
     "description": "Reveal safe tiles and flag hidden mines without blowing up the board."
+  },
+  "monkey-mart": {
+    "name": "Monkey Mart",
+    "category": "Simulation",
+    "description": "Run your own supermarket and serve customers as a busy monkey."
   }
 }
