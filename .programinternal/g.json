@@ -973,5 +973,10 @@
     "name": "Ping Pong Chaos",
     "category": "Sports",
     "description": "Smash the ball past your rival in fast and frantic ping pong rallies."
+  },
+  "pixel-speedrun": {
+    "name": "Pixel Speedrun",
+    "category": "Skill",
+    "description": "Sprint and jump through pixel levels as fast as you possibly can."
   }
 }
