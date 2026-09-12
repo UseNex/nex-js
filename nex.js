@@ -1005,6 +1005,11 @@
     "name": "Poor Bunny!",
     "category": "Skill",
     "description": "Hop across platforms, dodge falling arrows and outrun deadly cannons!"
+  },
+  "pou": {
+    "name": "Pou",
+    "category": "Simulation",
+    "description": "Feed, clean and care for your adorable alien pet Pou."
   }
 };
 
