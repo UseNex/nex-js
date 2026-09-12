@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/"
     ];
 
     const GAME_DATA = {
@@ -1000,6 +1000,11 @@
     "name": "Plonky",
     "category": "Skill",
     "description": "Run, jump and climb your way to the end without falling!"
+  },
+  "poor-bunny": {
+    "name": "Poor Bunny!",
+    "category": "Skill",
+    "description": "Hop across platforms, dodge falling arrows and outrun deadly cannons!"
   }
 };
 
