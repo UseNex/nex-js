@@ -888,5 +888,10 @@
     "name": "Papa's Cheeseria",
     "category": "Simulation",
     "description": "Melt cheese over burgers and stack the perfect patty for each order."
+  },
+  "papas-cupcakeria": {
+    "name": "Papa's Cupcakeria",
+    "category": "Simulation",
+    "description": "Decorate cupcakes and serve sweet orders to your hungry customers."
   }
 }
