@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9ba8dff16f4fe52f4a5d5a11681210e70d11aeba/"
     ];
 
     const GAME_DATA = {
@@ -935,6 +935,11 @@
     "name": "Papa's Pizzeria",
     "category": "Simulation",
     "description": "Top pizzas and bake them fast to satisfy every hungry customer."
+  },
+  "papas-scooperia": {
+    "name": "Papa's Scooperia",
+    "category": "Simulation",
+    "description": "Scoop ice cream and stack the perfect cone for every customer."
   }
 };
 
