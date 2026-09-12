@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/"
     ];
 
     const GAME_DATA = {
@@ -970,6 +970,11 @@
     "name": "Parking Fury 3",
     "category": "Driving",
     "description": "Park your car in tight spots and survive chaotic city traffic."
+  },
+  "parking-fury": {
+    "name": "Parking Fury",
+    "category": "Driving",
+    "description": "Park your car perfectly in tight spots without crashing."
   }
 };
 
