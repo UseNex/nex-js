@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2ed753a16c8318e47b7ad6fb22149e7a83841700/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2ed753a16c8318e47b7ad6fb22149e7a83841700/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2ed753a16c8318e47b7ad6fb22149e7a83841700/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2ed753a16c8318e47b7ad6fb22149e7a83841700/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2ed753a16c8318e47b7ad6fb22149e7a83841700/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2ed753a16c8318e47b7ad6fb22149e7a83841700/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/"
     ];
 
     const GAME_DATA = {
@@ -860,6 +860,11 @@
     "name": "Noob Miner",
     "category": "Simulation",
     "description": "Dig, trade and plot your daring escape from a ruthless prison."
+  },
+  "opposite-day": {
+    "name": "Opposite Day",
+    "category": "Puzzle",
+    "description": "Do the opposite of every instruction and survive the chaos."
   }
 };
 
