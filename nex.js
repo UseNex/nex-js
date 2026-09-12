@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/"
     ];
 
     const GAME_DATA = {
@@ -840,6 +840,11 @@
     "name": "Moto X3M: Pool Party",
     "category": "Racing",
     "description": "Race your motorbike through wild pool party tracks and land every stunt."
+  },
+  "moto-x3m-spooky-land": {
+    "name": "Moto X3M: Spooky Land",
+    "category": "Racing",
+    "description": "Race your motorbike through haunted tracks and survive every creepy jump."
   }
 };
 
