@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@8396cd620eb35b891ec80d49678bb858b1320fab/"
     ];
 
     const GAME_DATA = {
@@ -980,6 +980,11 @@
     "name": "Pico's School",
     "category": "Action",
     "description": "Survive a chaotic school day and shoot your way through lessons."
+  },
+  "ping-pong-chaos": {
+    "name": "Ping Pong Chaos",
+    "category": "Sports",
+    "description": "Smash the ball past your rival in fast and frantic ping pong rallies."
   }
 };
 
