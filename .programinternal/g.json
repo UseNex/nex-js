@@ -873,5 +873,10 @@
     "name": "Pac-Man",
     "category": "Action",
     "description": "Eat all the dots while dodging ghosts in this classic arcade maze."
+  },
+  "papas-bakeria": {
+    "name": "Papa's Bakeria",
+    "category": "Simulation",
+    "description": "Bake pies for hungry customers and serve them before time runs out."
   }
 }
