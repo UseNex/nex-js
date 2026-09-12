@@ -843,5 +843,10 @@
     "name": "Moto X3M",
     "category": "Racing",
     "description": "Race your motorbike through tricky tracks and pull off insane stunts."
+  },
+  "noob-miner": {
+    "name": "Noob Miner",
+    "category": "Simulation",
+    "description": "Dig, trade and plot your daring escape from a ruthless prison."
   }
 }
