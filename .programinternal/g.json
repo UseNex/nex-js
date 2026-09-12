@@ -883,5 +883,10 @@
     "name": "Papa's Burgeria",
     "category": "Simulation",
     "description": "Grill burgers and serve orders fast to keep your customers happy."
+  },
+  "papas-cheeseria": {
+    "name": "Papa's Cheeseria",
+    "category": "Simulation",
+    "description": "Melt cheese over burgers and stack the perfect patty for each order."
   }
 }
