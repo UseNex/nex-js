@@ -913,5 +913,10 @@
     "name": "Papa's Pancakeria",
     "category": "Simulation",
     "description": "Stack pancakes and serve them hot before your customers walk out."
+  },
+  "papas-pastaria": {
+    "name": "Papa's Pastaria",
+    "category": "Simulation",
+    "description": "Cook pasta dishes and serve them hot to keep your restaurant running."
   }
 }
