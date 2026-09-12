@@ -948,5 +948,10 @@
     "name": "Paper.io 2",
     "category": "Action",
     "description": "Claim territory and cut off rivals to conquer the whole map."
+  },
+  "parking-fury-2": {
+    "name": "Parking Fury 2",
+    "category": "Driving",
+    "description": "Steer through tight spaces and park your car without a scratch."
   }
 }
