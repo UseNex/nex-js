@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4c5a80ab94d7d93336456894c17c7af5a6f2ae32/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4c5a80ab94d7d93336456894c17c7af5a6f2ae32/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4c5a80ab94d7d93336456894c17c7af5a6f2ae32/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4c5a80ab94d7d93336456894c17c7af5a6f2ae32/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4c5a80ab94d7d93336456894c17c7af5a6f2ae32/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4c5a80ab94d7d93336456894c17c7af5a6f2ae32/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@be4e21098a04ea3634da10abf60aa1ccbd2392a4/"
     ];
 
     const GAME_DATA = {
@@ -995,6 +995,11 @@
     "name": "Plants vs Zombies",
     "category": "Strategy",
     "description": "Defend your lawn from zombie waves with an army of plants."
+  },
+  "plonky": {
+    "name": "Plonky",
+    "category": "Skill",
+    "description": "Run, jump and climb your way to the end without falling!"
   }
 };
 
