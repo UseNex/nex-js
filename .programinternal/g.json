@@ -853,5 +853,10 @@
     "name": "Opposite Day",
     "category": "Puzzle",
     "description": "Do the opposite of every instruction and survive the chaos."
+  },
+  "ovo-2": {
+    "name": "OvO 2",
+    "category": "Skill",
+    "description": "Run, jump and slide through fast levels with smooth parkour moves."
   }
 }
