@@ -968,5 +968,10 @@
     "name": "Pico's School",
     "category": "Action",
     "description": "Survive a chaotic school day and shoot your way through lessons."
+  },
+  "ping-pong-chaos": {
+    "name": "Ping Pong Chaos",
+    "category": "Sports",
+    "description": "Smash the ball past your rival in fast and frantic ping pong rallies."
   }
 }
