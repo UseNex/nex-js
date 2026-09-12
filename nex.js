@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f1a4fb24aa3970610b78807ac456e4f7d1c511c6/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/"
     ];
 
     const GAME_DATA = {
@@ -950,6 +950,11 @@
     "name": "Papa's Taco Mia",
     "category": "Simulation",
     "description": "Fill tacos with the right toppings and serve them before time runs out."
+  },
+  "papas-wingeria": {
+    "name": "Papa's Wingeria",
+    "category": "Simulation",
+    "description": "Fry chicken wings and toss them in sauce for every order."
   }
 };
 
