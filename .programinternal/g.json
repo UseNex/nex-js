@@ -978,5 +978,10 @@
     "name": "Pixel Speedrun",
     "category": "Skill",
     "description": "Sprint and jump through pixel levels as fast as you possibly can."
+  },
+  "plants-vs-zombies": {
+    "name": "Plants vs Zombies",
+    "category": "Strategy",
+    "description": "Defend your lawn from zombie waves with an army of plants."
   }
 }
