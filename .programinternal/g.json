@@ -838,5 +838,10 @@
     "name": "Moto X3M: Winter",
     "category": "Racing",
     "description": "Race your motorbike across icy winter tracks and land every slippery jump."
+  },
+  "moto-x3m": {
+    "name": "Moto X3M",
+    "category": "Racing",
+    "description": "Race your motorbike through tricky tracks and pull off insane stunts."
   }
 }
