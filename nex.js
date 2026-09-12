@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@06abdafe1b832a2726599060a09dbba795e76c5f/"
     ];
 
     const GAME_DATA = {
@@ -960,6 +960,11 @@
     "name": "Paper.io 2",
     "category": "Action",
     "description": "Claim territory and cut off rivals to conquer the whole map."
+  },
+  "parking-fury-2": {
+    "name": "Parking Fury 2",
+    "category": "Driving",
+    "description": "Steer through tight spaces and park your car without a scratch."
   }
 };
 
