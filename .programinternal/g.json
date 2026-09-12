@@ -823,5 +823,10 @@
     "name": "Moto X3M 3",
     "category": "Racing",
     "description": "Race your motorbike through deadly tracks and nail every jump and flip."
+  },
+  "moto-x3m-pool-party": {
+    "name": "Moto X3M: Pool Party",
+    "category": "Racing",
+    "description": "Race your motorbike through wild pool party tracks and land every stunt."
   }
 }
