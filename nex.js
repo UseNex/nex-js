@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@a31019f9591bc72efd6bc26e23fb94dda1734c98/"
     ];
 
     const GAME_DATA = {
@@ -930,6 +930,11 @@
     "name": "Papa's Pastaria",
     "category": "Simulation",
     "description": "Cook pasta dishes and serve them hot to keep your restaurant running."
+  },
+  "papas-pizzeria": {
+    "name": "Papa's Pizzeria",
+    "category": "Simulation",
+    "description": "Top pizzas and bake them fast to satisfy every hungry customer."
   }
 };
 
