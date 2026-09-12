@@ -868,5 +868,10 @@
     "name": "OvO",
     "category": "Skill",
     "description": "Run, jump and slide through fast parkour levels with smooth moves."
+  },
+  "pac-man": {
+    "name": "Pac-Man",
+    "category": "Action",
+    "description": "Eat all the dots while dodging ghosts in this classic arcade maze."
   }
 }
