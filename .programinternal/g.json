@@ -858,5 +858,10 @@
     "name": "OvO 2",
     "category": "Skill",
     "description": "Run, jump and slide through fast levels with smooth parkour moves."
+  },
+  "ovo-dimensions": {
+    "name": "OvO Dimensions",
+    "category": "Skill",
+    "description": "Dash, wall-jump and slide through tough levels across many dimensions."
   }
 }
