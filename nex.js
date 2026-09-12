@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@565be2a3b3339cd791886e8fe8febcaf259a592a/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/"
     ];
 
     const GAME_DATA = {
@@ -885,6 +885,11 @@
     "name": "Pac-Man",
     "category": "Action",
     "description": "Eat all the dots while dodging ghosts in this classic arcade maze."
+  },
+  "papas-bakeria": {
+    "name": "Papa's Bakeria",
+    "category": "Simulation",
+    "description": "Bake pies for hungry customers and serve them before time runs out."
   }
 };
 
