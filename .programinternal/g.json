@@ -953,5 +953,10 @@
     "name": "Parking Fury 2",
     "category": "Driving",
     "description": "Steer through tight spaces and park your car without a scratch."
+  },
+  "parking-fury-3": {
+    "name": "Parking Fury 3",
+    "category": "Driving",
+    "description": "Park your car in tight spots and survive chaotic city traffic."
   }
 }
