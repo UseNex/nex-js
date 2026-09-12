@@ -818,5 +818,10 @@
     "name": "Moto X3M 2",
     "category": "Racing",
     "description": "Race your motorbike through deadly tracks and pull off crazy flips."
+  },
+  "moto-x3m-3": {
+    "name": "Moto X3M 3",
+    "category": "Racing",
+    "description": "Race your motorbike through deadly tracks and nail every jump and flip."
   }
 }
