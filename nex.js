@@ -940,6 +940,11 @@
     "name": "Papa's Scooperia",
     "category": "Simulation",
     "description": "Scoop ice cream and stack the perfect cone for every customer."
+  },
+  "papas-sushiria": {
+    "name": "Papa's Sushiria",
+    "category": "Simulation",
+    "description": "Roll sushi and serve it fresh before your customers lose patience."
   }
 };
 
