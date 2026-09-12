@@ -848,5 +848,10 @@
     "name": "Noob Miner",
     "category": "Simulation",
     "description": "Dig, trade and plot your daring escape from a ruthless prison."
+  },
+  "opposite-day": {
+    "name": "Opposite Day",
+    "category": "Puzzle",
+    "description": "Do the opposite of every instruction and survive the chaos."
   }
 }
