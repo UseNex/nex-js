@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@172fd6255fd72fc866808f54ea675ffc12249513/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f04ba2516c641a11a52555e13eddeb91ac7bf40a/"
     ];
 
     const GAME_DATA = {
@@ -905,6 +905,11 @@
     "name": "Papa's Cupcakeria",
     "category": "Simulation",
     "description": "Decorate cupcakes and serve sweet orders to your hungry customers."
+  },
+  "papas-donuteria": {
+    "name": "Papa's Donuteria",
+    "category": "Simulation",
+    "description": "Fry and glaze donuts to fill every customer's order in time."
   }
 };
 
