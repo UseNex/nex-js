@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9886c6f049578959cb8e388bb7351ad5de96509b/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@89feb86a4d69bcdedfdcd93875140d5dac0c3198/"
     ];
 
     const GAME_DATA = {
@@ -955,6 +955,11 @@
     "name": "Papa's Wingeria",
     "category": "Simulation",
     "description": "Fry chicken wings and toss them in sauce for every order."
+  },
+  "paper-io-2": {
+    "name": "Paper.io 2",
+    "category": "Action",
+    "description": "Claim territory and cut off rivals to conquer the whole map."
   }
 };
 
