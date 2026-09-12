@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@26de074b09a3e859796d22a0523574e3d54741e2/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@0983c898d7e80d2329d7fe4034f1fbbfb73062e6/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@0983c898d7e80d2329d7fe4034f1fbbfb73062e6/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@0983c898d7e80d2329d7fe4034f1fbbfb73062e6/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@0983c898d7e80d2329d7fe4034f1fbbfb73062e6/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@0983c898d7e80d2329d7fe4034f1fbbfb73062e6/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@0983c898d7e80d2329d7fe4034f1fbbfb73062e6/"
     ];
 
     const GAME_DATA = {
@@ -820,6 +820,11 @@
     "name": "Monkey Mart",
     "category": "Simulation",
     "description": "Run your own supermarket and serve customers as a busy monkey."
+  },
+  "monster-tracks": {
+    "name": "Monster Tracks",
+    "category": "Racing",
+    "description": "Drive a monster truck over brutal obstacle tracks without crashing."
   }
 };
 
