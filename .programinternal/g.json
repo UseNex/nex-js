@@ -798,5 +798,10 @@
     "name": "Merge Round Racers",
     "category": "Racing",
     "description": "Merge identical cars to build faster racers and speed down the track."
+  },
+  "minesweeper": {
+    "name": "Minesweeper",
+    "category": "Puzzle",
+    "description": "Reveal safe tiles and flag hidden mines without blowing up the board."
   }
 }
