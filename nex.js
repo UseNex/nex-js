@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f1efc8ba4d57b2417ee8a400c57326f4045b1978/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e95c2462b7cfa825382e43e6b403d22390e28864/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e95c2462b7cfa825382e43e6b403d22390e28864/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e95c2462b7cfa825382e43e6b403d22390e28864/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e95c2462b7cfa825382e43e6b403d22390e28864/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e95c2462b7cfa825382e43e6b403d22390e28864/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e95c2462b7cfa825382e43e6b403d22390e28864/"
     ];
 
     const GAME_DATA = {
@@ -850,6 +850,11 @@
     "name": "Moto X3M: Winter",
     "category": "Racing",
     "description": "Race your motorbike across icy winter tracks and land every slippery jump."
+  },
+  "moto-x3m": {
+    "name": "Moto X3M",
+    "category": "Racing",
+    "description": "Race your motorbike through tricky tracks and pull off insane stunts."
   }
 };
 
