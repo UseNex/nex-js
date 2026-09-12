@@ -918,5 +918,10 @@
     "name": "Papa's Pastaria",
     "category": "Simulation",
     "description": "Cook pasta dishes and serve them hot to keep your restaurant running."
+  },
+  "papas-pizzeria": {
+    "name": "Papa's Pizzeria",
+    "category": "Simulation",
+    "description": "Top pizzas and bake them fast to satisfy every hungry customer."
   }
 }
