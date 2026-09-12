@@ -963,5 +963,10 @@
     "name": "Parking Fury",
     "category": "Driving",
     "description": "Park your car perfectly in tight spots without crashing."
+  },
+  "picos-school": {
+    "name": "Pico's School",
+    "category": "Action",
+    "description": "Survive a chaotic school day and shoot your way through lessons."
   }
 }
