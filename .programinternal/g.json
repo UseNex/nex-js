@@ -933,5 +933,10 @@
     "name": "Papa's Sushiria",
     "category": "Simulation",
     "description": "Roll sushi and serve it fresh before your customers lose patience."
+  },
+  "papas-taco-mia": {
+    "name": "Papa's Taco Mia",
+    "category": "Simulation",
+    "description": "Fill tacos with the right toppings and serve them before time runs out."
   }
 }
