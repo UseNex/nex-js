@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@36010023f08425caa514418176be83da0cd2d3da/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@afe35043cb32d1b16076645ba512667228ffec56/"
     ];
 
     const GAME_DATA = {
@@ -865,6 +865,11 @@
     "name": "Opposite Day",
     "category": "Puzzle",
     "description": "Do the opposite of every instruction and survive the chaos."
+  },
+  "ovo-2": {
+    "name": "OvO 2",
+    "category": "Skill",
+    "description": "Run, jump and slide through fast levels with smooth parkour moves."
   }
 };
 
