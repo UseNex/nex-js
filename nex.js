@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e22ee69f2320a59b1c3e575cd9d80e92de8f56ee/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2a7b7d8625a80daee3fb8855646210545820909e/"
     ];
 
     const GAME_DATA = {
@@ -975,6 +975,11 @@
     "name": "Parking Fury",
     "category": "Driving",
     "description": "Park your car perfectly in tight spots without crashing."
+  },
+  "picos-school": {
+    "name": "Pico's School",
+    "category": "Action",
+    "description": "Survive a chaotic school day and shoot your way through lessons."
   }
 };
 
