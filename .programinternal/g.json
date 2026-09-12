@@ -943,5 +943,10 @@
     "name": "Papa's Wingeria",
     "category": "Simulation",
     "description": "Fry chicken wings and toss them in sauce for every order."
+  },
+  "paper-io-2": {
+    "name": "Paper.io 2",
+    "category": "Action",
+    "description": "Claim territory and cut off rivals to conquer the whole map."
   }
 }
