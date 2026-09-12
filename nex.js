@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@793ea363c01f6f4889248bd81a24f396a3d626b0/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f1a7de100efedfcc8e78b57f0c9164fa72828783/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f1a7de100efedfcc8e78b57f0c9164fa72828783/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f1a7de100efedfcc8e78b57f0c9164fa72828783/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f1a7de100efedfcc8e78b57f0c9164fa72828783/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f1a7de100efedfcc8e78b57f0c9164fa72828783/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f1a7de100efedfcc8e78b57f0c9164fa72828783/"
     ];
 
     const GAME_DATA = {
@@ -890,6 +890,11 @@
     "name": "Papa's Bakeria",
     "category": "Simulation",
     "description": "Bake pies for hungry customers and serve them before time runs out."
+  },
+  "papas-burgeria": {
+    "name": "Papa's Burgeria",
+    "category": "Simulation",
+    "description": "Grill burgers and serve orders fast to keep your customers happy."
   }
 };
 
