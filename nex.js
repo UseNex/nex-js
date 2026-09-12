@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@edbfcb6fab1fc86774df265d17cab86b385913e7/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@0a5478f19c05fae7046f43f84a95938aac16ec42/"
     ];
 
     const GAME_DATA = {
@@ -920,6 +920,11 @@
     "name": "Papa's Hot Doggeria",
     "category": "Simulation",
     "description": "Grill hot dogs and serve fans fast at the big stadium."
+  },
+  "papas-pancakeria": {
+    "name": "Papa's Pancakeria",
+    "category": "Simulation",
+    "description": "Stack pancakes and serve them hot before your customers walk out."
   }
 };
 
