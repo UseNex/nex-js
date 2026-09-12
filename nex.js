@@ -845,6 +845,11 @@
     "name": "Moto X3M: Spooky Land",
     "category": "Racing",
     "description": "Race your motorbike through haunted tracks and survive every creepy jump."
+  },
+  "moto-x3m-winter": {
+    "name": "Moto X3M: Winter",
+    "category": "Racing",
+    "description": "Race your motorbike across icy winter tracks and land every slippery jump."
   }
 };
 
