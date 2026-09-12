@@ -893,5 +893,10 @@
     "name": "Papa's Cupcakeria",
     "category": "Simulation",
     "description": "Decorate cupcakes and serve sweet orders to your hungry customers."
+  },
+  "papas-donuteria": {
+    "name": "Papa's Donuteria",
+    "category": "Simulation",
+    "description": "Fry and glaze donuts to fill every customer's order in time."
   }
 }
