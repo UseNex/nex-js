@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f7319728a788c40f275b6ca2b362a2549f3688e6/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f7319728a788c40f275b6ca2b362a2549f3688e6/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f7319728a788c40f275b6ca2b362a2549f3688e6/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f7319728a788c40f275b6ca2b362a2549f3688e6/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f7319728a788c40f275b6ca2b362a2549f3688e6/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f7319728a788c40f275b6ca2b362a2549f3688e6/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@98819474d50d73c757112c0b601b05091692f030/"
     ];
 
     const GAME_DATA = {
@@ -835,6 +835,11 @@
     "name": "Moto X3M 3",
     "category": "Racing",
     "description": "Race your motorbike through deadly tracks and nail every jump and flip."
+  },
+  "moto-x3m-pool-party": {
+    "name": "Moto X3M: Pool Party",
+    "category": "Racing",
+    "description": "Race your motorbike through wild pool party tracks and land every stunt."
   }
 };
 
