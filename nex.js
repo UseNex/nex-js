@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@19be6c4c4e80d7ee672fd603119b8ab6120ad195/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@19be6c4c4e80d7ee672fd603119b8ab6120ad195/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@19be6c4c4e80d7ee672fd603119b8ab6120ad195/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@19be6c4c4e80d7ee672fd603119b8ab6120ad195/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@19be6c4c4e80d7ee672fd603119b8ab6120ad195/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@19be6c4c4e80d7ee672fd603119b8ab6120ad195/"
     ];
 
     const GAME_DATA = {
@@ -1020,6 +1020,11 @@
     "name": "Drift Hunters Pro",
     "category": "Racing",
     "description": "Drift around corners and chain combos to score big points."
+  },
+  "rocket-goal": {
+    "name": "Rocket Goal",
+    "category": "Driving",
+    "description": "Drive insanely fast cars and smash the giant ball into the enemy goal!"
   }
 };
 
