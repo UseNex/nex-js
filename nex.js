@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@55ef91510d18b92a64b68149df22b89476f50e70/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/"
     ];
 
     const GAME_DATA = {
@@ -1010,6 +1010,11 @@
     "name": "Pou",
     "category": "Simulation",
     "description": "Feed, clean and care for your adorable alien pet Pou."
+  },
+  "do-not-stop-run": {
+    "name": "Do Not Stop! Run!",
+    "category": "Skill",
+    "description": "Sprint forward non-stop and dodge every obstacle in your path!"
   }
 };
 
