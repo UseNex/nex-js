@@ -1008,5 +1008,10 @@
     "name": "Drift Hunters Pro",
     "category": "Racing",
     "description": "Drift around corners and chain combos to score big points."
+  },
+  "rocket-goal": {
+    "name": "Rocket Goal",
+    "category": "Driving",
+    "description": "Drive insanely fast cars and smash the giant ball into the enemy goal!"
   }
 }
