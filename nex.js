@@ -1052,7 +1052,7 @@
             name: game.name || alias,
             category: game.category || "Unknown",
             description: game.description || "",
-            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@main/${alias}.webp`
+            img: `https://cdn.jsdelivr.net/gh/UseNex/thumbnails@latest/${alias}.webp`
         };
     }
 
