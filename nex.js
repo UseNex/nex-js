@@ -1025,6 +1025,11 @@
     "name": "Rocket Goal",
     "category": "Driving",
     "description": "Drive insanely fast cars and smash the giant ball into the enemy goal!"
+  },
+  "spacebar-clicker": {
+    "name": "Spacebar Clicker",
+    "category": "Clicker",
+    "description": "Press the spacebar to earn points and unlock crazy upgrades."
   }
 };
 
