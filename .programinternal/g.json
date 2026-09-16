@@ -1003,5 +1003,10 @@
     "name": "Do Not Stop! Run!",
     "category": "Skill",
     "description": "Sprint forward non-stop and dodge every obstacle in your path!"
+  },
+  "drift-hunters-pro": {
+    "name": "Drift Hunters Pro",
+    "category": "Racing",
+    "description": "Drift around corners and chain combos to score big points."
   }
 }
