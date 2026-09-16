@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@1f8c2bbf5db298157c662ef03ac785aea174f5c4/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@263088638cf3d8588dda1b8a4bc5b545d4a00c61/"
     ];
 
     const GAME_DATA = {
@@ -1015,6 +1015,11 @@
     "name": "Do Not Stop! Run!",
     "category": "Skill",
     "description": "Sprint forward non-stop and dodge every obstacle in your path!"
+  },
+  "drift-hunters-pro": {
+    "name": "Drift Hunters Pro",
+    "category": "Racing",
+    "description": "Drift around corners and chain combos to score big points."
   }
 };
 
