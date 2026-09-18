@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/"
     ];
 
     const GAME_DATA = {
@@ -1035,6 +1035,11 @@
     "name": "Five Nights at Epstein's",
     "category": "Horror",
     "description": "Survive the night shift and keep an eye on the cameras until dawn."
+  },
+  "infinite-craft": {
+    "name": "Infinite Craft",
+    "category": "Sandbox",
+    "description": "Combine elements to discover endless new creations."
   }
 };
 
