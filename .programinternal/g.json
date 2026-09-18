@@ -1028,5 +1028,10 @@
     "name": "Infinite Craft",
     "category": "Sandbox",
     "description": "Combine elements to discover endless new creations."
+  },
+  "q13x-eaglercraft-1-8": {
+    "name": "Q13X Eaglercraft 1.8",
+    "category": "Sandbox",
+    "description": "Explore, build and survive in a full Minecraft world in your browser."
   }
 }
