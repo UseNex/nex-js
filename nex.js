@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b2c2028808cc56d8103c47f25908cc9c964a5398/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/"
     ];
 
     const GAME_DATA = {
@@ -1040,6 +1040,11 @@
     "name": "Infinite Craft",
     "category": "Sandbox",
     "description": "Combine elements to discover endless new creations."
+  },
+  "q13x-eaglercraft-1-8": {
+    "name": "Q13X Eaglercraft 1.8",
+    "category": "Sandbox",
+    "description": "Explore, build and survive in a full Minecraft world in your browser."
   }
 };
 
