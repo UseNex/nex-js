@@ -1023,5 +1023,10 @@
     "name": "Five Nights at Epstein's",
     "category": "Horror",
     "description": "Survive the night shift and keep an eye on the cameras until dawn."
+  },
+  "infinite-craft": {
+    "name": "Infinite Craft",
+    "category": "Sandbox",
+    "description": "Combine elements to discover endless new creations."
   }
 }
