@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@0f9014df341d523eb04b2294accdc51c56cabd37/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@0f9014df341d523eb04b2294accdc51c56cabd37/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@0f9014df341d523eb04b2294accdc51c56cabd37/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@0f9014df341d523eb04b2294accdc51c56cabd37/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@0f9014df341d523eb04b2294accdc51c56cabd37/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@0f9014df341d523eb04b2294accdc51c56cabd37/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@38ea334b0e8f7b1aa3ac41408b0ae20f360145a3/"
     ];
 
     const GAME_DATA = {
@@ -1030,6 +1030,11 @@
     "name": "Spacebar Clicker",
     "category": "Clicker",
     "description": "Press the spacebar to earn points and unlock crazy upgrades."
+  },
+  "five-nights-at-epsteins": {
+    "name": "Five Nights at Epstein's",
+    "category": "Horror",
+    "description": "Survive the night shift and keep an eye on the cameras until dawn."
   }
 };
 
