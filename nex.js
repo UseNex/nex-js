@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/"
     ];
 
     const GAME_DATA = {
@@ -1050,6 +1050,11 @@
     "name": "N-Gon",
     "category": "Action",
     "description": "Dodge bullet hell chaos and blast through waves of geometric enemies in style."
+  },
+  "google-feud": {
+    "name": "Google Feud",
+    "category": "Puzzle",
+    "description": "Guess how the internet finishes a Google search and score points for matching the top autocomplete results."
   }
 };
 
