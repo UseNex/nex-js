@@ -1033,5 +1033,10 @@
     "name": "Q13X Eaglercraft 1.8",
     "category": "Sandbox",
     "description": "Explore, build and survive in a full Minecraft world in your browser."
+  },
+  "n-gon": {
+    "name": "N-Gon",
+    "category": "Action",
+    "description": "Dodge bullet hell chaos and blast through waves of geometric enemies in style."
   }
 }
