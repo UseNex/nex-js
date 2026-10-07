@@ -1038,5 +1038,10 @@
     "name": "N-Gon",
     "category": "Action",
     "description": "Dodge bullet hell chaos and blast through waves of geometric enemies in style."
+  },
+  "google-feud": {
+    "name": "Google Feud",
+    "category": "Puzzle",
+    "description": "Guess how the internet finishes a Google search and score points for matching the top autocomplete results."
   }
 }
