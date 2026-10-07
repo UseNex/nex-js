@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@08e7a3f3a6f7b11dc10302783de245b902b198c2/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@05e33a8d718daaa2514f9634a1d6e15a0233614d/"
     ];
 
     const GAME_DATA = {
@@ -1045,6 +1045,11 @@
     "name": "Q13X Eaglercraft 1.8",
     "category": "Sandbox",
     "description": "Explore, build and survive in a full Minecraft world in your browser."
+  },
+  "n-gon": {
+    "name": "N-Gon",
+    "category": "Action",
+    "description": "Dodge bullet hell chaos and blast through waves of geometric enemies in style."
   }
 };
 
