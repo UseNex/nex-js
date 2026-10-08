@@ -1058,5 +1058,10 @@
     "name": "Ragdoll Soccer",
     "category": "Sports",
     "description": "Control a floppy stickman and kick, headbutt and flail the ball into the net."
+  },
+  "red-ball-4-vol-1": {
+    "name": "Red Ball 4 Vol 1",
+    "category": "Skill",
+    "description": "Roll, jump and bounce through grassy hills to stop the evil squares."
   }
 }
