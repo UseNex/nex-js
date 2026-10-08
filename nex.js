@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/"
     ];
 
     const GAME_DATA = {
@@ -1065,6 +1065,11 @@
     "name": "Ragdoll Hit",
     "category": "Action",
     "description": "Control a floppy ragdoll stickman and knock out enemies with chaotic physics-based brawls."
+  },
+  "ragdoll-soccer": {
+    "name": "Ragdoll Soccer",
+    "category": "Sports",
+    "description": "Control a floppy stickman and kick, headbutt and flail the ball into the net."
   }
 };
 
