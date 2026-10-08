@@ -1048,5 +1048,10 @@
     "name": "Ragdoll Archers",
     "category": "Action",
     "description": "Shoot arrows at wobbly ragdoll enemies and survive chaotic physics battles."
+  },
+  "ragdoll-hit": {
+    "name": "Ragdoll Hit",
+    "category": "Action",
+    "description": "Control a floppy ragdoll stickman and knock out enemies with chaotic physics-based brawls."
   }
 }
