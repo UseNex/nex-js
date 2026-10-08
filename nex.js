@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/"
     ];
 
     const GAME_DATA = {
@@ -1110,6 +1110,11 @@
     "name": "Riddle School 2",
     "category": "Puzzle",
     "description": "Help Phil escape middle school by solving puzzles and outsmarting teachers."
+  },
+  "idle-dice": {
+    "name": "Idle Dice",
+    "category": "Clicker",
+    "description": "Roll digital dice to earn money, unlock crazy combos, and build an idle dice empire."
   }
 };
 
