@@ -1078,5 +1078,10 @@
     "name": "Retro Bowl College",
     "category": "Sports",
     "description": "Manage a college football team, recruit players and lead them to the championship."
+  },
+  "retro-bowl": {
+    "name": "Retro Bowl",
+    "category": "Sports",
+    "description": "Manage your football team and lead them to victory in retro 8-bit style."
   }
 }
