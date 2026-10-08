@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@469647e379cee919e016b904585cea8975287086/"
     ];
 
     const GAME_DATA = {
@@ -1060,6 +1060,11 @@
     "name": "Ragdoll Archers",
     "category": "Action",
     "description": "Shoot arrows at wobbly ragdoll enemies and survive chaotic physics battles."
+  },
+  "ragdoll-hit": {
+    "name": "Ragdoll Hit",
+    "category": "Action",
+    "description": "Control a floppy ragdoll stickman and knock out enemies with chaotic physics-based brawls."
   }
 };
 
