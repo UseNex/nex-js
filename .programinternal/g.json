@@ -1093,5 +1093,10 @@
     "name": "Retro Ping Pong",
     "category": "Sports",
     "description": "Smash the ball past your rival in classic arcade ping pong with crazy action twists!"
+  },
+  "riddle-school-2": {
+    "name": "Riddle School 2",
+    "category": "Puzzle",
+    "description": "Help Phil escape middle school by solving puzzles and outsmarting teachers."
   }
 }
