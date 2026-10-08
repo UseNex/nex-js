@@ -1088,5 +1088,10 @@
     "name": "Retro Highway",
     "category": "Racing",
     "description": "Dodge traffic at high speed on a motorcycle and perform stunts."
+  },
+  "retro-ping-pong": {
+    "name": "Retro Ping Pong",
+    "category": "Sports",
+    "description": "Smash the ball past your rival in classic arcade ping pong with crazy action twists!"
   }
 }
