@@ -1043,5 +1043,10 @@
     "name": "Google Feud",
     "category": "Puzzle",
     "description": "Guess how the internet finishes a Google search and score points for matching the top autocomplete results."
+  },
+  "ragdoll-archers": {
+    "name": "Ragdoll Archers",
+    "category": "Action",
+    "description": "Shoot arrows at wobbly ragdoll enemies and survive chaotic physics battles."
   }
 }
