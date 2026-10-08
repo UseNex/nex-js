@@ -1083,5 +1083,10 @@
     "name": "Retro Bowl",
     "category": "Sports",
     "description": "Manage your football team and lead them to victory in retro 8-bit style."
+  },
+  "retro-highway": {
+    "name": "Retro Highway",
+    "category": "Racing",
+    "description": "Dodge traffic at high speed on a motorcycle and perform stunts."
   }
 }
