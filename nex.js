@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e776db73ce4f08cc6feda4cc5bdb3e68cfb4d097/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@6f83457b01bf78c26cd58c7185315c0d552ff1c7/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@6f83457b01bf78c26cd58c7185315c0d552ff1c7/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@6f83457b01bf78c26cd58c7185315c0d552ff1c7/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@6f83457b01bf78c26cd58c7185315c0d552ff1c7/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@6f83457b01bf78c26cd58c7185315c0d552ff1c7/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@6f83457b01bf78c26cd58c7185315c0d552ff1c7/"
     ];
 
     const GAME_DATA = {
@@ -1070,6 +1070,11 @@
     "name": "Ragdoll Soccer",
     "category": "Sports",
     "description": "Control a floppy stickman and kick, headbutt and flail the ball into the net."
+  },
+  "red-ball-4-vol-1": {
+    "name": "Red Ball 4 Vol 1",
+    "category": "Skill",
+    "description": "Roll, jump and bounce through grassy hills to stop the evil squares."
   }
 };
 
