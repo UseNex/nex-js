@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/"
     ];
 
     const GAME_DATA = {
@@ -1095,6 +1095,11 @@
     "name": "Retro Bowl",
     "category": "Sports",
     "description": "Manage your football team and lead them to victory in retro 8-bit style."
+  },
+  "retro-highway": {
+    "name": "Retro Highway",
+    "category": "Racing",
+    "description": "Dodge traffic at high speed on a motorcycle and perform stunts."
   }
 };
 
