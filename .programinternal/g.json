@@ -1073,5 +1073,10 @@
     "name": "Red Ball 4 Vol 3",
     "category": "Skill",
     "description": "Roll through a deadly factory and dodge lasers to stop the evil squares."
+  },
+  "retro-bowl-college": {
+    "name": "Retro Bowl College",
+    "category": "Sports",
+    "description": "Manage a college football team, recruit players and lead them to the championship."
   }
 }
