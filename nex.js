@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4cec8e8c7318c26dee0d6a6eb4950eca9a480883/"
     ];
 
     const GAME_DATA = {
@@ -1105,6 +1105,11 @@
     "name": "Retro Ping Pong",
     "category": "Sports",
     "description": "Smash the ball past your rival in classic arcade ping pong with crazy action twists!"
+  },
+  "riddle-school-2": {
+    "name": "Riddle School 2",
+    "category": "Puzzle",
+    "description": "Help Phil escape middle school by solving puzzles and outsmarting teachers."
   }
 };
 
