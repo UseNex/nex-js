@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c9acf0de4ba64c65e5288de56a61b89ee4524aed/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c9acf0de4ba64c65e5288de56a61b89ee4524aed/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c9acf0de4ba64c65e5288de56a61b89ee4524aed/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c9acf0de4ba64c65e5288de56a61b89ee4524aed/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c9acf0de4ba64c65e5288de56a61b89ee4524aed/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c9acf0de4ba64c65e5288de56a61b89ee4524aed/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/"
     ];
 
     const GAME_DATA = {
@@ -1080,6 +1080,11 @@
     "name": "Red Ball 4 Vol 2",
     "category": "Skill",
     "description": "Roll, bounce and solve physics puzzles to stop the evil squares!"
+  },
+  "red-ball-4-vol-3": {
+    "name": "Red Ball 4 Vol 3",
+    "category": "Skill",
+    "description": "Roll through a deadly factory and dodge lasers to stop the evil squares."
   }
 };
 
