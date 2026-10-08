@@ -1068,5 +1068,10 @@
     "name": "Red Ball 4 Vol 2",
     "category": "Skill",
     "description": "Roll, bounce and solve physics puzzles to stop the evil squares!"
+  },
+  "red-ball-4-vol-3": {
+    "name": "Red Ball 4 Vol 3",
+    "category": "Skill",
+    "description": "Roll through a deadly factory and dodge lasers to stop the evil squares."
   }
 }
