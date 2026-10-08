@@ -1053,5 +1053,10 @@
     "name": "Ragdoll Hit",
     "category": "Action",
     "description": "Control a floppy ragdoll stickman and knock out enemies with chaotic physics-based brawls."
+  },
+  "ragdoll-soccer": {
+    "name": "Ragdoll Soccer",
+    "category": "Sports",
+    "description": "Control a floppy stickman and kick, headbutt and flail the ball into the net."
   }
 }
