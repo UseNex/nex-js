@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@4f9de2edb5ad42da61045e9766b2fe6ac708e697/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fe6181b60316058512f4f6722d6e712c0dd88839/"
     ];
 
     const GAME_DATA = {
@@ -1055,6 +1055,11 @@
     "name": "Google Feud",
     "category": "Puzzle",
     "description": "Guess how the internet finishes a Google search and score points for matching the top autocomplete results."
+  },
+  "ragdoll-archers": {
+    "name": "Ragdoll Archers",
+    "category": "Action",
+    "description": "Shoot arrows at wobbly ragdoll enemies and survive chaotic physics battles."
   }
 };
 
