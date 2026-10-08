@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@1572cfc2c359b42f05d1a0977dd0e60d35a38613/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@5aba0e4dcbe8e48194e0c53953b3a6017e96656e/"
     ];
 
     const GAME_DATA = {
@@ -1100,6 +1100,11 @@
     "name": "Retro Highway",
     "category": "Racing",
     "description": "Dodge traffic at high speed on a motorcycle and perform stunts."
+  },
+  "retro-ping-pong": {
+    "name": "Retro Ping Pong",
+    "category": "Sports",
+    "description": "Smash the ball past your rival in classic arcade ping pong with crazy action twists!"
   }
 };
 
