@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@c1a2871381716a87c893ecca9a487f39daf6555c/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/"
     ];
 
     const GAME_DATA = {
@@ -1085,6 +1085,11 @@
     "name": "Red Ball 4 Vol 3",
     "category": "Skill",
     "description": "Roll through a deadly factory and dodge lasers to stop the evil squares."
+  },
+  "retro-bowl-college": {
+    "name": "Retro Bowl College",
+    "category": "Sports",
+    "description": "Manage a college football team, recruit players and lead them to the championship."
   }
 };
 
