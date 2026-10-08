@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@a1260fb847b1aaa12e8c1c9ed0ad465997cd79ef/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e674722a7384a64c2a71989b347c661418e6cdb8/"
     ];
 
     const GAME_DATA = {
@@ -1090,6 +1090,11 @@
     "name": "Retro Bowl College",
     "category": "Sports",
     "description": "Manage a college football team, recruit players and lead them to the championship."
+  },
+  "retro-bowl": {
+    "name": "Retro Bowl",
+    "category": "Sports",
+    "description": "Manage your football team and lead them to victory in retro 8-bit style."
   }
 };
 
