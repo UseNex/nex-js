@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@2f2bb57b04af36ae8079b9babb715451948eb823/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@2f2bb57b04af36ae8079b9babb715451948eb823/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@2f2bb57b04af36ae8079b9babb715451948eb823/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@2f2bb57b04af36ae8079b9babb715451948eb823/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@2f2bb57b04af36ae8079b9babb715451948eb823/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@2f2bb57b04af36ae8079b9babb715451948eb823/"
     ];
 
     const GAME_DATA = {
@@ -1140,6 +1140,11 @@
     "name": "Riddle Transfer 2",
     "category": "Puzzle",
     "description": "Escape the school, defeat Quiz, and end the Riddle saga once and for all."
+  },
+  "riddle-transfer": {
+    "name": "Riddle Transfer",
+    "category": "Puzzle",
+    "description": "Escape a secret government facility, free your friends, and uncover the truth."
   }
 };
 
