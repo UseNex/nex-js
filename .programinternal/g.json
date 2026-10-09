@@ -1128,5 +1128,10 @@
     "name": "Riddle Transfer 2",
     "category": "Puzzle",
     "description": "Escape the school, defeat Quiz, and end the Riddle saga once and for all."
+  },
+  "riddle-transfer": {
+    "name": "Riddle Transfer",
+    "category": "Puzzle",
+    "description": "Escape a secret government facility, free your friends, and uncover the truth."
   }
 }
