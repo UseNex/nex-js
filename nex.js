@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@f11430d8b02e66b034d4122e8bf1a4f06f28637c/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/"
     ];
 
     const GAME_DATA = {
@@ -1115,6 +1115,11 @@
     "name": "Idle Dice",
     "category": "Clicker",
     "description": "Roll digital dice to earn money, unlock crazy combos, and build an idle dice empire."
+  },
+  "riddle-school-3": {
+    "name": "Riddle School 3",
+    "category": "Puzzle",
+    "description": "Escape Riddle High School by solving tricky puzzles and collecting hidden items."
   }
 };
 
