@@ -1118,5 +1118,10 @@
     "name": "Riddle School 5",
     "category": "Puzzle",
     "description": "Escape an alien spaceship, enter your friends' dreams and save Earth from being frozen."
+  },
+  "riddle-school": {
+    "name": "Riddle School",
+    "category": "Puzzle",
+    "description": "Escape a boring classroom by finding items and outsmarting your teacher."
   }
 }
