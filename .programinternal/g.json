@@ -1113,5 +1113,10 @@
     "name": "Riddle School 4",
     "category": "Puzzle",
     "description": "Click anything in class and watch Phil meet his doom in this April Fools joke."
+  },
+  "riddle-school-5": {
+    "name": "Riddle School 5",
+    "category": "Puzzle",
+    "description": "Escape an alien spaceship, enter your friends' dreams and save Earth from being frozen."
   }
 }
