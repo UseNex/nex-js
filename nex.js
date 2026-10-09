@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@fa07e654212527b57664ec7bcf76d8fbccd975f6/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/"
     ];
 
     const GAME_DATA = {
@@ -1120,6 +1120,11 @@
     "name": "Riddle School 3",
     "category": "Puzzle",
     "description": "Escape Riddle High School by solving tricky puzzles and collecting hidden items."
+  },
+  "riddle-school-4": {
+    "name": "Riddle School 4",
+    "category": "Puzzle",
+    "description": "Click anything in class and watch Phil meet his doom in this April Fools joke."
   }
 };
 
