@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@906f5f4c200c754f9ef3b501e056c18714067e81/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/"
     ];
 
     const GAME_DATA = {
@@ -1125,6 +1125,11 @@
     "name": "Riddle School 4",
     "category": "Puzzle",
     "description": "Click anything in class and watch Phil meet his doom in this April Fools joke."
+  },
+  "riddle-school-5": {
+    "name": "Riddle School 5",
+    "category": "Puzzle",
+    "description": "Escape an alien spaceship, enter your friends' dreams and save Earth from being frozen."
   }
 };
 
