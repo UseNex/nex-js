@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@b8cebc4476ca40dd527c4d09a77b1a22138f79f5/"
     ];
 
     const GAME_DATA = {
@@ -1135,6 +1135,11 @@
     "name": "Riddle School",
     "category": "Puzzle",
     "description": "Escape a boring classroom by finding items and outsmarting your teacher."
+  },
+  "riddle-transfer-2": {
+    "name": "Riddle Transfer 2",
+    "category": "Puzzle",
+    "description": "Escape the school, defeat Quiz, and end the Riddle saga once and for all."
   }
 };
 
