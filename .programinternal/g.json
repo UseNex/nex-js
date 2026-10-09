@@ -1123,5 +1123,10 @@
     "name": "Riddle School",
     "category": "Puzzle",
     "description": "Escape a boring classroom by finding items and outsmarting your teacher."
+  },
+  "riddle-transfer-2": {
+    "name": "Riddle Transfer 2",
+    "category": "Puzzle",
+    "description": "Escape the school, defeat Quiz, and end the Riddle saga once and for all."
   }
 }
