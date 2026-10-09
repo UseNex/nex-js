@@ -1103,5 +1103,10 @@
     "name": "Idle Dice",
     "category": "Clicker",
     "description": "Roll digital dice to earn money, unlock crazy combos, and build an idle dice empire."
+  },
+  "riddle-school-3": {
+    "name": "Riddle School 3",
+    "category": "Puzzle",
+    "description": "Escape Riddle High School by solving tricky puzzles and collecting hidden items."
   }
 }
