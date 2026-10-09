@@ -1108,5 +1108,10 @@
     "name": "Riddle School 3",
     "category": "Puzzle",
     "description": "Escape Riddle High School by solving tricky puzzles and collecting hidden items."
+  },
+  "riddle-school-4": {
+    "name": "Riddle School 4",
+    "category": "Puzzle",
+    "description": "Click anything in class and watch Phil meet his doom in this April Fools joke."
   }
 }
