@@ -2,12 +2,12 @@
     const XOR_KEY_BASE64 = "TkVYIFBMQVRGT1JN";
     const NEX_CACHE_STORE = "np-cache-1";
     const NEX_NODES = [
-        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
-        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
-        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
-        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
-        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/",
-        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@e41e3ea26590eba61bbd1b1d98716d874db00190/"
+        "https://gcore.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
+        "https://testingcf.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
+        "https://quantil.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
+        "https://fastly.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
+        "https://jsdelivr.b-cdn.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/",
+        "https://cdn.jsdelivr.net/gh/UseNex/g-assets-enc@9f85274701b848bba75a9e4b34b2156e24815142/"
     ];
 
     const GAME_DATA = {
@@ -1130,6 +1130,11 @@
     "name": "Riddle School 5",
     "category": "Puzzle",
     "description": "Escape an alien spaceship, enter your friends' dreams and save Earth from being frozen."
+  },
+  "riddle-school": {
+    "name": "Riddle School",
+    "category": "Puzzle",
+    "description": "Escape a boring classroom by finding items and outsmarting your teacher."
   }
 };
 
